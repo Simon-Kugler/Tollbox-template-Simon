@@ -1,0 +1,48 @@
+\documentclass[titlepage=firstiscover, parskip=half, bibliography=totoc,captions=tableheading]{scrartcl} % KOMA-Script Dokumentenklasse Article
+
+% Warnung, falls noch einmal kompiliert werden muss
+\usepackage[aux]{rerunfilecheck}
+
+% Paket für Schriftarteinstellung, muss immer geladen werden
+\usepackage{fontspec}
+
+% Deutsche Spracheinstellungen, wichtig z. B. für korrekte Trennung
+\usepackage[ngerman]{babel}
+
+% mehr Pakete hier
+\usepackage{amsmath} % unverzichtbare Mathe-Befehle
+\usepackage{amssymb} % viele Mathe-Symbole
+\usepackage{mathtools} % Erweiterungen für amsmath
+\usepackage[
+math-style=ISO, % ┐
+bold-style=ISO, % │
+sans-style=italic, % │ ISO-Standard folgen
+nabla=upright, % │
+partial=upright, % │
+mathrm=sym, % ┘
+]{unicode-math}
+\usepackage[
+version=4,
+math-greek=default,
+text-greek=default,
+]{mhchem}
+\usepackage[section, below]{placeins}
+\usepackage{caption} % Captions schöner machen
+\usepackage{graphicx}
+\usepackage{graphicx}
+\usepackage{tabularray}
+\UseTblrLibrary{booktabs}
+\UseTblrLibrary{siunitx} % Lädt siunitx und definiert die S-Spalte
+\usepackage[style=alphabetic]{biblatex} % nach babel
+\addbibresource{lit.bib}
+
+% Unterstützung für Links und PDF Metadaten
+\usepackage[unicode]{hyperref}
+\usepackage{bookmark}
+\usepackage{microtype}
+\usepackage{xfrac}
+% Einstellungen hier, z.B. Fonts
+\setmathfont{Latin Modern Math}
+% \setmathfont{Tex Gyre Pagella Math} % alternativ
+
+
