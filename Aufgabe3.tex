@@ -1,0 +1,53 @@
+\input{maingeruest.tex}
+
+\begin{document}
+\title{Abgabe 3}
+\author{
+Sophia Brechmann \\
+\texorpdfstring{\href{mailto:sophia.brechmann@tu-dortmund.de}{sophia.brechmann@tu-dortmund.de}\and}{,}
+Simon Kugler \\
+\texorpdfstring{\href{mailto:simon.kugler@tu-dortmund.de}{simon.kugler@tu-dortmund.de}}{}
+}
+\date{Deadline: Dienstag, 07.11.2023}
+\maketitle
+\section{Volumen eines Hohlzylinders: }
+\begin{align*}
+    R_\text{innen}&=\qty{10+-1}{\centi\meter}\,\,R_\text{außen}=\num{10+-1}\unit{\centi\meter},\,h=(20\pm1)\text{cm}\\
+    V&=(\pi R_\text{außen}^2-\pi R_\text{innen}^2)\cdot h 
+    \intertext{Der wahrscheinlichste Fehler, für eine von mehreren Variablen 
+    abhängigen Funktion, berechnet sich wie folgt: }
+    % \Delta f_\text{max}&=\big\vert\frac{df}{dy_1}\big\vert\Delta y_1+...+
+    % \big\vert\frac{df}{dy_N}\big\vert\Delta y_N \\
+    % \Delta f_\text{max}&=\big\vert\frac{df}{dR_\text{außen}}\big\vert\Delta R_\text{außen}+
+    % \big\vert\frac{df}{dR_\text{innen}}\big\vert\Delta R_\text{innen}+
+    % \big\vert\frac{df}{dh}\big\vert\Delta h \\
+    % &=\big\vert 2\pi R_\text{außen}\cdot h\big\vert\cdot 1+\big\vert 2\pi R_\text{innen}\cdot h\big\vert\cdot 1+
+    % \big\vert \pi R_\text{außen}^2-\pi R_\text{innen}^2\big\vert \cdot 1\\
+    % &=2\pi\cdot 15\cdot20+2\pi\cdot 10\cdot 20+\pi\cdot 15^2-\pi\cdot 10^2\\
+    % \Delta f_\text{max}&=1125\pi...???\\
+    \Delta f&=\sqrt{\sum_{i=1}^N\left(\frac{df}{dy_i}\right)^2(\Delta y_i)^2}\\
+    \intertext{Angewandt bzw. eingesetzt in unsere Formel: }
+    \Delta f&=\huge{[}\sqrt{(2\pi\cdot15\unit{cm}\cdot 20\unit{cm})^2\cdot (1\unit{cm})^2+(-2\pi\cdot 10\unit{cm}\cdot 20\unit{cm})^2\cdot (1\unit{cm})^2}\\
+    &\overline{(\pi\cdot(15\unit{cm})^2-\pi\cdot(10\unit{cm})^2)^2\cdot (1\unit{cm})^2}\huge]\\
+    &\approx2299,22\unit{cm^3}\\
+    V&=(\pi\cdot(15\unit{cm})^2-\pi(10\unit{cm})^2)\cdot20\unit{cm}\\
+    &\boxed{=(7583,98\pm2299,22)\unit{cm^3}}
+\end{align*}
+\section{Kinetische Energie eines Projektils}
+Die kinetische Energie $E_\text{kin}$ berechnet sich wie folgt:
+\begin{align*}
+    E_\text{kin}&=\frac{1}{2}mv^2\\
+    \intertext{Mit obiger Formel ergibt sich für $\Delta f$: }
+    \Delta f&=\sqrt{(\frac{1}{4}\cdot (200\unit{m/s})^4)\cdot (0.0001\unit{kg})^2+((0,005\unit{kg})^2\cdot(200\unit{m/s})^2)\cdot (10\unit{m/s})^2}\\
+    &=10\unit{J}\\
+    \intertext{Damit ist die kinetische Energie: }
+    E_\text{kin}&=\frac{1}{2}mv^2=\frac{1}{2}\cdot 0,005\unit{kg}\cdot200\unit{m\s}^2\\
+    &\boxed{=(100\pm 10)\unit{J}}\\
+    \intertext{Die zurückgelegte Strecke berechnet sich über: }
+    s&=v\cdot t \\
+    \Delta f&=\sqrt{((6\unit{s})^2)\cdot (10\unit{m/s})^2+((200\unit{m/s})^2)\cdot(0\unit{s})^2}\\
+    &=60\unit{m}\\
+    s&=v\cdot t=200\unit{m/s}\cdot 6\unit{s}\\
+    &\boxed{=(1200\pm 60)\unit{m}}
+\end{align*}
+\end{document}
