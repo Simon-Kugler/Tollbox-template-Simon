@@ -1,18 +1,43 @@
 import matplotlib.pyplot as plt
 import numpy as np
+from scipy.optimize import curve_fit
 
-x = np.linspace(0, 10, 1000)
-y = x ** np.sin(x)
+x, y = np.genfromtxt("Messdaten1_203.txt" , unpack=True)
+y2, x2 =np.genfromtxt("Messdaten2_203.txt",unpack=True)
 
-fig, (ax1, ax2) = plt.subplots(1, 2, layout="constrained")
-ax1.plot(x, y, label="Kurve")
-ax1.set_xlabel(r"$\alpha \mathbin{/} \unit{\ohm}$")
-ax1.set_ylabel(r"$y \mathbin{/} \unit{\micro\joule}$")
-ax1.legend(loc="best")
+plt.plot(x, y, "bx", label="Messwerte1")
+plt.yscale("log")
+plt.xlabel("$T$ [K]")
+plt.ylabel("$p$ [mbar]")
+plt.legend()
+plt.grid()
 
-ax2.plot(x, y, label="Kurve")
-ax2.set_xlabel(r"$\alpha \mathbin{/} \unit{\ohm}$")
-ax2.set_ylabel(r"$y \mathbin{/} \unit{\micro\joule}$")
-ax2.legend(loc="best")
 
-fig.savefig("build/plot.pdf")
+R = 8.314472
+p = 996
+def fit (x, L):
+    return p * np.exp(- (1/x) * L/R)
+
+params, covariance = curve_fit(fit, x, y)
+errors = np.sqrt(np.diag(covariance))
+print(errors)
+
+for name, value, error in zip('LR', params, errors):
+        print(f'{name} = {value:.6f} ± {error:.6f}')
+
+x_t = np.linspace(293.15, 373.15, 1000)
+plt.plot(x_t, fit(x_t, *params), label="Ausgleichsgerade")
+
+plt.show()
+
+plt.savefig("build/plot.pdf")
+plt.clf()
+
+plt.plot(x2, y2, "bx", label="Messwerte2")
+plt.yscale("log")
+plt.xlabel("$T$ [K]")
+plt.ylabel("$p$ [bar]")
+plt.legend()
+plt.grid()
+
+plt.show()
