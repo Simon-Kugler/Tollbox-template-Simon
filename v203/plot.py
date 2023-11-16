@@ -41,4 +41,5 @@ plt.ylabel("$p$ [bar]")
 plt.legend()
 plt.grid()
 
-plt.show()
+# plt.show()
+fig.savefig("plot_sophia.pdf")
