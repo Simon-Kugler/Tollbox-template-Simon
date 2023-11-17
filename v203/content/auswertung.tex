@@ -66,13 +66,14 @@ Mit diesen Messwerten lassen sich folgende Grafiken erstellen:
   \centering
   \includegraphics[width=\textwidth]{plot_simon1.pdf}
   \caption{Messwerte der ersten Messreihe aufgetragen als Druck $p$ 
-  gegen Temperatur $T$. $Fit fehlt noch$.}
+  gegen Temperatur $T$. $Fit\,\,fehlt\,\, noch$.}
 \end{figure}
 Mittels Python lässt sich für die gemittelte Verdampfungswärme $L$ im Bereich unter einem Bar der Wert
 1522 ermitteln. Er bestimmt das Aussehen der Exponentialfunktion $\exp(-\frac{1}{T}\cdot\frac{L}{R})$.
 \\
 Die allgemeine Gasgleichung ist pV=RT. 
 % Siehe \autoref{fig:plot} und \autoref{tab:tabelle}!
+\newpage
 \subsection{d) Druck über einem Bar}
 Auflösen er Clausius-Clapeyronschen Gleichung nach $L$ zur Bestimmung der Wärmeabhängigkeit.\\
 \begin{align}
@@ -98,3 +99,4 @@ Ableitung des Polynoms
 T(p)&=-\num{3e-15}p^4+\num{9.75e-11}p^3-\num{1.522e-6}p^2+0,015p+377,748:\nonumber\\
 T'(p)&=-\num{1.2e-14}p^3+\num{2.925e-10}p^2-\num{3.044}p+0,015
 \end{align}
+Das ist nun unser Asudruck für $\frac{dp}{dT}$.
