@@ -8,7 +8,7 @@ all: build/v203.pdf
 # 	TEXINPUTS=$$(pwd)/..: MATPLOTLIBRC=../matplotlibrc python plot.py
 
 # hier weitere Abhängigkeiten für build/vXXX.pdf deklarieren:
-build/v203.pdf: build/plot.pdf
+# build/v203.pdf: build/plot.pdf
 
 build/v203.pdf: FORCE | build
 	# to find header and bib files in the main directory

@@ -96,7 +96,18 @@ e = 377.748401598401188 ± 1.450339506446900
 \\
 Ableitung des Polynoms 
 \begin{align}
-T(p)&=-\num{3e-15}p^4+\num{9.75e-11}p^3-\num{1.522e-6}p^2+0,015p+377,748:\nonumber\\
-T'(p)&=-\num{1.2e-14}p^3+\num{2.925e-10}p^2-\num{3.044}p+0,015
+p(T)&=-\num{3e-15}p^4+\num{9.75e-11}p^3-\num{1.522e-6}p^2+0,015p+377,748:\nonumber\\
+p'(T)&=-\num{1.2e-14}p^3+\num{2.925e-10}p^2-\num{3.044}p+0,015
 \end{align}
-Das ist nun unser Asudruck für $\frac{dp}{dT}$.
+Das ist nun unser Asudruck für $\frac{dp}{dT}$.\\
+Nun nehmen wir uns die in der Aufgabe angegebene Formel. Hierfür wird, wie bereits in der Theorie beschrieben,
+die Annahme getroffen, dass $V_F$ sehr klein bzw. vernachlässigbar gegenüber $V_D$ ist. Daher ist hier $V_D=V$:
+\begin{align}
+  \left(p+\frac{a}{V^2}\right)V=RT\text{  mit  }a=0,9\,\frac{\text{Joule m}^3}{\text{Mol}^2}\nonumber\\
+  V=\frac{RT}{2p}\pm\sqrt{\frac{RT^2}{2p}-\frac{a}{p}}
+\end{align}
+Setzt man diese Formel für das Volumen in Gl.(2) ein, erhält man folgenden Ausdruck für L:
+\begin{equation}
+  L(T)=\frac{p'(T)\cdot T}{p(T)}\cdot(\frac{RT}{2p}\pm\sqrt{\frac{RT^2}{2p}-\frac{a}{p}})
+\end{equation}
+Dies ist nun die Verdampfungswärme in Abhängigkeit der Temperatur für mehr als 100 Pascal. 
