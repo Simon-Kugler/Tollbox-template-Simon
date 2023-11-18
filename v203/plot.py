@@ -19,7 +19,7 @@ def fit(x, L):
    return p * np.exp(- L / (x * R))
 
 
-params, covariance = curve_fit(fit, x, y)
+params, covariance = curve_fit(fit, x[2:], y[2:],p0=[270,40])
 errors = np.sqrt(np.diag(covariance))
 print(params)
 
