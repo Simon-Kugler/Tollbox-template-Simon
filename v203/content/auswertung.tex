@@ -5,7 +5,7 @@
 \begin{table}
   \centering
   \caption{Temperatur und Druck bei Verdampfung des Wassers. Der Druck hat eine Messunsicherheit von
-  $\pm$mB, die Temperatur von $\pm 1$ K.}
+  $\pm$mB, die Temperatur von $\pm 1$ K.},
   \label{tab:Messreihe_1}
 \begin{tabular}{
   c c||c c||c c||c c
@@ -41,7 +41,7 @@ $T/ \unit{\kelvin}$ & $p / \text{mB}$ & $T/ \unit{\kelvin}$ & $p / \text{mB}$ \\
 \begin{table}
   \centering
   \caption{Temperatur und Druck bei Verdampfung des Wassers für $p\geq 1$.Der Druck hat eine Messunsicherheit von
-  $\pm$mB, die Temperatur von $\pm 1$ K.}
+  $\pm$mB, die Temperatur von $\pm 1$ K.},
   \label{tab:Messreihe_2}
 \begin{tabular}{
   c c||c c
@@ -63,51 +63,36 @@ $p$/B & $T$/K & $p$/B & $T$/K\\
 
 Mit diesen Messwerten lassen sich folgende Grafiken erstellen:
 \begin{figure}
-  \centering
-  \includegraphics[width=\textwidth]{plot_simon1.pdf}
-  \caption{Messwerte der ersten Messreihe aufgetragen als Druck $p$ 
-  gegen Temperatur $T$. $Fit\,\,fehlt\,\, noch$.}
+  \begin{subfigure}{0.48\textwidth}
+
+    \includegraphics{python/plota}
+    \caption{Messwerte für den Bereich von $30$ bis $1000 mbar$}
+    \label{fig:MesswerteKlein}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}
+    \includegraphics{python/plotb}
+    \caption{Messwerte für den Bereich von $1$ bis $15 bar$}
+    \label{fig:MesswerteGross}
+  \end{subfigure}
+  \caption{Die Messwerte der ersten Messreihe aufgetragen als der Logarithmus des Drucks $p$
+  gegen die reziproke absolute Temperatur $T$.}
+  \label{fig:Teila}
 \end{figure}
-Mittels Python lässt sich für die gemittelte Verdampfungswärme $L$ im Bereich unter einem Bar der Wert
-1522 ermitteln. Er bestimmt das Aussehen der Exponentialfunktion $\exp(-\frac{1}{T}\cdot\frac{L}{R})$.
+Um hier raus die Verdampfungswärme von Wasser zu bestimmen, legt man eine Gerade durch die Messwerte.
+Diese wird mittels Python für den Bereich von $30$ bis $1000 mbar$ erstellt und sieht folgendermaßen aus:
+\begin{figure}
+  \centering
+  \includegraphics[width=\textwidth]{python/plotc}
+  \caption{Die Messwerte der zweiten Messreihe aufgetragen als der Logarithmus des Drucks $p$
+  gegen die reziproke absolute Temperatur $T$.}
+\end{figure}
+Für diesen Fit wurden die ersten zwei Messwerte dieser Reihe nicht berücksichtigt, da diese aus der Reihe rausspringen.
+Für die Verdampfungswärme von Wasser ergibt sich:
+\begin{*equation}
+  L = 2029.10266825 \pm 20.99148783
+\end{*equation}
+
 \\
 Die allgemeine Gasgleichung ist pV=RT. 
 % Siehe \autoref{fig:plot} und \autoref{tab:tabelle}!
-\newpage
-\subsection{d) Druck über einem Bar}
-Auflösen er Clausius-Clapeyronschen Gleichung nach $L$ zur Bestimmung der Wärmeabhängigkeit.\\
-\begin{align}
-  &(V_D-V_F)dp=\frac{L}{T}dT\nonumber\\
-  \Leftrightarrow L=&(V_D-V_F)\frac{dp}{dT}T
-\end{align}
-Errechnet man mittels Python und scipy einen polynomialen Fit vierten Grades, erhält das Polynom $ax^4+bx^3+cx^2+dx+e$ folgende Werte:
-\begin{align*}
-a = -0.000000000000003 ± 0.000000000000001\\
-b = 0.000000000097499 ± 0.000000000026259\\
-c = -0.000001522301035 ± 0.000000283848956\\
-d = 0.015382375751184 ± 0.001167777905221\\
-e = 377.748401598401188 ± 1.450339506446900
-\end{align*}
-\begin{figure}[h]
-    \centering
-    \includegraphics[height=8cm]{plot2.pdf}
-    \caption{Druck und Temperatur der zweiten Messreihe, $p\geq 1$Bar.}
-\end{figure}
-\\
-Ableitung des Polynoms 
-\begin{align}
-p(T)&=-\num{3e-15}p^4+\num{9.75e-11}p^3-\num{1.522e-6}p^2+0,015p+377,748:\nonumber\\
-p'(T)&=-\num{1.2e-14}p^3+\num{2.925e-10}p^2-\num{3.044}p+0,015
-\end{align}
-Das ist nun unser Asudruck für $\frac{dp}{dT}$.\\
-Nun nehmen wir uns die in der Aufgabe angegebene Formel. Hierfür wird, wie bereits in der Theorie beschrieben,
-die Annahme getroffen, dass $V_F$ sehr klein bzw. vernachlässigbar gegenüber $V_D$ ist. Daher ist hier $V_D=V$:
-\begin{align}
-  \left(p+\frac{a}{V^2}\right)V=RT\text{  mit  }a=0,9\,\frac{\text{Joule m}^3}{\text{Mol}^2}\nonumber\\
-  V=\frac{RT}{2p}\pm\sqrt{\frac{RT^2}{2p}-\frac{a}{p}}
-\end{align}
-Setzt man diese Formel für das Volumen in Gl.(2) ein, erhält man folgenden Ausdruck für L:
-\begin{equation}
-  L(T)=\frac{p'(T)\cdot T}{p(T)}\cdot(\frac{RT}{2p}\pm\sqrt{\frac{RT^2}{2p}-\frac{a}{p}})
-\end{equation}
-Dies ist nun die Verdampfungswärme in Abhängigkeit der Temperatur für mehr als 100 Pascal. 
