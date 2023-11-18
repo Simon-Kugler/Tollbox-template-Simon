@@ -28,6 +28,8 @@ errors = errors = np.sqrt(np.diag(cov))
 
 print(params)
 print(errors)
+L = - params[0]
+print("L = ", L, "±", errors[0])
 
 ax.plot(x, fit(x, *params), "b-", label="Ausgleichsgerade")
 
