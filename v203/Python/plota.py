@@ -9,7 +9,7 @@ p *= 100 # um von mbar auf Pa zu kommen
 T = 1/T
 p = np.log(p)
 
-plt.plot(T, p, "bx", label="Messwerte1")
+plt.plot(T, p, "bx", label="Messwerte")
 
 plt.xlabel("$1/T$ ")
 plt.ylabel("$ln(p)$")
