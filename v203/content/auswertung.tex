@@ -62,51 +62,61 @@ $p$/B & $T$/K & $p$/B & $T$/K\\
 \end{table}
 
 Mit diesen Messwerten lassen sich folgende Grafiken erstellen:
-\begin{figure}
-    \includegraphics{Python/plota.pdf}
-    \caption{Messwerte für den Bereich von $30$ bis $1000 mbar$}
+\begin{figure}[H]
+  \begin{subfigure}{0.48\textwidth}
+      \includegraphics[height=6cm]{python/plota.pdf}
+    \caption{Bereich von $30$ bis $1000 mbar$}
     \label{fig:MesswerteKlein}
-\end{figure}
-  % \hfill
-\begin{figure}
-    \includegraphics{Python/plotb.pdf}
-    \caption{Messwerte für den Bereich von $1$ bis $15 bar$}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}{0.48\textwidth}
+    \includegraphics[height=6cm]{python/plotb.pdf}
+    \caption{Bereich von $1$ bis $15 bar$}
     \label{fig:MesswerteGross}
-\end{figure}
-\begin{figure}
-  \includegraphics{Python/plotc.pdf}
+  \end{subfigure}
   \caption{Die Messwerte der ersten Messreihe aufgetragen als der Logarithmus des Drucks $p$
   gegen die reziproke absolute Temperatur $T$.}
   \label{fig:Teila}
 \end{figure}
+\newpage
 Um hier raus die Verdampfungswärme von Wasser zu bestimmen, legt man eine Gerade durch die Messwerte.
-Diese wird mittels Python für den Bereich von $30$ bis $1000 mbar$ erstellt und sieht folgendermaßen aus:
-% \begin{figure}
-%   \centering
-%   \includegraphics[width=\textwidth]{Python/plotc.pdf}
-%   \caption{Die Messwerte der zweiten Messreihe aufgetragen als der Logarithmus des Drucks $p$
-%   gegen die reziproke absolute Temperatur $T$.}
-% \end{figure}
-Für diesen Fit wurden die ersten zwei Messwerte dieser Reihe nicht berücksichtigt, da diese aus der Reihe rausspringen.
-Für die Verdampfungswärme von Wasser ergibt sich:
-\begin{equation*}
-  L = 2029.10266825 \pm 20.99148783
-\end{equation*}
-L beschreibt die Steigung der Ausgleichsgeraden.\\
-\\
-Die allgemeine Gasgleichung ist pV=RT. 
-% Siehe \autoref{fig:plot} und \autoref{tab:tabelle}!
-Mit diesen Messwerten lassen sich folgende Grafiken erstellen:
-\begin{figure}
+Diese wird mittels Python für den Bereich von $30$ bis $1000 mbar$ erstellt und sieht folgendermaßen aus: \\
+\begin{figure}[H]
   \centering
-  \includegraphics[width=\textwidth]{plot_simon1.pdf}
-  \caption{Messwerte der ersten Messreihe aufgetragen als Druck $p$ 
-  gegen Temperatur $T$. $Fit\,\,fehlt\,\, noch$.}
+  \includegraphics[width=\textwidth]{python/plotc}
+  \caption{Die Messwerte der zweiten Messreihe aufgetragen als der Logarithmus des Drucks $p$
+  gegen die reziproke absolute Temperatur $T$ mit der Ausgleichsgerade.}
+  \label{fig:Ausgleichsgerade}
 \end{figure}
-Mittels Python lässt sich für die gemittelte Verdampfungswärme $L$ im Bereich unter einem Bar der Wert
-1522 ermitteln. Er bestimmt das Aussehen der Exponentialfunktion $\exp(-\frac{1}{T}\cdot\frac{L}{R})$.
-\\
-Die allgemeine Gasgleichung ist pV=RT. 
+Für diesen Fit wurden die ersten zwei Messwerte dieser Reihe nicht berücksichtigt, da diese die Bestimmung von $L$
+offensichtlich verfälschen würden.
+Die Gleichung des zu der Ausgleichsgerade ist:
+\begin{equation}
+  ln(p) = - \frac{L}{R} \cdot \frac{1}{T}
+  \Rightarrow y = a \cdot x + b = -2029 * x + 17.010
+\end{equation}
+Mit Numerik Python ergeben sich folgende Messunsicherheiten: $a = \SI{-2029 \pm 21 }{\frac{1}{\kelvin}}$
+und $b = \SI{17.010 \pm 0.063}{\frac{1}{\kelvin}}$
+Für die Verdampfungswärme von Wasser ergibt sich zu
+\begin{equation*}
+  L = - \ a \cdot R \Rightarrow L = \SI{16870.1 \pm 174.6}{\frac{\J}{\mol}}
+\end{equation*}
+L ist die Steigung der Ausgleichsgeraden in Abbildung \ref{fig:Ausgleichsgerade} multipliziert mit der Universellen Gaskonstante R.
+
+Nun folgt die Bestimmung der äußeren Verdampfungswärme $L_a$.
+Diese beschreibt die benötigte Arbeit, um bei konstantem Druck das Volumen eines Stoffs zu verändern.
+Hierfür wird die ideale Gasgleichung mit der verrichteten Arbeit gleich gesetzt.
+\begin{equation}
+    W = P \cdot V = R \cdot T = L_a
+\end{equation}
+Also ergibt sich $L_a = \SI{3101.3}{\frac{\J}{\mol}}$.
+Um jetzt noch die erforderliche Arbeit zu Überwindung der molekularen Anziehungskraft bei Verdampfung $L_i$ zu bestimmen, wird
+    die Differenz zwischen $L$ und $L_a$ gebildet.
+\begin{equation}
+    L_i = L - L_a \Rightarrow L_i = \SI{13768.8 \pm 174.6}{\frac{\J}{\mol}}
+\end{equation}
+
+
 % Siehe \autoref{fig:plot} und \autoref{tab:tabelle}!
 \newpage
 \subsection{d) Druck über einem Bar}
@@ -129,7 +139,7 @@ e = 377.748401598401188 ± 1.450339506446900
     \caption{Druck und Temperatur der zweiten Messreihe, $p\geq 1$Bar.}
 \end{figure}
 \\
-Ableitung des Polynoms 
+Ableitung des Polynoms
 \begin{align}
 T(p)&=-\num{3e-15}p^4+\num{9.75e-11}p^3-\num{1.522e-6}p^2+0,015p+377,748:\nonumber\\
 T'(p)&=-\num{1.2e-14}p^3+\num{2.925e-10}p^2-\num{3.044}p+0,015
