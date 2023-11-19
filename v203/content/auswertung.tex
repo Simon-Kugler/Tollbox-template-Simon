@@ -1,11 +1,12 @@
-\newpage
+\usepackage{siunitx}\newpage
 \section{Auswertung}
 \label{sec:Auswertung}
 
+\subsection{Darstellung der Messergebnisse}
 \begin{table}[H]
   \centering
   \caption{Temperatur und Druck bei Verdampfung des Wassers. Der Druck hat eine Messunsicherheit von
-  $\pm$mB, die Temperatur von $\pm 1$ K.}
+  $\pm$ mB, die Temperatur von $\pm 1$ K.}
   \label{tab:Messreihe_1}
 \begin{tabular}{
   c c||c c||c c||c c
@@ -41,7 +42,7 @@ $T/ \unit{\kelvin}$ & $p / \text{mB}$ & $T/ \unit{\kelvin}$ & $p / \text{mB}$ \\
 \begin{table}[H]
   \centering
   \caption{Temperatur und Druck bei Verdampfung des Wassers für $p\geq 1$.Der Druck hat eine Messunsicherheit von
-  $\pm$mB, die Temperatur von $\pm 1$ K.}
+  $\pm$ mB, die Temperatur von $\pm 1$ K.}
   \label{tab:Messreihe_2}
 \begin{tabular}{
   c c||c c
@@ -60,29 +61,31 @@ $p$/B & $T$/K & $p$/B & $T$/K\\
 \bottomrule
 \end{tabular}
 \end{table}
-\subsection{Druck unter einem Bar}
+
 Mit diesen Messwerten lassen sich folgende Grafiken erstellen:
 \begin{figure}[H]
   \begin{subfigure}{0.48\textwidth}
       \includegraphics[height=6cm]{python/plota.pdf}
-    \caption{Bereich von $30$ bis $1000 mbar$}
+    \caption{Bereich von $30$ bis $\SI{1000}{\mbar}$}
     \label{fig:MesswerteKlein}
   \end{subfigure}
   \hfill
   \begin{subfigure}{0.48\textwidth}
     \includegraphics[height=6cm]{python/plotb.pdf}
-    \caption{Bereich von $1$ bis $15 bar$}
+    \caption{Bereich von $1$ bis $\SI{15}{\bar}$}
     \label{fig:MesswerteGross}
   \end{subfigure}
   \caption{Die Messwerte der ersten Messreihe aufgetragen als der Logarithmus des Drucks $p$
   gegen die reziproke absolute Temperatur $T$.}
   \label{fig:Teila}
 \end{figure}
-Um hier raus die Verdampfungswärme von Wasser zu bestimmen, legt man eine Gerade durch die Messwerte.
-Diese wird mittels Python für den Bereich von $30$ bis $1000 mbar$ erstellt und sieht folgendermaßen aus: \\
+
+\subsection{Druck unter einem Bar}
+Um aus Abbildung \ref{fig:MesswerteKlein} die Verdampfungswärme von Wasser zu bestimmen, legt man eine Gerade durch die Messwerte.
+Diese wird mittels Python für den Bereich von $30$ bis $\SI{1000}{\mbar}$ erstellt und sieht folgendermaßen aus: \\
 \begin{figure}[H]
   \centering
-  \includegraphics[scale=0.5]{python/plotc.pdf}
+  \includegraphics[scale=0.5]{Phython/plotc.pdf}
   \caption{Die Messwerte der zweiten Messreihe aufgetragen als der Logarithmus des Drucks $p$
   gegen die reziproke absolute Temperatur $T$ mit der Ausgleichsgerade.}
   \label{fig:Ausgleichsgerade}
@@ -92,11 +95,11 @@ offensichtlich verfälschen würden.
 Die Gleichung des zu der Ausgleichsgerade ist:
 \begin{equation}
   ln(p) = - \frac{L}{R} \cdot \frac{1}{T}
-  \Rightarrow y = a \cdot x + b = -2029 * x + 17.010
+  \Rightarrow y = a \cdot x + b = -2029 \cdot x + 17.010
 \end{equation}
 Mit Numerik Python ergeben sich folgende Messunsicherheiten: $a = \SI{-2029 \pm 21 }{\frac{1}{\kelvin}}$
-und $b = \SI{17.010 \pm 0.063}{\frac{1}{\kelvin}}$
-Für die Verdampfungswärme von Wasser ergibt sich zu
+und $b = \SI{17.010 \pm 0.063}{\frac{1}{\kelvin}}$.
+Für die Verdampfungswärme von Wasser ergibt sich
 \begin{equation*}
   L = - \ a \cdot R \Rightarrow L = \SI{16870.1 \pm 174.6}{\frac{\J}{\mol}}
 \end{equation*}
@@ -116,7 +119,7 @@ Um jetzt noch die erforderliche Arbeit zu Überwindung der molekularen Anziehung
 \end{equation}
 
 \subsection{Druck über einem Bar}
-Auflösen er Clausius-Clapeyronschen Gleichung nach $L$ zur Bestimmung der Wärmeabhängigkeit.\\
+Auflösen der Clausius-Clapeyronschen Gleichung nach $L$ zur Bestimmung der Wärmeabhängigkeit.\\
 \begin{align}
   &(V_D-V_F)dp=\frac{L}{T}dT\nonumber\\
   \Leftrightarrow L=&(V_D-V_F)\frac{dp}{dT}T
@@ -139,13 +142,13 @@ Ableitung des Polynoms
 \begin{equation}
 p'(T)=3\cdot a\cdot T^2+2\cdot b\cdot T+c
 \end{equation}
-Das ist nun unser Asudruck für $\frac{dp}{dT}$.\\
+Das ist nun unser Ausdruck für $\frac{dp}{dT}$.\\
 Nun wird die, oben in der Theorie, schon aufgestellte Annahme genutzt, dass $V_F$ gegen $V_D$
 vernachlässigt werden darf. Nach umstellen der Formel aus der Theorie ergibt sich für $V_D$:
 \begin{align}
    RT&=\left(p+\frac{a}{V^2}\right)V
    \intertext{wobei }
-   a&=0,9\,\frac{\text{Joule m}^3}{\text{Mol}^2}\nonumber 
+   a&= \SI{0.9}{\frac{\joule \m**3}{\mol^2}}%0,9\,\frac{\text{Joule m}^3}{\text{Mol}^2}\nonumber
    \intertext{ist. Mithilfe der pq-Formel ergibt sich}
    \Rightarrow V&=\frac{RT}{2p}\pm\sqrt{\left(\frac{RT}{2p}\right)^2+\frac{a}{p}}
    \intertext{Durch einsetzen von Gl.(7) in Gl.(5) lässt sich folgender Ausdruck für L schreiben:}
@@ -155,14 +158,14 @@ Mit Python geplottet sieht $L(T)$ wie folgt aus:
 \begin{figure}
   \begin{subfigure}{0.3\textwidth}
   \centering
-  \includegraphics[height=4cm]{Python/plote.pdf}
+  %\includegraphics[height=4cm]{Python/plote.pdf}
   \caption{$L$ in Abhängigkeit von T für $V_{D+}$.}
   \label{fig:Verdampfungswärme1}
   \end{subfigure}
   \hfill
   \begin{subfigure}{0.3\textwidth}
   \centering
-  \includegraphics[height=4cm]{Python/plotf.pdf}
+  %\includegraphics[height=4cm]{Python/plotf.pdf}
   \caption{$L$ in Abhängigkeit von T für $V_{D-}$.}
   \label{fig:Verdampfungswärme2}
   \end{subfigure}
