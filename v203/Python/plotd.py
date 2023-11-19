@@ -21,8 +21,8 @@ ax.plot(
     params[0]*x_p**3+params[1]*x_p**2+params[2]*x_p**1+params[3],
     label="Regression"
 )
-ax.set_ylabel("T / K")
-ax.set_xlabel("p / Pa")
+ax.set_xlabel("T / K")
+ax.set_ylabel("p / Pa")
 ax.grid()
 ax.legend()
 
