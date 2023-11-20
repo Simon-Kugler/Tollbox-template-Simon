@@ -23,7 +23,7 @@ ax.plot(T, p, "rx", label="Messwerte")
 def fit(T, L, b):
    return L * T + b
 
-params, cov = curve_fit(fit, T1, p1)
+params, cov = curve_fit(fit, T, p)
 errors = errors = np.sqrt(np.diag(cov))
 
 print(params)

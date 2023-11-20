@@ -32,28 +32,34 @@ Diese wird mittels Python für den Bereich von $30$ bis $1000$\,mbar erstellt. \
 Die Gleichung zur Bestimmung von $L$ und dem damit einhergehenden Fit ist wie folgt:
 \begin{equation}
   ln(p) = - \frac{L}{R} \cdot \frac{1}{T}
-  \Rightarrow y = a \cdot x + b = -2029 \cdot x + 17.010
+  \Rightarrow y = a \cdot x + b = -2262 \cdot x + 17.69
 \end{equation}
-Mit numeric Python ergeben sich folgende Messunsicherheiten: $a = \SI{-2029 \pm 21 }{\frac{1}{\kelvin}}$
-und $b = \SI{17.010 \pm 0.063}{\frac{1}{\kelvin}}$.
+Mit numeric Python ergeben sich folgende Messunsicherheiten: $a = \SI{-2262 \pm 106 }{\frac{1}{\kelvin}}$
+und $b = \SI{17.69 \pm 0.32}{\frac{1}{\kelvin}}$.
 Die Verdampfungswärme wird mit folgendem Wert berechnet:
 \begin{equation*}
   L = - \ a \cdot R \Rightarrow L = \SI{1.88 +- 0.09e4}{\frac{\J}{\mol}}
 \end{equation*}
 L ist die Steigung der Ausgleichsgeraden in Abbildung \ref{fig:Ausgleichsgerade} multipliziert mit der Universellen Gaskonstante R.
 \noindent
-Jetzt soll die äußere Verdampfungswärme $L_a bestimmt werden$.
+Jetzt soll die äußere Verdampfungswärme $L_a$ bestimmt werden.
 Diese beschreibt die benötigte Arbeit, um bei konstantem Druck das Volumen eines Stoffs zu verändern.
-Hierfür wird die ideale Gasgleichung mit der verrichteten Arbeit gleich gesetzt.
+Hierfür wird die ideale Gasgleichung verwendet, die für ideale Gase genau diese Arbeit angibt.
 \begin{equation}
     P \cdot V = R \cdot T = L_a
 \end{equation}
 Also ergibt sich $L_a = \SI{3101.3}{\frac{\J}{\mol}}$.
 Um die erforderliche Arbeit zur Überwindung der molekularen Anziehungskraft bei Verdampfung $L_i$ zu bestimmen, wird
-die Differenz zwischen $L$ und $L_a$ gebildet.
+zunächst die Differenz zwischen $L$ und $L_a$ gebildet.
 \begin{equation}
-    L_i = L - L_a \Rightarrow L_i = \SI{13768.8 \pm 174.6}{\frac{\J}{\mol}}
+    L_i = L - L_a \Rightarrow L_i = \SI{15698.7 \pm 881.3}{\frac{\J}{\mol}}
 \end{equation}
+Um hier raus jetzt die Kraft für ein Molekül auszurechnen, muss die Definition für ein Mol eingesetzt werden.
+Also muss $L_i$ durch die Avogadro-Konstante $N_a = \SI{6.022 \cdot 10^{23}}{\mol^{-1}}$ \cite{Avogadro} geteilt werden.
+Zuletzt muss noch die Einheit in eV umgerechnet werden.
+\begin{equation*}
+  L_i = \SI{0.162722 \pm 0.009134 }{eV}
+\end{equation*}
 
 \subsection{Druck über einem Bar}
 Auflösen der Clausius-Clapeyronschen Gleichung nach $L$ zur Bestimmung der Wärmeabhängigkeit ergibt.\\
