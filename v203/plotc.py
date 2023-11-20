@@ -1,6 +1,8 @@
 import matplotlib.pyplot as plt
 import numpy as np
 from scipy.optimize import curve_fit
+import scipy.constants as const
+from uncertainties import ufloat
 
 T, p = np.genfromtxt("Messdaten1_203.txt", unpack=True)
 T1, p1 = np.genfromtxt("Messdaten1.1_203.txt", unpack=True)
@@ -23,7 +25,7 @@ ax.plot(T, p, "rx", label="Messwerte")
 def fit(T, L, b):
    return L * T + b
 
-params, cov = curve_fit(fit, T1, p1)
+params, cov = curve_fit(fit, T, p)
 errors = errors = np.sqrt(np.diag(cov))
 
 print(params)
@@ -39,3 +41,5 @@ ax.grid()
 ax.legend()
 fig.savefig("plotc.pdf")
 fig.show()
+L1=ufloat(L,errors[0])*const.R
+print("L1=",L1,)

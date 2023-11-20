@@ -8,10 +8,10 @@ p *= 100 # um von mbar auf Pa zu kommen
 #Aufgabe Log des Drucks gegen 1/T
 T = 1/T
 p = np.log(p)
+T = T * 100
+plt.plot(T, p, "rx", label="Messwerte")
 
-plt.plot(T, p, "r.", label="Messwerte")
-
-plt.xlabel(r"$1/T$ ")
+plt.xlabel(f"$1/T  \cdot 10 ^3$")
 plt.ylabel(r"$\ln\left(\frac{p}{p_0}\right)$")
 plt.grid()
 plt.legend()

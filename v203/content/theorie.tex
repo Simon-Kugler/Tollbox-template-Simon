@@ -4,12 +4,12 @@ von Wasser ebenso wie von einer anderen Substanz bestimmt werden.
 \section{Theorie}
 \label{sec:Theorie}
 \cite{sample}
-Einem Stoff kann in fast allen Kombinationen aus Druck $p$ und Temperatur $T$ eine feste Phase zugeorndet werden.
+Einem Stoff kann in nahezu jeder Kombinationen aus Druck $p$ und Temperatur $T$ eine eindeutig definierte Phase zugeorndet werden.
 Im Allgemeinen wird zwischen den Phasen fest, flüssig und gasförmig unterschieden. Zwischen diesen Zuständen verlaufen jeweils
-sogenannte Dampfdruckkurven. Wird sich auf einer dieser Kurven bewegt, koexistieren die zwei Zustände, welche sich jeweils neben der Kurve befinden.
-Visualisiert  wird das ganze in einem Zustandsdiagramm. Ebenso sind die Punkte "TP" \, sowie "KP" wichtig zu erläutern. Der Tripelpunkt(TP) beschreibt jene Kombination
-aus $p$ und $T$, an der alle drei Phasen koexistieren. Von ihm aus startet die, zwischen der gasförmigen und flüssigen Phase verlaufenden, Dampfdruckkurve und
-endet am kritischen Punkt(KP). Entlängs dieser Kurve hat das System nur noch einen Freheitsgrad - $T$ -, da zu jeder Temperatur ein Druck festgelegt ist.
+sogenannte Dampfdruckkurven. An jedem Punkt, welcher auf der Kurve liegt, koexistieren die zwei Zustände, welche sich jeweils neben der Kurve befinden.
+Visualisiert  wird das ganze in einem Zustandsdiagramm. Ebenso sind die Punkte "TP" \, sowie "KP" wichtig zu erläutern. Der Tripelpunkt(TP) beschreibt die Kombination
+aus $p$ und $T$, an der alle drei Phasen koexistieren. Von hier aus startet die zwischen der gasförmigen und flüssigen Phase verlaufenden Dampfdruckkurve und
+endet am kritischen Punkt(KP). Entlang dieser Kurve hat das System nur noch den Freheitsgrad  $T$, da zu jeder Temperatur ein Druck festgelegt ist.
 \begin{figure}[h]
     \centering
     \includegraphics[scale=0.8]{"screen.jpg"}
@@ -17,18 +17,20 @@ endet am kritischen Punkt(KP). Entlängs dieser Kurve hat das System nur noch ei
     \label{Abb1:Zustandsdiagramm}
 \end{figure}
 \noindent
-Eine weitere, wichtig einzuführende Größe, ist die molare Verdampfungswärme $L$. Sie besitzt die Einheit $\unit{Joule/Mol}$ und beschreibt die Menge an Energie, um einen Mol
-des Stoffes in einen gasförmigen Zustand zu bringen. Daher ist sie maßgebend für den Verlauf der Dampfdruckkurve. In unserem Messbereich
-wird L als Konstante angenommen.\\
-Aus der Thermodynamik ist bekannt, dass die Temperatur eines Stoffes über die gemittelte Stoßzeit eines Teilchens zur "Wand"\, oder mit anderen Teilchen definiert ist. Die Teilchen
-mit der kürzesten mittleren Stoßzeit, sind auch jene mit der größten kinetischen Energie. Soll ein Stoff also zum verdampfen gebracht werden, muss ihm Energie zugeführt werden,
-was wiederum die Teilchengeschwindigkeit erhöht. Hat ein Teilchen genug kinetische Energie, kann es aus der flüssigen (festen) Umgebung austreten - der Stoff verdampft. Für dieses Phänomen
-braucht man genau die Energiemenge $L$. Das Austreten der Teilchen aus der Flüssigkeit (Festkörper) bewirkt ebenfalls einen Anstieg des Drucks im Gas oberhalb.\\
-Nach langer Zeit stellt sich ein Gleichgewicht zwischen jenen Teilchen, welche die Flüssigkeit verlassen, und denen, die sich zurück in die Flüssigkeit bewegen, ein Gleichgewicht ein. Der so erreichte Druck im Dampf
-wird mit Sättigungsdampfdruck bezeichnet. Dieser ist nicht abhängig vom Volumen in dem sich der Dampf befindet. Ändert sich dieses Volumen, wird nicht der Druck, sondern das Gleichgewicht verändert. Daher gilt die allgmein bekannte Gasgleichung
+Eine weitere wichtig einzuführende Größe ist die molare Verdampfungswärme $L$. Durch diese wird die Menge an Energie beschrieben, die benötigt wird, den Phasenübergang
+eines Teilchens von flüssig zu gasgförmig zu bewirken.
+Daher ist sie maßgebend für den Verlauf der Dampfdruckkurve. In dem Messbereich
+unter einem Bar wird L als Konstante angenommen.\\
+Aus der Thermodynamik ist bekannt, dass die Temperatur eines Stoffes über die gemittelte Stoßzeit eines Teilchens definiert ist. Die Teilchen
+mit der kürzesten mittleren Stoßzeit, sind auch jene mit der größten kinetischen Energie. Soll ein Stoff also zum dampfen gebracht werden, muss ihm Energie zugeführt werden.
+Hat ein Teilchen genug kinetische Energie, erfährt es einen Phasenübergang - der Stoff verdampft. Für dieses Phänomen
+wird genau die Energiemenge $L$ benötigt. Der Phasenübergang bewirkt ebenfalls einen Anstieg des Drucks im Gas oberhalb der Flüssigkeit.\\
+Nach langer Zeit stellt sich ein Gleichgewicht zwischen verdampfenden und kondensierenden Teilchen ein. Der so erreichte Druck im Dampf
+wird als Sättigungsdampfdruck definiert. Dieser ist nicht abhängig vom Volumen, welches von dem Dampf ausgefüllt wird. Ändert sich dieses Volumen, wird nicht der Druck, sondern das Gleichgewicht verändert. 
+Daher gilt die ideale Gasgleichung
 pV=RT nicht.\\
-Im Folgenden soll eine Differentialgleichung bestimmt werden, welche zur Bestimmung der Dampfdruckkurve führt.
-Dazu muss folgender Kreisprozess, für ein Mol, mathematisch näher betrachtet werden.
+Im Folgenden soll eine Differentialgleichung bestimmt werden, welche zur Bestimmung der Dampfdruckkurve geeignet ist.
+Dazu muss folgender Kreisprozess für ein Mol mathematisch näher betrachtet werden.
 \begin{figure}[h!]
     \centering
     \includegraphics[scale=0.8]{sreen2.jpg}
@@ -37,18 +39,17 @@ Dazu muss folgender Kreisprozess, für ein Mol, mathematisch näher betrachtet w
     \label{Abb2:Kreisprozess}
 \end{figure}
 \\
-Durch mathematische Überlegungen ergibt sich folgende Differentialgleichung:
+Durch Überlegungen am Kreisprozess ergibt sich die Clausius-Clapeyronsche Gleichung 
 \begin{equation}
-    (V_D-V_F)dp=\frac{L}{T}dT
+    (V_D-V_F)dp=\frac{L}{T}dT.
 \end{equation}
-Diese Differentialgleichung trägt den Namen Clausius-Clapeyronsche Gleichung.
-Auf beiden Seiten des Gleichheitszeichens stehen Ausdrücke für die gesamt
-geleistete Arbeit, die sich links aus der Volumendifferenz von B zu C sowie einer infitisimalen
+Es sind zwei Ausdrücke für die gesamt geleistete Arbeit miteinander gleichgesetzt, 
+die sich auf der einen Seite aus der Volumendifferenz von Punkt B zu Punkt C sowie einer infitisimalen
 Druckänderung ergibt.
-Rechts beschreibt der Quotient der Verdampfungswärme mit der Temperatur um eine infitisimal kleine
+Rechts beschreibt der Quotient der Verdampfungswärme mit der Temperatur um eine infinitesimal kleine
 Temperaturänderung die Gesamtarbeit.\\
-Unter der Bedingung, dass $V_D$, $V_F$ und $L$ konstant seien, ist diese Gleichung gut lösbar. Dies ist im
-Allgemeinen jedoch nur in manchen Temperaturbereichen möglich. Hier wird der Fall behandelt, dass $T$ deutlich kleiner
+Unter der Bedingung, dass $V_D$, $V_F$ und $L$ konstant seien, ist diese Gleichung direkt lösbar. Dies ist im
+Allgemeinen jedoch nur in wenigen Temperaturbereichen möglich. Hier wird der Fall behandelt, dass $T$ deutlich kleiner
 als die kritische Temperatur $T_\text{Kr}$ ist.
 \newpage
 Somit sind folgende Annahmen zu treffen:
@@ -58,12 +59,10 @@ Somit sind folgende Annahmen zu treffen:
     \item[3.] L darf keine Abhängigkeit von Druck $p$ oder Temperatur $T$ haben. Damit
     ergibt sich als Lösung der DGL: $p=p_0\cdot \exp(-\frac{1}{T}\cdot\frac{L}{R})$
 \end{itemize}
-Es existiert also eine Proportionalität zwischen der Molekühlanzahl in der Damfphase sowie
-des Drucks oberhalb der Flüssigkeit. Wie vorhin diskutiert, braucht ein Teilchen jedoch eine gewisse
-kinetische Energie zum Austreteten aus der Flüssigkeit, was durch die Boltzmann-Statistik parametrisiert wird.
-Mit Gesamtenergie $W$ ergibt sich für den Bruchteil der Moleküle, die austreten könnten:
-$\exp(-W/kT)\Rightarrow p\propto \exp(-W/kT)$.
-\begin{figure}
-    \centering
-    \includegraphics[scale=0.6]{screen3.jpg}
-\end{figure}
+Es existiert also eine Proportionalität zwischen der Teilchenanzahl in der Dampfphase sowie
+des Drucks oberhalb der Flüssigkeit. Wie bereits diskutiert, braucht ein Teilchen jedoch eine bestimmte
+kinetische Energie zum Phasenübergang, was durch die Boltzmann-Statistik beschrieben wird.
+Über die Gesamtenergie $W$ ergibt sich für den Anteil der Moleküle, die in die Dampfphase übergehen können:
+\begin{equation*}
+\exp(-W/kT)\Rightarrow p\propto \exp(-W/kT).
+\end{equation*}
