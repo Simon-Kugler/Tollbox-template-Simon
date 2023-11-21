@@ -1,7 +1,7 @@
 all: build/v203.pdf
 
 # hier Python-Skripte:
-build/plota.pdf: plota.py ../matplotlibrc ../header-matplotlib.tex Messdaten1_203.txt | build
+build/plota.pdf: python/plota.py ../matplotlibrc ../header-matplotlib.tex Messdaten1_203.txt | build
 	# so that matplotlib can find the tex header when running
 	# LaTeX in the tmp directory
 	# and set the matplotlibrc
