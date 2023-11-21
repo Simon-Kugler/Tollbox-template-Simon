@@ -1,6 +1,9 @@
 \section{Auswertung}
 \label{sec:Auswertung}
-
+Die Feher werden mittels Python und der Gaußschen Fehlerfortpflanzung berechnet.
+\begin{equation}
+\Delta f=\sqrt{\sum_{i=1}^N\left(\frac{df}{dy_i}\right)^2(\Delta y_i)^2}
+\end{equation}
 \subsection{Druck unter einem Bar}
 Mit den im Anhang zu findenden Messwerten lassen sich folgende Grafiken erstellen:
 \begin{figure}[H]
@@ -23,12 +26,11 @@ Um daraus die zu berechnende Verdampfungswärme des Wassers zu bestimmen, wird e
 Diese wird mittels Python für den Bereich von $30$ bis $1000$\,mbar erstellt. \\
 \begin{figure}[H]
   \centering
-  \includegraphics[scale=0.5]{plotc.pdf}
+  \includegraphics[scale=0.8]{plotc.pdf}
   \caption{Die Messwerte der zweiten Messreihe aufgetragen als der Logarithmus des Drucks $p$
   gegen die reziproke absolute Temperatur $T$ mit der Ausgleichsgerade. $p_0=1$\,mbar.}
   \label{fig:Ausgleichsgerade}
 \end{figure}
-\newpage
 Die Gleichung zur Bestimmung von $L$ und dem damit einhergehenden Fit ist wie folgt:
 \begin{equation}
   ln(p) = - \frac{L}{R} \cdot \frac{1}{T}
@@ -55,7 +57,7 @@ zunächst die Differenz zwischen $L$ und $L_a$ gebildet.
     L_i = L - L_a \Rightarrow L_i = \SI{15698.7 \pm 881.3}{\frac{\J}{\mol}}
 \end{equation}
 Um hier raus jetzt die Kraft für ein Molekül auszurechnen, muss die Definition für ein Mol eingesetzt werden.
-Also muss $L_i$ durch die Avogadro-Konstante $N_a = \SI{6.022 \cdot 10^{23}}{\mol^{-1}}$ \cite{Avogadro} geteilt werden.
+Also muss $L_i$ durch die Avogadro-Konstante $N_a = \SI{6.022e23}{\per\mol}$ \cite{Avogadro} geteilt werden.
 Zuletzt muss noch die Einheit in eV umgerechnet werden.
 \begin{equation*}
   L_i = \SI{0.162722 \pm 0.009134 }{eV}
@@ -70,19 +72,18 @@ Auflösen der Clausius-Clapeyronschen Gleichung nach $L$ zur Bestimmung der Wär
 Mittels Python und scipy wird polynomialer Fit dritten Grades errechnet. Die 
 zum Polynom $p(T)=a\cdot T^3+b\cdot T^2+c\cdot T+d$ gehörenen Vorfaktoren sind:
 \begin{align*}
-  a &= (0.021 ± 0.006)\si{\pascal\per\kelvin\cubed}\\
-  b &= (-24.7 ± 7.7)\si{\pascal\per\kelvin\squared}\\
-  c &= (9879 ± 3300)\si{\pascal\per\kelvin}\\
-  d &= \num{-1.33(0.47)e6}\si{\pascal}\\
+  a &= \num{2.1(0.6)e-5}\,\si{\bar\per\kelvin\cubed}\\
+  b &= (-0.02 ± 0.008)\,\si{\bar\per\kelvin\squared}\\
+  c &= (9.9 ± 3.3)\,\si{\bar\per\kelvin}\\
+  d &= \num{-1.33(0.47)e3}\,\si{\pascal}\\
 \end{align*}
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
 \includegraphics[height=7cm]{plotd.pdf}
 \caption{Druck und Temperatur der zweiten Messreihe, $p\geq 1$Bar, sowie 
 der Fit durch die Messwerte.}
 \label{fig:Druck_groß}
 \end{figure}
-\\
 Ableitung des Polynoms $p(T)$ ergibt
 \begin{equation}
 p'(T)=3\cdot a\cdot T^2+2\cdot b\cdot T+c.
@@ -93,12 +94,11 @@ vernachlässigt werden darf. Dies wird hier genutzt. Nach umstellen der Formel a
 \begin{align}
    RT&=\left(p+\frac{a}{V^2}\right)V\\
    a\text{ ist hierbei } \text{gleich } &0,9\,\text{J m}^3\text{mol}^{-2}.\nonumber
-   \intertext{ist. Mithilfe der pq-Formel ergibt sich}
+   \intertext{Mithilfe der pq-Formel ergibt sich}
    \Rightarrow V&=\frac{RT}{2p}\pm\sqrt{\left(\frac{RT}{2p}\right)^2+\frac{a}{p}}\label{eqn:V(T)}
    \intertext{Durch einsetzen von Gl.\eqref{eqn:V(T)} in Gl.\eqref{eqn:L(V,T)} lässt sich folgender Ausdruck für L finden:}
    L(T)&=\frac{T}{P}\left(\frac{RT}{2}\pm\sqrt{\left(\frac{R^2T^2}{4}\right)-ap}\right).
 \end{align}
-\newpage
 Mit Python geplottet sieht $L(T)$ wie folgt aus:
 \begin{figure}
   \begin{subfigure}{0.45\textwidth}
