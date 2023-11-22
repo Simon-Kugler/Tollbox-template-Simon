@@ -1,14 +1,24 @@
 all: build/v351.pdf
 
 # hier Python-Skripte:
-build/plot.pdf: plot.py ../matplotlibrc ../header-matplotlib.tex | build
+build/plota.pdf: python/plota.py ../matplotlibrc ../header-matplotlib.tex | build
 	# so that matplotlib can find the tex header when running
 	# LaTeX in the tmp directory
 	# and set the matplotlibrc
-	TEXINPUTS=$$(pwd)/..: MATPLOTLIBRC=../matplotlibrc python plot.py
+	TEXINPUTS=$$(pwd)/..: MATPLOTLIBRC=../matplotlibrc python python/plota.py
+build/plotb.pdf: python/plotb.py ../matplotlibrc ../header-matplotlib.tex | build
+	# so that matplotlib can find the tex header when running
+	# LaTeX in the tmp directory
+	# and set the matplotlibrc
+	TEXINPUTS=$$(pwd)/..: MATPLOTLIBRC=../matplotlibrc python python/plotb.py
+build/plotc.pdf: python/plotc.py ../matplotlibrc ../header-matplotlib.tex | build
+	# so that matplotlib can find the tex header when running
+	# LaTeX in the tmp directory
+	# and set the matplotlibrc
+	TEXINPUTS=$$(pwd)/..: MATPLOTLIBRC=../matplotlibrc python python/plotc.py
 
 # hier weitere Abhängigkeiten für build/vXXX.pdf deklarieren:
-build/v351.pdf: build/plot.pdf
+build/v351.pdf: build/plota.pdf build/plotb.pdf build/plotc.pdf
 
 build/v351.pdf: FORCE | build
 	# to find header and bib files in the main directory
@@ -20,7 +30,7 @@ build/v351.pdf: FORCE | build
 	  --output-directory=build \
 	  --interaction=nonstopmode \
 	  --halt-on-error \
-	vXXX.tex
+	v351.tex
 
 build:
 	mkdir -p build
