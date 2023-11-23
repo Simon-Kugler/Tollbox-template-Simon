@@ -1,3 +1,50 @@
+\section{Zielsetzung}
+\label{sec:Zielsetzung}
+Ziel dieses Versuchs ist es eine Funktion in ihre Fourieranteile zu zerlegen und aus Fourieranteilen eine Funktion zusammenzufügen.
+
 \section{Theorie}
 \label{sec:Theorie}
+\cite{sample}Fourier-Analysen werden in der Physik oft zur Bildverarbeitung verwendet.
+Die Grundvorraussetzung hierfür sind periodische Funktionen, die zeitlich periodische
+\begin{align*}
+    f(t + T) = f(t)
+    \intertext{oder räumlich periodisch}
+    f(x + D) = f(x)
+\end{align*}
+sein können.
+Beispiele für periodische Funktionen sind Sinus- und Kosinusfunktionen.
 
+Mit diesen beiden Funktionen kann man viele periodische Vorgänge in der Natur beschreiben.
+Hierfür wird das Fouriersche Theorem verwendet, welches wie folgt aussieht:
+\begin{align}
+    \frac{1}{2} a_0 + \sum_{n = 1}^{\infty} (a_n \cos(\frac{2 \pi n}{T}t) + b_n \sin(\frac{2 \pi n}{T}t))
+    \label{equ:Fourierreihe}
+\end{align}
+Wenn die Reihe gleichmäßig konvergiert, stellt sie eine periodische Funktion $f(t)$ mit der Periode $T$ dar.
+Dies ist immer dann der Fall, wenn $f(t)$ stetig ist.
+An Stellen, an denen $f$ unstetig ist, kann die Fourier-Reihe die Funktion nicht approximieren und es entsteht eine endliche Abweichung.
+In \ref{equ:Fourierreihe} kommen nur die Phasen $0, \pi/2 $ und $3\pi/2$ vor.
+Außerdem treten nur ganzzahlige Vielfache der Grundfrequenz $\nu = \frac{1}{T}$ auf.
+Als Grundfrequenz wird die Frequenz des periodischen Vorgangs beschrieben.
+Die Koeffizienten $a_n$ und $b_n$ werden wie folgt berechnet
+\begin{align}
+    a_n = \frac{2}{T} \int_0^T f(t) \cos(\frac{2 \pi n}{T}t) \, \symup{d}t \ , n = 1, 2, ... \\
+    \intertext{und}
+    b_n = \frac{2}{T} \int_0^T f(t) \sin(\frac{2 \pi n}{T}t) \, \symup{d}t \
+    , n = 1, 2, ...
+\end{align}
+
+Für gerade Funktionen gilt $f(t) = f(-t)$ und somit verschwinden alle Koeffizienten $b_n$.
+Bei ungerade Funktionen verschwinden alle $a_n$, da $f(t) = -f(-t)$ gilt.
+
+Mit der Fourier-Transformation
+\begin{equation}
+    g(\omega) = \frac{1}{2\pi} \int_{-\infty}^{\infty} f(t) e^{i\omega t} \, \symup{d}t
+\end{equation}
+kann man das gesamte Frequenzspektrum einer Funktion bestimmen.
+Das Frequenzspektrum einer nicht-periodischen Funktion ist kontinuierlich, während das einer periodischen Funktion aus einer Reihe von $\delta$-Funktionen besteht.
+Die Transformation lässt sich auch wieder umkehren mit
+\begin{equation}
+    f(t) = \frac{1}{2\pi} \int_{-\infty}^{\infty} g(\omega) e^{-i\omega t} \, \symup{d}\omega
+\end{equation}
+Da oft nicht über unendliche Zeiträume integriert werden kann, beschränkt man die Integration auf einen endlichen Zeitraum.
