@@ -3,9 +3,9 @@ Der erste Teil der Auswertung befasst sich mit der Fuorier-Synthese, der zweite 
 \label{sec:Auswertung}
 \subsection{Fuorier-Synthese}
 Wie schon in der Durchführung beschrieben, werden hier verschiedene Schwingungsmuster aus verschiedenen Oberwellen 
-zusammengesetzt. Zuerst wird durch einstellen jeder $1+2n$-ten Oberwelle und Anpassung der Amplituden nach 
-$\sfrac{1}{n}$ sowie der Phase versucht eine Rechtecksschwingung zu synthetisieren (approximieren).
-Dies funktioniert (so wie auch bei den anderen beiden) durch einzelnes Schalten der Phasenverschiebung um 90 oder 
+synthetisiert. Zuerst wird durch einstellen jeder ($1+2n$)-ten Oberwelle und Anpassung der Amplituden nach 
+$\sfrac{1}{n}$ sowie der Phase versucht eine Rechtecksschwingung zu approximieren.
+Dies funktioniert, so wie auch bei den anderen beiden, durch einzelnes Schalten der Phasenverschiebung um 90 oder 
 180 Grad an den eingeschalteten Oberwellen.\\ \noindent
 Für die Rechtecksschwingung wurden die als ungerade nummerierten Oberwellen eingeschaltet und das folgende Bild erzeugt.
 \begin{figure}[H]
@@ -31,15 +31,15 @@ Daher wird hier deutlich früher eine kleine Amplitude erreicht, weshalb auch de
   \label{fig:Sägezahnschwingung}
 \end{figure}
 \subsection{Fuorier-Analyse}
-Da die Amplituden vom Oszilloskop in Dezibel angegeben sind, mussten diese zur Berechnung in Volt umgerechnet werden.
-Dazu wird die Formel $1V=10{\text{dzb}/20}$ genutzt. Dort fehlt zwar noch ein Vorfaktor, dieser ist jedoch zur Bestimmung
+Da die Amplituden vom Oszilloskop in Dezibel angegeben sind, mussten diese zur Berechnung des Fits in Volt umgerechnet werden.???
+Dazu wird die Formel $1V=10{\text{dB}/20}$ genutzt. Diese ist zwar nur bis auf einen Vorfaktor korrekt, dieser ist jedoch zur Bestimmung
 des Funkionsverlaufes vernachlässigbar.\\
 Es sollen die $\sfrac{1}{n}$-Abhängigkeiten der verschiedenen Schwingungsmuster untersucht werden. Dazu werden die am Oszilloskop 
 abgelesenen Messwerte geplottet und eine Funktion der Form $U(\nu)=a\cdot x^b$ gefittet. Der Koeffizent $b$ gibt Aufschluss über die 
 besagte $\sfrac{1}{n}$-Abhängigkeit. Für die Fuorier-Analyse der Rechtecksschwingung erwarten wir einen Abfall von $\sfrac{1}{n^1}$
 für den Abfall der gemessenen Peaks. Mittels Python lässt sich folgender Fit plotten sowie die Koeffizienten $a$ und $b$ ermitteln.
 Da die Amplituden vom Oszilloskop in Dezibel angegeben sind, mussten diese zur Berechnung in Volt umgerechnet werden.
-Dazu wird die Formel $1V=10{\text{dzb}/20}$ genutzt. Dort fehlt zwar noch ein Vorfaktor, dieser ist jedoch zur Bestimmung
+Dazu wird die Formel $1V=10{\text{dB}/20}$ genutzt. Dort fehlt zwar noch ein Vorfaktor, dieser ist jedoch zur Bestimmung
 des Funkionsverlaufes vernachlässigbar. 
 \begin{align*}
   a &= (896.8 ± 4.6)\\

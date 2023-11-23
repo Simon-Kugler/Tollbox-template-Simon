@@ -22,7 +22,7 @@ y_fit = power_law(x_f, a_fit, b)
 
 fig, ax = plt.subplots(1,layout="constrained")
 
-ax.plot(f, L, "rx", markersize=10, label="Messdaten")
+ax.plot(f, L, "rx", label="Messdaten")
 plt.plot(x_f, y_fit, "b", label="Fit")
 plt.ylim(0,100)
 
