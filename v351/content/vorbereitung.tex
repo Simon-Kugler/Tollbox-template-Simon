@@ -1,8 +1,58 @@
 \section{Vorbereitungsaufgaben}
-Die Vorbereitungaufgabe war es die Fourier-Koeffizienten von 3 verschiedenen periodischen Schwingungsformen zu berechnen.
-Die Funktionen werden als gerade oder ungerade Funktion definiert um das Wegfallen der Koeffizienten auszunutzen.
-\subsection{Recheckspannung}
-
+Die Vorbereitungaufgabe ist es die Fourier-Koeffizienten von 3 verschiedenen periodischen Schwingungsformen zu berechnen.
+Die Funktionen werden als gerade oder ungerade Funktionen definiert, um das Wegfallen der Koeffizienten auszunutzen.
+\subsection{Rechteckspannung}
+Die Funktion wird definiert als
+\begin{align*}
+    f(t) =
+    \begin{cases}
+        V, & -\frac{T}{2}  \leq t  \leq 0 \\
+        -V, & 0  \leq t \leq \frac{T}{2}
+    \end{cases}
+\end{align*}
+Da sie ungerade ist, gilt $a_n = 0  \, \forall \, n$.
+Die Koeffizienten $b_n$ lassen sich wie folgt berechnen:
+\begin{align*}
+    b_n &= \frac{2}{T} \int_0^T f(t) \sin(\frac{2 \pi n}{T}t) \, \symup{d}t \\
+        &= \frac{2}{T} \biggl( \int_{-\frac{T}{2}}^0 V \sin(\frac{2 \pi n}{T}t) \, \symup{d}t
+                            + \int_{0}^{\frac{T}{2}} (-V) \sin(\frac{2 \pi n}{T}t) \, \symup{d}t \biggr) \\
+        &= \frac{2}{T} \biggl( \left[-V \frac{T}{2n\pi} \cos(\frac{2 \pi n}{T}t) \right]_{-\frac{T}{2}}^0
+                            + \left[V \frac{T}{2n\pi} \cos(\frac{2 \pi n}{T}t) \right]_{-\frac{T}{2}}^0 \biggr) \\
+        &= \frac{V}{n\pi}(-1 + \cos(-n\pi)+ \cos(n\pi)-1) = \frac{2V}{n\pi} (\cos(n\pi)-1) \\
+    \Rightarrow b_n &= - \frac{4V}{n\pi} \text{  für n ungerade}
+\end{align*}
+Die Amplitude der Rechteckspannung nimmt mit $\sfrac{1}{n}$ ab.
 \subsection{Dreieckspannung}
-
+Die Funktion wird definiert als
+\begin{equation*}
+    f(t) =
+    \begin{cases}
+        \frac{4V}{T}t + V, & -\frac{T}{2} \leq t \leq 0 \\
+        -\frac{4V}{T}t + V, & 0 \leq t \leq \frac{T}{2}
+    \end{cases}
+\end{equation*}
+Die Funktion ist gerade, also gilt $b_n = 0  \, \forall \, n$.
+Die Koeffizienten $a_n$ lassen sich wie folgt berechnen:
+\begin{align*}
+    a_n &= \frac{2}{T} \int_0^T f(t) \cos(\frac{2 \pi n}{T}t) \, \symup{d}t \\
+        &= \frac{2}{T} \biggl( \int_{-\frac{T}{2}}^0 (\frac{4V}{T}t + V) \cos(\frac{2 \pi n}{T}t) \, \symup{d}t
+                            + \int_{0}^{\frac{T}{2}} (-\frac{4V}{T}t + V) \cos(\frac{2 \pi n}{T}t) \, \symup{d}t \biggr) \\
+    \intertext{Mit partieller Integration und einsetzten der Grenzen ergibt sich}
+    a_n &= -\frac{4V}{\pi^2 n^2} (\pi n \sin(n \pi)+ cos(n \pi) - 1)\\
+    \Rightarrow a_n &= \frac{8V}{\pi^2 n^2} \text{ für n ungerade}
+\end{align*}
+Die Amplitude der Rechteckspannung nimmt mit $\sfrac{1}{n^2}$ ab.
 \subsection{Sägezahnspannung}
+\begin{equation*}
+    f(t) = \frac{V}{T} \cdot t, \, 0 \leq t \leq T
+\end{equation*}
+Die Funktion ist ungerade, also gilt $a_n = 0  \, \forall \, n$.
+Die Koeffizienten $b_n$ lassen sich wie folgt berechnen:
+\begin{align*}
+    b_n &= \frac{2}{T} \int_0^T f(t) \sin(\frac{2 \pi n}{T}t) \, \symup{d}t \\
+        &= \frac{2}{T} \biggl(\left[-\frac{VT}{2n\pi} \cos(\frac{2 \pi n}{T}t) \right]_{-\frac{T}{2}}^{\frac{T}{2}}
+                    + \int_{-\frac{T}{2}}^{\frac{T}{2}} (\frac{VT}{2n\pi} \cos(\frac{2 \pi n}{T}t) \, \symup{d}t \biggr) \\
+        &= \frac{1}{T} \Bigl( - \frac{VT}{2n\pi} \cos(n \pi) - \frac{VT}{2n\pi}\cos(n\pi)\Bigr) \\
+    \Rightarrow b_n &= -\frac{V}{2n\pi} (-1)^n
+\end{align*}
+Die Amplitude der Rechteckspannung nimmt mit $\sfrac{1}{n}$ ab.
