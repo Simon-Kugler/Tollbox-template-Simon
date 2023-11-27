@@ -33,15 +33,13 @@ Daher wird hier deutlich früher eine kleine Amplitude erreicht, weshalb auch de
 \subsection{Fuorier-Analyse}
 Da die Amplituden vom Oszilloskop in Dezibel angegeben sind, mussten diese zur Berechnung des Fits in Volt umgerechnet werden.
 Dazu wird die Formel $1V=10{\text{dB}/20}$ genutzt. Diese ist zwar nur bis auf einen Vorfaktor korrekt, dieser ist jedoch zur Bestimmung
-des Funkionsverlaufes vernachlässigbar.\\
+des Funkionsverlaufes vernachlässigbar, da nur die $\scfrac{1}{n}$-Abhängigkeit wichtig ist.\\
 Es sollen die $\sfrac{1}{n}$-Abhängigkeiten der verschiedenen Schwingungsmuster untersucht werden. Dazu werden die am Oszilloskop 
 abgelesenen Messwerte geplottet und eine Funktion der Form $U(\nu)=a\cdot x^b$ gefittet. Der Koeffizent $b$ gibt Aufschluss über die 
 besagte $\sfrac{1}{n}$-Abhängigkeit. Für die Fuorier-Analyse der Rechtecksschwingung wird ein Abfall von $\sfrac{1}{n^1}$ der Peaks
 erwartet.
 Mittels Python lässt sich folgender Fit plotten sowie die Koeffizienten $a$ und $b$ ermitteln.
 Da die Amplituden vom Oszilloskop in Dezibel angegeben sind, mussten diese zur Berechnung in Volt umgerechnet werden.
-Dazu wird die Formel $1V=10^{\si{dB}/20}$ genutzt. Dort fehlt zwar noch ein Vorfaktor, dieser ist jedoch zur Bestimmung
-des Funkionsverlaufes vernachlässigbar. 
 \begin{align*}
   a &= \SI{896.8 +- 4.6}{\volt\second\squared}\cdot10^{-3}\, \\
   b &= -1.003 ± 0.002
