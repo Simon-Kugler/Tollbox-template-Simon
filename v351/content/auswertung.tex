@@ -43,38 +43,38 @@ Da die Amplituden vom Oszilloskop in Dezibel angegeben sind, mussten diese zur B
 Dazu wird die Formel $1V=10^{\si{dB}/20}$ genutzt. Dort fehlt zwar noch ein Vorfaktor, dieser ist jedoch zur Bestimmung
 des Funkionsverlaufes vernachlässigbar. 
 \begin{align*}
-  a &= \si{896.8 ± 4.6}\\
-  b &= (-1.003 ± 0.002)
+  a &= \SI{896.8 +- 4.6}{\volt\second\squared}\cdot10^{-3}\, \\
+  b &= -1.003 ± 0.002
 \end{align*}
 Es liegt also eine Kurve mit einer genäherten $\sfrac{1}{n}$-Abhängigkeit vor, so wie erwartet.
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.6]{plota.pdf}
-  \caption{Plot 1.}
+  \caption{Messwerte und Fit zur Fourier-Analyse der Rechtecksschwingung.}
   \label{fig:Plot1}
 \end{figure}\noindent
 Wie schon diskutiert, fällt die Amplitude bei der Dreiecksschwingung mit $\sfrac{1}{n^2}$, sodass hier deutlich weniger Messwerte
 abzulesen waren. Dieses Ergebnis spiegelt sich auch im Koeffizienten $b$ wieder.
 \begin{align*}
-  a &= \si{5570 ± 38.7}\\
-  b &= (-1.996 ± 0.003)
+  a &= \SI{5570 +- 38.7}{\volt\second\squared}\cdot10^{-6}\\
+  b &= -1.996 ± 0.003
 \end{align*}
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.6]{plotb.pdf}
-  \caption{Plot 2.}
+  \caption{Messwerte und Fit zur Fourier-Analyse der Dreiecksschwingung.}
   \label{fig:Plot2}
 \end{figure}\noindent
 Für die Sägezahnschwingung gibt es wieder deutlich mehr Messwerte, da wieder eine $\sfrac{1}{n}$-Abhängigkeit in der Kurve zu erwarten
 ist und die Peaks im Abstand von 10\,kHz vorkommen.
 \begin{align*}
-  a &= \si{443.008 ± 2.415}\\
+  a &= \SI{443.008 +- 2.415}{\volt\second\squared}\cdot10^{-3}\\
   b &= -0.997 ± 0.002
 \end{align*} 
 Wieder ist ein Koeffizient $b$ bestimmt worden, der sehr nah an dem Theorie-Wert liegt.
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.6]{plotc.pdf} 
-  \caption{Plot 3.}
+  \caption{Messwerte und Fit zur Fourier-Analyse der Sägezahnschwingung.}
   \label{fig:Plot3}
 \end{figure} 
