@@ -12,20 +12,20 @@ p *= 100 # um von mbar auf Pa zu kommen
 p1 *= 100
 #Aufgabe Log des Drucks gegen 1/T
 T = 1/T
-p = np.log(p)
+p = np.log(p/1000)
 T1 = 1/T1
-p1 = np.log(p1)
+p1 = np.log(p1/1000)
 x = 1/x
 
 #plt.plot(T, p, "bx", label="Messwerte1")
 fig, ax = plt.subplots(1,layout="constrained")
-ax.plot(T, p, "rx", label="Messwerte")
+ax.plot(T1, p1, "rx", label="Messwerte")
 
 #der Fit
-def fit(T, L, b):
-   return L * T + b
+def fit(T1, L, b):
+   return L * T1 + b
 
-params, cov = curve_fit(fit, T, p)
+params, cov = curve_fit(fit, T1, p1)
 errors = errors = np.sqrt(np.diag(cov))
 
 print(params)
@@ -43,3 +43,4 @@ fig.savefig("plotc.pdf")
 fig.show()
 L1=ufloat(L,errors[0])*const.R
 print("L1=",L1,)
+# print("b=",b=ufloat(b, params[0]))
