@@ -11,7 +11,7 @@ p = np.log(p)
 T = T * 100
 plt.plot(T, p, "rx", label="Messwerte")
 
-plt.xlabel(f"$1/T  \cdot 10 ^3$")
+plt.xlabel(r"$\frac{1}{T\cdot 10^3}\,/\,\frac{1}{K\cdot10^3}$")
 plt.ylabel(r"$\ln\left(\frac{p}{p_0}\right)$")
 plt.grid()
 plt.legend()

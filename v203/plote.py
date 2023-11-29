@@ -12,8 +12,7 @@ fig, ax = plt.subplots(1,layout="constrained")
 ax.plot(T, (T/(a*T**3+b*T**2+c*T+d))*(((8.31448*T)/2)+np.sqrt((8.31448**2*T**2)/4-0.9*(a*T**3+b*T**2+c*T+d)))*(3*a*T**2+2*b*T+c),
 label="Positive Lösung für $L$")
 ax.set_xlabel("T / K")
-ax.set_ylabel("L ")
+ax.set_ylabel(r"$L\,/\,\frac{\text{J}}{\text{mol}}$")
 ax.grid()
 ax.legend()
-
 fig.savefig("plote.pdf")
