@@ -98,16 +98,16 @@ Diese wird mittels Python für den Bereich von $30$\,mbar bis $1000$\,mbar erste
   \centering
   \includegraphics[scale=0.8]{plotc.pdf}
   \caption{Die Messwerte der ersten Messreihe aufgetragen als der Logarithmus des Drucks $p$
-  gegen die reziproke absolute Temperatur $T$ mit der Ausgleichsgerade. $p_0=1$\,mbar.}
+  gegen die reziproke absolute Temperatur $T$ mit der Ausgleichsgerade. $p_0=1$\,bar.}
   \label{fig:Ausgleichsgerade}
 \end{figure}\noindent
 Die Gleichung zur Bestimmung von $L$ und dem damit einhergehenden Fit ist wie folgt:
 \begin{equation}
   \ln(p) = - \frac{L}{R} \cdot \frac{1}{T}
-  \Rightarrow y = a \cdot x + b = -2262 \cdot x + 17,69
+  \Rightarrow y = a \cdot x + b = -2029 \cdot x + 5.497
 \end{equation}
-Mit numeric Python und Gl.\eqref{eq:Gauß} ergeben sich folgende Messunsicherheiten: $a = \SI{2030 +- 21}{\kelvin}$
-und $b = ???????$.
+Mit numeric Python und Gl.\eqref{eq:Gauß} ergeben sich folgende Messunsicherheiten: $a = \SI{2029 +- 21}{\kelvin}$
+und $b = \SI{5.497 +- 0.063}$.
 Die Verdampfungswärme wird mit folgendem Wert berechnet:
 \begin{equation*}
   L = - \ a \cdot R \Rightarrow L = \SI{1.69(0.02)e4}{\joule\per\mol}
