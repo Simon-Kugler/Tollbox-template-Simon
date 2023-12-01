@@ -1,31 +1,15 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
-\begin{figure}
-  \centering
-  \includegraphics{plot.pdf}
-  \caption{Plot.}
-  \label{fig:plot}
-\end{figure}
-
-\begin{table}
-  \centering
-  \caption{Eine Beispieltabelle mit Messdaten.}
-  \label{tab:tabelle}
-  \sisetup{table-format=1.1, per-mode=reciprocal}
-  \begin{tblr}{
-      colspec = {S[table-format=3.0] S[table-format=2.1] S},
-      row{1} = {guard, mode=math},
-      vline{4} = {2}{-}{text=\clap{$\pm$}},
-    }
-    \toprule
-    U \mathbin{/} \unit{\volt} & I \mathbin{/} \unit{\micro\ampere} & \SetCell[c=2]{c} N \mathbin{/} \unit{\per\second} & \\
-    \midrule
-    360 & 0.1 & 98.3 & 0.9 \\
-    400 & 0.2 & 99.8 & 1.0 \\
-    420 & 0.2 & 99.1 & 0.9 \\
-    \bottomrule
-  \end{tblr}
-\end{table}
-
-Siehe \autoref{fig:plot} und \autoref{tab:tabelle}!
+Zunächst wird aus den Messwerten die Winkelrichtgröße $D$ bestimmt.
+Hierfür werden die Drehwinkel $\phi$ zu nächst von $^\circ$ in $rad$ umgerechnet.
+Man erhält die Formel $\phi_{neu} = \phi \sfrac{\pi}{180}$.
+$D$ wird dann mit
+\begin{equation}
+  D = \frac{F r}{\phi}
+\end{equation}
+bestimmt.
+Dabei ist $F$ die gemessene Kraft und $r$ der Radius, an dem der Kraftmesser befestigt wird.
+In diesem Versuch wird $r = \Si{0.2}{\meter}$ gewählt.
+Es werden die Winkelrichtgrößen aller Winkel einzeln ausgerechnet.
+Anschließend wird der Mittelwert dieser gebildet und $D = \Si*{0.01997}{\N \meter \per\rad}$ ergibt sich.
