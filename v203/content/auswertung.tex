@@ -107,12 +107,12 @@ Die Gleichung zur Bestimmung von $L$ und dem damit einhergehenden Fit ist wie fo
   \Rightarrow y = a \cdot x + b = -2029 \cdot x + 5.497
 \end{equation}
 Mit numeric Python und Gl.\eqref{eq:Gauß} ergeben sich folgende Messunsicherheiten: $a = \SI{2029 +- 21}{\kelvin}$
-und $b = \SI{5.497 +- 0.063}$.
+und $b = 5,497\pm0,063$.
 Die Verdampfungswärme wird mit folgendem Wert berechnet:
 \begin{equation*}
   L = - \ a \cdot R \Rightarrow L = \SI{1.69(0.02)e4}{\joule\per\mol}
 \end{equation*}
-$R$ ist die allgemeine Gaskonstant mit einem Wert von $\SI{8.314}{\joule\per\mole\per\kelvin}$\,\cite{Gaskonstante}.
+$R$ ist die allgemeine Gaskonstante mit einem Wert von $\SI{8.314}{\joule\per\mole\per\kelvin}$\,\cite{Gaskonstante}.
 $L$ ist die Steigung der Ausgleichsgeraden in Abbildung \ref{fig:Ausgleichsgerade} multipliziert mit der Universellen Gaskonstante $R$.
 \noindent
 Jetzt soll die äußere Verdampfungswärme $L_a$ bestimmt werden.
@@ -125,7 +125,7 @@ Also ergibt sich $L_a = \SI{3101.3}{\frac{\J}{\mol}}$.
 Um die erforderliche Arbeit zur Überwindung der molekularen Anziehungskraft bei Verdampfung $L_i$ zu bestimmen, wird
 zunächst die Differenz zwischen $L$ und $L_a$ gebildet.
 \begin{equation}
-    L_i = L - L_a \Rightarrow L_i = \SI{15698.7 \pm 881.3}{\frac{\J}{\mol}}
+    L_i = L - L_a \Rightarrow L_i = \SI{13800 \pm 170}{\frac{\J}{\mol}}
 \end{equation}
 Um hier raus jetzt die Kraft für ein Molekül auszurechnen, muss die Definition für ein Mol eingesetzt werden.
 Also muss $L_i$ durch die Avogadro-Konstante $N_a = \SI{6.022e23}{\per\mol}$ \cite{Avogadro} geteilt werden.
@@ -137,7 +137,7 @@ Zuletzt muss noch die Einheit in eV umgerechnet werden.
 \subsection{Druck über einem Bar}
 Auflösen der Clausius-Clapeyronschen Gleichung nach $L$ zur Bestimmung der Wärmeabhängigkeit ergibt.\\
 \begin{align}
-  &(V_D-V_F)\text{d}p=\frac{L}{T}\frac{d}T\nonumber\\
+  &(V_D-V_F)\text{d}p=\frac{L}{T}\text{d}T\nonumber\\
   \Leftrightarrow L=&(V_\text{D}-V_\text{F})\frac{\text{d}p}{\text{d}T}T\label{eqn:L(V,T)}
 \end{align}
 Mittels Python und scipy wird polynomialer Fit dritten Grades errechnet. Die 
