@@ -1,0 +1,1 @@
+#denk an die 5 fache schwingungsdauer
