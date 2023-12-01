@@ -32,6 +32,7 @@ print(params)
 print(errors)
 L = - params[0]
 print("L = ", L, "±", errors[0])
+print("b = ", params[1], "±", errors[1])
 
 ax.plot(x, fit(x, *params), "b-", label="Ausgleichsgerade")
 
