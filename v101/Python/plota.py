@@ -28,9 +28,11 @@ for y in range(0, Fl):
 
 for d in range(0, Dl):
     Dx += D[d]
-print("Mittelwert von Phi =", Phix/Phil)
-print("Mittelwert von F = ", Fx/Fl)
+
 print("Mittelwert von D = ", Dx/Dl)
+print("Standartabweichung von D: \sigma_D = ", np.std(D))
+
+
 
 
 
