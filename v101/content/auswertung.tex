@@ -1,9 +1,24 @@
 \section{Auswertung}
 \label{sec:Auswertung}
-
-
+Zur Berechnung des Mittelwerts $\overline{x}$ einer Größe mit $n$ Messungen der Größe $x$ wird die Formel 
+\begin{equation}
+  \overline{x}=\frac{1}{n}\sum_{i=1}^n x_n,
+  \label{eq:Mittelwert}
+\end{equation} verwendet.
+Die dazu gehörige Standardabweichung $\sigma$ ergibt sich über 
+\begin{equation}
+  \sigma=\sqrt{\frac{1}{n-1}\sum_{i=1}^n(x_n-\overline{x})^2}
+  \label{eq:Standardabweichung}
+\end{equation}
+Zum Berechnen der Fehler wird die Gaußsche Fehlerfortpflanzung genutzt 
+\begin{equation}
+\increment f=\sqrt{\sum_{k=1}^{n}\biggl(\frac{\partial f}{\partial x_\text{k}}\biggr)^2(\increment x_\text{k})^2}\,.
+\label{eq:gauss}
+\end{equation}
+Dabei ist $f$ die zur Berechnung der Größe gegebene Formel und $x_k$ dessen Argumente.
+$\increment x_k$ ist der jeweilige Fehler der einzelnen Argumente.
 Zunächst wird aus den Messwerten die Winkelrichtgröße $D$ bestimmt.
-\begin{table}
+\begin{table}[H]
   \centering
   \caption{Messwerte zur Bestimmung der Winkelrichtgröße}
   \label{tab:Winkelrichtgroesse}
@@ -26,8 +41,9 @@ Zunächst wird aus den Messwerten die Winkelrichtgröße $D$ bestimmt.
     \bottomrule
   \end{tabular}
 \end{table}
-Hierfür werden die Drehwinkel $\phi$ zu nächst von $^\circ$ in $rad$ umgerechnet, was mit $\phi_\text{neu} = \sfrac{\phi \pi}{180}$ durchgeführt wird.
-$D$ wird dann mit
+Hierfür werden die Drehwinkel $\phi$ zu nächst von $^\circ$ in $rad$ umgerechnet, 
+was mit $\phi_\text{neu} = \sfrac{\phi \pi}{180}$ durchgeführt wird.
+$D$ wird daraufhin mittels
 \begin{equation}
   D = \frac{F R}{\phi_\text{neu}}
 \end{equation}
@@ -37,7 +53,7 @@ In diesem Versuch wird $R = \SI{0.2}{\meter}$ gewählt.
 Es werden die Winkelrichtgrößen aller Winkel einzeln ausgerechnet.
 Anschließend wird der Mittelwert dieser gebildet und $D = \SI{0.01997}{\N \meter}$ ergibt sich.
 
-\begin{table}
+\begin{table}[H]
   \centering
   \caption{Messwerte zur Bestimmung des Trägheitsmoments}
   \label{tab:Traegheitsmoment}
@@ -62,7 +78,7 @@ Anschließend wird der Mittelwert dieser gebildet und $D = \SI{0.01997}{\N \mete
 \end{table}
 
 
-\begin{table}
+\begin{table}[H]
   \centering
   \caption{5-fache Schwingungsdauer einer Kugel und einers Zylinders}
   \label{tab:Kugel_Zylinder}
@@ -85,3 +101,31 @@ Anschließend wird der Mittelwert dieser gebildet und $D = \SI{0.01997}{\N \mete
     \bottomrule
   \end{tabular}
 \end{table}
+\subsection{Trägheitsmoment einer Kugel}
+
+
+\begin{table}[H]
+  \centering
+  \caption{Schwingungsdauer einer Kugel für eine Auslenkung von $90°$.}
+  \label{tab:Kugel}
+    \begin{tblr}{
+      colspec={c|c}
+      }
+    \toprule
+    $t$ / s & $t$ / s\\
+    \midrule
+    1.83 & 1.87\\
+    1.86 & 1.88\\
+    1.84 & 1.86\\
+    1.87 & 1.86\\
+    1.86 & 1.87\\
+    \bottomrule
+    \end{tblr}
+\end{table}
+Die verwendete Holzkugel hat die Masse $M_\text{K}=\SI{1172.6}{\gram}$ und den Radius $R_\text{K}=\SI{7.34}{\centi\meter}$. 
+Mittels Gl. \eqref{eq:Mittelwert} und \eqref{eq:Standardabweichung} ergibt sich aus den Daten der Tabelle \ref{tab:Kugel} 
+eine mittlere Schwingungsdauer von $\overline{t}=\SI{1.86\pm0.015}{\second}$.Mit Einsetzen der gemessenen Werte in Gleichung 
+\eqref{eq:Kugel} ein ergibt sich ein Theoriewert für das Trägheitsmoment der Kugel von $I_{\text{K,theo}}=\SI{2.53e-4}
+{\kilo\gram\meter\squared}$.
+Unter Verwendung der Gl. \eqref{eq:Schwingungsdauer} umgestellt nach $I$ ergibt sich
+ein experimenteller Wert von $I=\SI{0.161}{\kilo\gram\meter\squared}$.
