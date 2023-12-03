@@ -5,8 +5,8 @@ Die Fehler werden mittels Python und der Gaußschen Fehlerfortpflanzung berechne
 \Delta f=\sqrt{\sum_{i=1}^N\left(\frac{\text{d}f}{\text{d}y_i}\right)^2(\Delta y_i)^2}.
 \label{eq:Gauß}
 \end{equation}
-$f$ ist dabei unsere zur Berechnun nötige Funktion, $y$ unsere Variablen und $\Delta y$ deren Abweichung.
-\subsection{Druck unter einem Bar}
+$f$ ist dabei unsere zur Berechnung nötige Funktion, $y$ unsere Variablen und $\Delta y$ deren Abweichung.
+\subsection{Druck unter ein bar}
 \begin{table}
   \centering
   \caption{Temperatur und Druck bei Verdampfung des Wassers. Der Druck hat eine Messunsicherheit von
@@ -85,7 +85,7 @@ Mit diesen gemessenen Werten lassen sich folgende Grafiken erstellen. $p_0$ ist 
     \caption{Bereich von $1$ bis $\SI{15}{\bar}$.}
     \label{fig:MesswerteGross}
   \end{subfigure}
-  \caption{Die Messwerte der ersten Messreihe aufgetragen als der Logarithmus des Drucks $p$
+  \caption{Die Messwerte beider Messreihen aufgetragen als der Logarithmus des Drucks $p$
   gegen die reziproke absolute Temperatur $T$.}
   \label{fig:Teila}
 \end{figure}
@@ -93,7 +93,7 @@ Mit diesen gemessenen Werten lassen sich folgende Grafiken erstellen. $p_0$ ist 
 Die Messwerte wurden in Grad Celsius aufgenommen, für die Auswertung jedoch in Kelvin umgerechnet. Außerdem wurden die ersten beiden Messwerte ausgelassen,
 da sie offensichtlich deutlich von den restlichen Werte abwichen.
 Um daraus die zu berechnende Verdampfungswärme des Wassers zu bestimmen, wird eine Gerade durch die Messwerte gelegt.
-Diese wird mittels Python für den Bereich von $30$\,mbar bis $1000$\,mbar erstellt. \\
+Diese wird mittels Python für den Bereich von $30$ bis $1000$\,mbar erstellt. \\
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.8]{plotc.pdf}
@@ -104,10 +104,10 @@ Diese wird mittels Python für den Bereich von $30$\,mbar bis $1000$\,mbar erste
 Die Gleichung zur Bestimmung von $L$ und dem damit einhergehenden Fit ist wie folgt:
 \begin{equation}
   \ln(p) = - \frac{L}{R} \cdot \frac{1}{T}
-  \Rightarrow y = a \cdot x + b = -2029 \cdot x + 5.497
+  \Rightarrow y = a \cdot x + b = -2029 \cdot x + 5,497
 \end{equation}
 Mit numeric Python und Gl.\eqref{eq:Gauß} ergeben sich folgende Messunsicherheiten: $a = \SI{2029 +- 21}{\kelvin}$
-und $b = 5,497\pm0,063$.
+und $b = \SI{5.497 \pm 0.063}{\elvin}$.
 Die Verdampfungswärme wird mit folgendem Wert berechnet:
 \begin{equation*}
   L = - \ a \cdot R \Rightarrow L = \SI{1.69(0.02)e4}{\joule\per\mol}
@@ -131,10 +131,10 @@ Um hier raus jetzt die Kraft für ein Molekül auszurechnen, muss die Definition
 Also muss $L_i$ durch die Avogadro-Konstante $N_a = \SI{6.022e23}{\per\mol}$ \cite{Avogadro} geteilt werden.
 Zuletzt muss noch die Einheit in eV umgerechnet werden.
 \begin{equation*}
-  L_i = \SI{0.162722 \pm 0.009134 }{eV}
+  L_i = \SI{0.1430 \pm 0.0018 }{eV}
 \end{equation*}
 
-\subsection{Druck über einem Bar}
+\subsection{Druck über ein bar}
 Auflösen der Clausius-Clapeyronschen Gleichung nach $L$ zur Bestimmung der Wärmeabhängigkeit ergibt.\\
 \begin{align}
   &(V_D-V_F)\text{d}p=\frac{L}{T}\text{d}T\nonumber\\
@@ -170,8 +170,9 @@ vernachlässigt werden darf. Dies wird hier genutzt. Nach Umstellen der Formel a
    \intertext{Durch einsetzen von Gl.\eqref{eqn:V(T)} in Gl.\eqref{eqn:L(V,T)} lässt sich folgender Ausdruck für L finden:}
    L(T)&=\frac{T}{P}\left(\frac{RT}{2}\pm\sqrt{\left(\frac{R^2T^2}{4}\right)-ap}\right).
 \end{align}
-Mit Python geplottet sieht $L(T)$ wie folgt aus.
+In Abbildung \ref{fig:Verdampfungswärme} wird $L(T)$ mit Python geplottet.
 \begin{figure}
+  \label{fig:Verdampfungswärme}
   \begin{subfigure}{0.45\textwidth}
   \centering
   \includegraphics[height=4cm]{plote.pdf}
