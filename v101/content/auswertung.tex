@@ -2,4 +2,86 @@
 \label{sec:Auswertung}
 
 
+Zunächst wird aus den Messwerten die Winkelrichtgröße $D$ bestimmt.
+\begin{table}
+  \centering
+  \caption{Messwerte zur Bestimmung der Winkelrichtgröße}
+  \label{tab:Winkelrichtgroesse}
+  \begin{tabular}{
+  c c
+  }
+    \toprule
+     $\phi \, / \unit{°}$ & $F\, / \unit{\newton}$\\
+    \midrule
+    110 & 0.21 \\
+    100 & 0.19 \\
+    90  & 0.188\\
+    80  & 0.168\\
+    70  & 0.147\\
+    60  & 0.118\\
+    50  & 0.090\\
+    40  & 0.060\\
+    30  & 0.038\\
+    20  & 0.016\\
+    \bottomrule
+  \end{tabular}
+\end{table}
+Hierfür werden die Drehwinkel $\phi$ zu nächst von $^\circ$ in $rad$ umgerechnet, was mit $\phi_\text{neu} = \sfrac{\phi \pi}{180}$ durchgeführt wird.
+$D$ wird dann mit
+\begin{equation}
+  D = \frac{F R}{\phi_\text{neu}}
+\end{equation}
+bestimmt.
+Dabei ist $F$ die gemessene Kraft und $R$ der Radius, an dem der Kraftmesser befestigt wird.
+In diesem Versuch wird $R = \SI{0.2}{\meter}$ gewählt.
+Es werden die Winkelrichtgrößen aller Winkel einzeln ausgerechnet.
+Anschließend wird der Mittelwert dieser gebildet und $D = \SI{0.01997}{\N \meter}$ ergibt sich.
 
+\begin{table}
+  \centering
+  \caption{Messwerte zur Bestimmung des Trägheitsmoments}
+  \label{tab:Traegheitsmoment}
+  \begin{tabular}{
+  c c
+  }
+    \toprule
+     $R \, / \unit{\meter}$ & $F\, / \unit{\newton}$\\
+    \midrule
+    0.05  & 14.16 \\
+    0.075 & 15.97 \\
+    0.10  & 18.34 \\
+    0.125 & 20.78 \\
+    0.15  & 23.47 \\
+    0.175 & 26.47 \\
+    0.20  & 29.81 \\
+    0.225 & 32.81 \\
+    0.25  & 35.82 \\
+    0.30  & 41.79 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+
+\begin{table}
+  \centering
+  \caption{5-fache Schwingungsdauer einer Kugel und einers Zylinders}
+  \label{tab:Kugel_Zylinder}
+  \begin{tabular}{
+  c c
+  }
+    \toprule
+     $T_\text{Kugel}\, / \unit{\second}$ & $T_\text{Zylinder}\, / \unit{\second}$\\
+    \midrule
+    9.15 & 9.47 \\
+    9.31 & 9.43 \\
+    9.19 & 9.31 \\
+    9.34 & 9.47 \\
+    9.28 & 9.31 \\
+    9.35 & 9.28 \\
+    9.41 & 9.41 \\
+    9.28 & 9.31 \\
+    9.31 & 9.28 \\
+    9.35 & 9.28 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
