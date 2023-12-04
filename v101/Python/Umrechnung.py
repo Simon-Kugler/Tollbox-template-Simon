@@ -98,7 +98,7 @@ print("I_G1=",'{:1.10f}'.format(I_G1))
 print("I_THEORIE_1=",'{:1.10f}'.format(I_G))
 
 #Schwingunsdauern 1
-D=ufloat(0.01997,0.00466)
+D=ufloat(0019.97,0.00466)
 
 phi_90=np.array([3.06, 3.28, 2.72, 3.06, 3.16,2.88, 2.87, 2.87, 2.84, 2.90])
 
