@@ -18,69 +18,35 @@ Zum Berechnen der Fehler wird die Gaußsche Fehlerfortpflanzung genutzt
 Dabei ist $f$ die zur Berechnung der Größe gegebene Formel und $x_k$ dessen Argumente.
 $\increment x_k$ ist der jeweilige Fehler der einzelnen Argumente.\\ \noindent 
 \newpage
-Zunächst wird aus den Messwerten in Tabelle \ref{tab:Winkelrichtgroesse}
-die Winkelrichtgröße $D$ bestimmt.
-\begin{table}[H]
-  \centering
-  \caption{Messwerte zur Bestimmung der Winkelrichtgröße.}
-  \label{tab:Winkelrichtgroesse}
-  \begin{tabular}{
-  c c
-  }
-    \toprule
-     $\phi \, / \unit{°}$ & $F\, / \unit{\newton}$\\
-    \midrule
-    110 & 0.21 \\
-    100 & 0.19 \\
-    90  & 0.188\\
-    80  & 0.168\\
-    70  & 0.147\\
-    60  & 0.118\\
-    50  & 0.090\\
-    40  & 0.060\\
-    30  & 0.038\\
-    20  & 0.016\\
-    \bottomrule
-  \end{tabular}
-\end{table}
-Hierfür werden die Drehwinkel $\phi$ zu nächst von $^\circ$ in $rad$ umgerechnet, 
-was mit $\phi_\text{neu} = \sfrac{\phi \pi}{180}$ durchgeführt wird.
-$D$ wird daraufhin mittels
-\begin{equation}
-  D = \frac{F R}{\phi_\text{neu}}
-\end{equation}
-bestimmt.
-Dabei ist $F$ die gemessene Kraft und $R$ der Radius, an dem der Kraftmesser befestigt wird.
-In diesem Versuch wird $R = \SI{0.2}{\meter}$ gewählt.
-Es werden die Winkelrichtgrößen aller Winkel einzeln ausgerechnet.
-Anschließend wird der Mittelwert und die Standardabweichung dieser gebildet und die Winkelrichtgröße
-\begin{equation*}
-  D = \SI{0.01997 \pm 0.00466}{\N \meter}
-\end{equation*}
-ergibt sich.
 
-Zur Auswertung der Daten in Tabelle \ref{tab:Traegheitsmoment},???
+\subsection{Bestimmung der Winkelrichtgröße und des Eigenträgheitmoments}
+
+Die gemessenen Werte zur Bestimmung des Eigenträgheitmoments $I_D$ der Drillachse sind in Tabelle \ref{tab:Traegheitsmoment} zu sehen.
+Dabei ist $a$ der Abstand der Zylinder zur Drillachse und $T$ die Schwingungsdauer.
+Die Quadrate beider Größen werden ebenfalls aufgeführt.
+Die lineare Regression wird durch diese beiden Größen gelegt, wie in Abbildung \ref{fig:Plot1} dargestellt.
 
 \begin{table}[H]
   \centering
   \caption{Messwerte zur Bestimmung des Trägheitsmoments}
   \label{tab:Traegheitsmoment}
   \begin{tabular}{
-  c c
+  c c c c
   }
     \toprule
-     $R \, / \unit{\meter}$ & $F\, / \unit{\newton}$\\
+     $R \, / \unit{\meter}$ & $F\, / \unit{\newton}$
+      & $R^2 \, / \unit{\meter^2}$ & $F^2\, / \unit{\newton^2}$\\
     \midrule
-    0.05  & 14.16 \\
-    0.075 & 15.97 \\
-    0.10  & 18.34 \\
-    0.125 & 20.78 \\
-    0.15  & 23.47 \\
-    0.175 & 26.47 \\
-    0.20  & 29.81 \\
-    0.225 & 32.81 \\
-    0.25  & 35.82 \\
-    0.30  & 41.79 \\
+    0.05  & 2.832 & 0.0025   & 8.0202\\
+    0.075 & 3.194 & 0.0056   & 10.2016\\
+    0.10  & 3.668 & 0.01     & 13.4542\\
+    0.125 & 4.156 & 0.0156   & 17.2723\\
+    0.15  & 4.694 & 0.0225   & 22.0336\\
+    0.175 & 5.294 & 0.0306   & 28.0264\\
+    0.20  & 5.962 & 0.04     & 35.5454\\
+    0.225 & 6.962 & 0.0506   & 43.0598\\
+    0.25  & 7.164 & 0.0625   & 51.3228\\
+    0.30  & 8.358 & 0.09     & 69.8561\\
     \bottomrule
   \end{tabular}
 \end{table}
@@ -91,33 +57,76 @@ Zur Auswertung der Daten in Tabelle \ref{tab:Traegheitsmoment},???
   \label{fig:Plot1}
 \end{figure}
 
+Das gemessene Trägheitsmoment setzt sich zusammen aus dem Trägheitsmoment der beiden Zylinder $I_\text{Zylinder}$
+  und dem Trägheitsmoment der Drillachse $I_D$
+  \begin{equation}
+    I_{\text{ges}} = I_D + I_{\text{Zylinder}}
+   \end{equation}
+wobei
+    \begin{equation}
+    I_{\text{Zylinder}} = 2m(\frac{R^2}{4}+\frac{h^2}{12})+2ma^2
+  \end{equation}
+  ist.
+Mit Gleichung \ref{eq:Schwingungsdauer} ergibt sich
+  \begin{equation}
+    T^2 = \frac{4 \pi^2}{D}(I_D + 2m(\frac{R^2}{4}+\frac{h^2}{12}))+\frac{8 \pi^2 m}{D}a^2.
+    \label{equ:T^2}
+  \end{equation}
+Aus der linearen Regression, die die Gleichung der Form $y = b x + c$ hat, ergeben sich die Parameter
+  \begin{align*}
+    b &= 714 \pm 5 \\
+    c &= 6.3 \pm 0.2.
+  \end{align*}
+Durch hinschauen kann man erkennen, dass
+  \begin{align*}
+    b &= \frac{8 \pi^2 m}{D} \\
+    c &= \frac{4 \pi^2}{D}(I_D + 2m(\frac{R^2}{4}+\frac{h^2}{12}))
+  \end{align*}
+  gilt.
+  Nun wird c nach $I_D$ um gestellt und
+  \begin{equation}
+    I_D = \frac{cD}{4\pi^4}- 2m(\frac{R^2}{4}+\frac{h^2}{12})
+  \end{equation}
+  ergibt sich.
+  Durch Einsetzten der Messwerte
+  \begin{align*}
+    m &= \SI{261.2(0.1)e-3}{\kilogram} \\
+    R &= \SI{22.26(0.02)e-3}{\meter}\\
+    h &= \SI{20.4(0.02)e-3}{\meter}\\
+  \end{align*}
+  und Formel \ref{eq:gauss} erhält man
+  \begin{equation*}
+    I_D = \SI{3.10(0.75)e-4}{\kilogram \meter\squared}.
+  \end{equation*}
 
-
-\begin{table}[H]
+  \subsection{Trägheitsmoment eines Zylinders}
+  Der verwendete Zylinder hat eine Masse $M_{\text{Z}} = \SI{423.2}{\gram}$, eine Höhe von $H_{\text{Z}} = \SI{1.5e-2}{\meter}$
+  und einen Radius von $R_{\text{Z}} = \SI{11.125e-2}{\meter}$.
+  \begin{table}[H]
   \centering
-  \caption{5-fache Schwingungsdauer einer Kugel und einers Zylinders}
-  \label{tab:Kugel_Zylinder}
-  \begin{tabular}{
-  c c
-  }
+  \caption{Schwingungsdauer eines Zylinders für eine Auslenkung von $90°$.}
+  \label{tab:Zylinder}
+    \begin{tblr}{
+      colspec={c|c}
+      }
     \toprule
-     $T_\text{Kugel}\, / \unit{\second}$ & $T_\text{Zylinder}\, / \unit{\second}$\\
+    $t$ / s & $t$ / s\\
     \midrule
-    9.15 & 9.47 \\
-    9.31 & 9.43 \\
-    9.19 & 9.31 \\
-    9.34 & 9.47 \\
-    9.28 & 9.31 \\
-    9.35 & 9.28 \\
-    9.41 & 9.41 \\
-    9.28 & 9.31 \\
-    9.31 & 9.28 \\
-    9.35 & 9.28 \\
+    1.90 & 1.86\\
+    1.89 & 1.88\\
+    1.86 & 1.86\\
+    1.89 & 1.86\\
+    1.86 & 1.86\\
     \bottomrule
-  \end{tabular}
+    \end{tblr}
 \end{table}
-\subsection{Trägheitsmoment einer Kugel}
+  Aus Tabelle \ref{tab:Zylinder} berechnet sich die mittlere Schwingungsdauer zu $\overline{t}=\SI{1.87\pm0.015}{\second}$.
+Mit Gleichung \ref{eq:Schwingungsdauer}
+und umstellen nach $I$ ergibt sich für den experimentellen Wert des Zylinders $I=\SI{1.77e-3}{\kilo\gram\meter\squared}$.
+Der Theoriewert resultiert aus dem Einsetzen der gemessenen Werte in Gleichung %\eqref{eq:Zylinder}
+$I_{\text{Z,theo}}=\SI{2.61e-3}{\kilo\gram\meter\squared}$.
 
+\subsection{Trägheitsmoment einer Kugel}
 
 \begin{table}[H]
   \centering
