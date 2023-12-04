@@ -154,8 +154,8 @@ Maße wurden abgenommen. Die Puppe hat eine Masse von $m_\text{P}=\SI{167.2}{\gr
     colspec ={c c || c c || c c || c}
   }
   \toprule
-    $d_{\text{Bein}}$ / mm  & $d_{\text{Bein}}$ / mm  & $d_\text{Arm}$ / mm
-    & $d_\text{Arm}$ / mm & $d_\text{Torso}$ / mm & $d_\text{Torso}$ / mm & $d_\text{Kopf}$ / mm\\
+    $d_{\text{Bein}}$ / mm  & $d_{\text{B}}$ / mm  & $d_\text{Arm}$ / mm
+    & $d_\text{A}$ / mm & $d_\text{Torso}$ / mm & $d_\text{T}$ / mm & $d_\text{Kopf}$ / mm\\
     \midrule
     13,04 & 16,00 & 11,84 & 13,04 & 32,96 & 26,08 & 22,56\\
     13,24 & 16,78 & 11,18 & 12,88 & 37,56 & 31,08 & 27,36\\
@@ -187,9 +187,9 @@ Dicken berechnet. Das Ergebnis geteilt durch zwei ergibt dies dann den Radius $r
 Das Volumen eines Zylinders ist gegeben durch $V=\pi\cdot r^2\cdot H$. Durch Anwendung der Gauß'schen Fehlerfortpflanzung nach Gl. \eqref{eq:gauss}
 ergeben sich für die Volumina sowie deren Fehler 
 \begin{align*}
-  V_A&=\SI{1.8(0.28)e4}{\milli\meter\cubed},\\
+  V_A&=\SI{1.8(0.29)e4}{\milli\meter\cubed},\\
   V_B&=\SI{2.8(0.7)e4} {\milli\meter\cubed},\\
-  V_T&=\SI{9.0(2.6)e4} {\milli\meter\cubed},\\
+  V_T&=\SI{9.0(2.7)e4} {\milli\meter\cubed},\\
   V_K&=\SI{2.3(0.4)e4} {\milli\meter\cubed}.
 \end{align*}
 Durch addieren der Volumina sowie verdoppeln des Volumens für Arme und Beine 
@@ -202,9 +202,98 @@ ein Körperteil jeweils vom Gesamtvolumen ausmacht und dieser Anteils-Koeffizien
 der Gesamtmasse multipliziert. Die Dichte des Holzes wird hierfür als konstant angenommen und
 Unterschiede in dem Metall-Anteil der Körperteile vernachlässigt.
 \begin{align*}
-  m_A&=\frac{V_\text{A}}{V_\text{Ges}}\cdot m_\text{P}=\qty{14.8+-2.2}{\gram}\\
-  m_B&=\frac{V_\text{B}}{V_\text{Ges}}\cdot m_\text{P}=\qty{23+-6}{\gram}\\
-  m_T&=\frac{V_\text{T}}{V_\text{Ges}}\cdot m_\text{P}=\qty{73+-22}{\gram}\\
-  m_K&=\frac{V_\text{K}}{V_\text{Ges}}\cdot m_\text{P}=\qty{18.5+-3.1}{\gram}
+  m_A&=\frac{V_\text{A}}{V_\text{Ges}}\cdot m_\text{P}=\qty{14.7+-2.9}{\gram}\\
+  m_B&=\frac{V_\text{B}}{V_\text{Ges}}\cdot m_\text{P}=\qty{23+-5}{\gram}\\
+  m_T&=\frac{V_\text{T}}{V_\text{Ges}}\cdot m_\text{P}=\qty{74+-14}{\gram}\\
+  m_K&=\frac{V_\text{K}}{V_\text{Ges}}\cdot m_\text{P}=\qty{19+-4}{\gram}
 \end{align*}
   Die Fehler ergeben sich erneut über Gauß'sche Fehlerfortpflanzung \eqref{eq:gauss}.
+Nun soll der Satz von Steiner \eqref{eq:Steiner} angewandt bzw. überprüft werden.
+anhand zwei verschiedener Sitzpositionden einer Puppe überprüft werden. Mit seitlich ausgestreckten
+Armen im 90°-Winkel zum Oberkörper und geraden Beinen befindet sich die Puppe im 1. Zustand. werden 
+zusätzlich noch die Beine, ebenfalls in einem 90°-Winkel zum Oberkörper, ausgestreckt.
+Dazu werden mittels \eqref{eq:Steiner} die einzelnen Trägheitsmomente ermittelt.
+Für die Beine, den Kopf und den Torso wird angenommen, dass die Drehachse durch den Schwerpunkt
+verläuft. Die Beine werden als ein Zylinder mit Radius $r=D_\text{B}=2r_\text{B}$ angenommen. Der Kopf und Torso werden
+jeweils als auch als Zylinder angenommen. Das Trägheitsmoment der Arme wird mithilfe der Formel in Gl. 
+\eqref{eq:falscher_zylinder} berechnet. Die Verschiebung $a$ zwischen Dreh- und Schwerpunktsachse setzt 
+sich aus dem Radius des Torsos und der Länge des Arms zusammen.
+\begin{align*}
+  a&=r_T+\frac{H_\text{A}}{2}
+\intertext{Damit ergibt sich für einen Arm mit Gl.\eqref{eq:Steiner}}
+\label{eq:Arme}
+I_\text{A}&=m_\text{A}\left(\frac{r_\text{A}^2}{4}+\frac{(r_T*0,5*H_\text{A})^2}{12}\right)\,,
+\intertext{Für das Trägheitsmoment der Beine ergibt sich nach Gl. \eqref{eq:Zylinder}}
+I_\text{2B}&=\frac{2m_\text{B}\cdot 2r_\text{B}^2}{2}=m_\text{B}\cdot r_\text{B}^2\,.
+\intertext{Analog dazu für Kopf und Torso}
+I_\text{i}&=\frac{m_i\cdot r_i^2}{2};\quad i\in\{T,K\}\,.
+\end{align*}
+Aus diesen Formeln und vorher berechneten Werten ergibt sich
+der Theorie-Wert für das Gesamträgheitsmoment
+\begin{equation}
+  I_\text{1,theo}=\qty{32.1+-6.8e-4}{\kilo\gram\meter\squared}\,.
+\end{equation}0.0032185662+/-0.0006804836
+Das Trägheitsmoment soll nun mittels Gleichung \eqref{eq:Schwingungsdauer} und den in Tabelle
+\ref{tab:Zeiten1_Puppe} aufgeführten Daten bestimmt und mit dem Theorie-Wert abgeglichen werden.
+Gl. \eqref{eq:Schwingungsdauer} nach $I$ umgestellt ergibt
+\begin{equation}
+  I=\frac{T^2}{2\pi}D\,.
+  \label{eq:Traegheitsmoment}
+\end{equation}
+\begin{table}
+  \centering
+  \caption{Messdaten der Schwingungsdauer für zwei verschiedene Winkel in 
+  der ersten Körperhaltung der Puppe.}
+  \label{tab:Zeiten1_Puppe}
+  \begin{tblr}{colspec={S S},
+    row{1}={guard}, row{2}={guard},
+    }
+    \toprule
+    $\phi=\qty{90}{\degree}$ & $\phi=\qty{120}{\degree}$\\
+    $5T$ / s & $5T$ / s\\
+    \midrule
+    3,06 & 2,88 \\
+    3,28 & 2,87 \\
+    2,72 & 2,87 \\
+    3,06 & 2,84 \\
+    3,16 & 2,90 \\
+    \bottomrule
+  \end{tblr}
+\end{table}
+FÜr das experimentell bestimmte Trägheitsmoment der Puppe in der ersten Haltung ergibt sich 
+\begin{equation*}
+  I_\text{1,exp}=\qty{11,2+-02,9e-4}{\kilo\gram\meter\squared}
+\end{equation*}
+Für die zweite Haltung der Puppe verläuft die Rechnung sehr analog. Die Trägheitsmomente der Arme, des Torsos 
+sowie des Kopfes können übernommen werden, die Beine müssen jedoch mittels des Satzes von Steiner berechnet werden.
+Dies geschieht jedoch genau wie bei der anderen Haltung für die Arme mit Gleichung\eqref{eq:Arme} und \eqref{eq:Steiner}.
+Die Beine werden ebenso wieder als ein Zylinder mit doppeltem Radius angenommen.
+Es ergibt sich ein gesamt theoretisch bestimmtes Trägheitsmoment 
+\begin{equation*}
+  I_\text{2,theo}=\qty{5,2+-1,3e-3}{\kilo\gram\meter\squared}
+\end{equation*}
+Mit den in Tabelle \ref{tab:Zeiten2_Puppe} und Gleichung \eqref{eq:Trägheitsmoment} ergibt sich
+ein experimentell bestimmtes Trägheitsmoment 
+\begin{equation*}
+  I_\text{2,exp}=\qty{3+-0,73e-3}{\kilo\gram\meter\squared}\,.
+\end{equation*}
+\begin{table}
+  \centering
+  \caption{Messdaten der Schwingungsdauer für zwei verschiedene Winkel in 
+  der zweiten Körperhaltung der Puppe.}
+  \label{tab:Zeiten2_Puppe}
+  \begin{tblr}{colspec={S S},
+    row{1}={guard}, row{2}={guard},
+    }
+    \toprule
+    $\phi=\qty{90}{\degree}$ & $\phi=\qty{120}{\degree}$\\
+    $5T$ / s & $5T$ / s\\
+    \midrule
+    4,84 & 4,85 \\
+    4,87 & 4,94 \\
+    4,72 & 4,90 \\
+    4,93 & 4,97 \\
+    4,79 & 4,94 \\
+    \bottomrule
+  \end{tblr}
+\end{table}

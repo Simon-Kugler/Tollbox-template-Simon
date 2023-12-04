@@ -28,11 +28,15 @@ Zylinders oder auch einer Kugel.
     \intertext{Für einen Zylinder, dessen Drehachse durch die Deckelflächen verläuft:}
     I_\text{Z}=\frac{m\cdot R^2}{2}.
     \label{eq:Zylinder}
+    \intertext{Für einen Zylinder, dessen Drehachse durch den Schwerpunkt parallel zu den Deckelflächen verläuft:}
+    I_\text{Zh}=m\left(\frac{R^2}{4}+\frac{h^2}{12}\right)
+    \label{eq:falscher_zylinder}
 \end{align}
 Liegt ein Problem vor, bei dem die Drehachse, für welche das Trägheitsmoment bestimmt werden soll,
 nicht durch den Schwerpunkt des Körpers verläuft, kann der Satz von Steiner genutzt werden: 
 \begin{equation}
     I=I_S+m\cdot a^2.
+    \label{eq:Steiner}
 \end{equation}
 $I$ ist das Trägheitsmoment um die verschobene, aber zur ursprünglichen Achse parallelen Achse,
 $m$ die Masse des Körpers. $I_S$ ist das schon bestimmte Trägheitsmoment um die Drehachse und $a$
