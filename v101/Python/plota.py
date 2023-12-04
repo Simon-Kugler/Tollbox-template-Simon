@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from scipy.optimize import curve_fit
 
-Phi, F = np.genfromtxt("../Messwerte/Winkelrichtgroesse.txt", unpack=True)
+Phi, F = np.genfromtxt("Messwerte/Winkelrichtgroesse.txt", unpack=True)
 D = np.zeros(10)
 # phi in rad
 Phin = Phi * np.pi / 180

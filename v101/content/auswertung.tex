@@ -84,7 +84,7 @@ Zur Auswertung der Daten in Tabelle \ref{tab:Traegheitsmoment},
 \end{table}
 \begin{figure}[H]
   \centering
-  \includegraphics[scale=0.6]{Python/plotI_D.pdf}
+  \includegraphics[scale=0.6]{plotI_D.pdf}
   \caption{Das Quadrat des Abstandes aufgetragen gegen das Quadrat der einfachen Schwingungsdauer.}
   \label{fig:Plot1}
 \end{figure}
@@ -142,3 +142,69 @@ eine mittlere Schwingungsdauer von $\overline{t}=\SI{1.86\pm0.015}{\second}$.Mit
 {\kilo\gram\meter\squared}$.
 Unter Verwendung der Gl. \eqref{eq:Schwingungsdauer} umgestellt nach $I$ ergibt sich
 ein experimenteller Wert von $I=\SI{0.161}{\kilo\gram\meter\squared}$.
+\subsection{Trägheitsmoment einer Puppe}
+Um das Trägheitsmoment einer Puppe zu bestimmen, muss diese vermessen werden. Wie in der Durchführung bereits 
+beschrieben, wurde die Höhe der einzelnen Körperteile jeweils ein mal, die Dicke 5 oder 10 mal gemessen. Folgende 
+Maße wurden abgenommen. Die Puppe hat eine Masse von $m_\text{P}=\SI{167.2}{\gram}$.
+\begin{table}
+  \centering
+  \caption{Maße der Puppe.}
+  \label{tab:Puppe}
+  \begin{tblr}{
+    colspec ={c c || c c || c c || c}
+  }
+  \toprule
+    $d_{\text{Bein}}$ / mm  & $d_{\text{Bein}}$ / mm  & $d_\text{Arm}$ / mm
+    & $d_\text{Arm}$ / mm & $d_\text{Torso}$ / mm & $d_\text{Torso}$ / mm & $d_\text{Kopf}$ / mm\\
+    \midrule
+    13,04 & 16,00 & 11,84 & 13,04 & 32,96 & 26,08 & 22,56\\
+    13,24 & 16,78 & 11,18 & 12,88 & 37,56 & 31,08 & 27,36\\
+    14,32 & 19,42 & 12,46 & 13,24 & 38,74 & 36,08 & 28,44\\
+    16,58 & 18,54 & 14,42 & 14,32 & 33,34 & 39,22 & 27,86\\
+    17,00 & 16,68 & 14,52 & 13,14 & 25,10 & 40,37 & 24,82\\
+    \bottomrule
+  \end{tblr}
+\end{table}
+Die zu den Abmessungen der Puppe in Tabelle \ref{tab:Puppe} gehörigen 
+Höhen $H$ der Körperteile wurden jeweils einfach vermessen.
+\begin{align*}
+  H_\text{A}&=\SI{133.12}{\milli\meter}\\
+  H_\text{B}&=\SI{136.58}{\milli\meter}\\
+  H_\text{T}&=\SI{99.02}{\milli\meter}\\
+  H_\text{K}&=\SI{42.02}{\milli\meter}
+\end{align*}
+Ziel ist es, über die Volumina der einzelnen Körperteile und die Gesamtmasse 
+einzelne Massenwerte zu errechnen. Damit kann der Satz von Steiner angewandt und gezeigt werden.
+Mittels Gleichung \eqref{eq:Mittelwert} und Gleichung \eqref{eq:Standardabweichung} erhält werden 
+die Mittelwerte und Standardabweichungen der verschiedenen
+Dicken berechnet. Das Ergebnis geteilt durch zwei ergibt dies dann den Radius $r$. 
+\begin{align*}
+  r_\text{A}= \SI{6.6\pm0.5}{\milli\meter}\\
+  r_\text{B}= \SI{8.1\pm1.0}{\milli\meter}\\
+  r_\text{T}= \SI{17.0\pm2.5}{\milli\meter}\\
+  r_\text{K}= \SI{13.1\pm1.1}{\milli\meter}\\
+\end{align*}
+Das Volumen eines Zylinders ist gegeben durch $V=\pi\cdot r^2\cdot H$. Durch Anwendung der Gauß'schen Fehlerfortpflanzung nach Gl. \eqref{eq:gauss}
+ergeben sich für die Volumina sowie deren Fehler 
+\begin{align*}
+  V_A&=\SI{1.8(0.28)e4}{\milli\meter\cubed},\\
+  V_B&=\SI{2.8(0.7)e4} {\milli\meter\cubed},\\
+  V_T&=\SI{9.0(2.6)e4} {\milli\meter\cubed},\\
+  V_K&=\SI{2.3(0.4)e4} {\milli\meter\cubed}.
+\end{align*}
+Durch addieren der Volumina sowie verdoppeln des Volumens für Arme und Beine 
+wird das Gesamtvolumen bestimmt. Der Fehler ergibt sich aus der Gauß'schen Fehlerfortpflanzung.
+\begin{equation*}
+  V_\text{Ges}=\qty{2,05+-0,31e5}{\milli\meter\cubed}
+\end{equation*}
+Nun sollen die Massen $m$ der einzelnen Körperteile bestimmt werden. Dazu wird bestimmt, wie viel
+ein Körperteil jeweils vom Gesamtvolumen ausmacht und dieser Anteils-Koeffizient dann mit 
+der Gesamtmasse multipliziert. Die Dichte des Holzes wird hierfür als konstant angenommen und
+Unterschiede in dem Metall-Anteil der Körperteile vernachlässigt.
+\begin{align*}
+  m_A&=\frac{V_\text{A}}{V_\text{Ges}}\cdot m_\text{P}=\qty{14.8+-2.2}{\gram}\\
+  m_B&=\frac{V_\text{B}}{V_\text{Ges}}\cdot m_\text{P}=\qty{23+-6}{\gram}\\
+  m_T&=\frac{V_\text{T}}{V_\text{Ges}}\cdot m_\text{P}=\qty{73+-22}{\gram}\\
+  m_K&=\frac{V_\text{K}}{V_\text{Ges}}\cdot m_\text{P}=\qty{18.5+-3.1}{\gram}
+\end{align*}
+  Die Fehler ergeben sich erneut über Gauß'sche Fehlerfortpflanzung \eqref{eq:gauss}.
