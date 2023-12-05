@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from scipy.optimize import curve_fit
 
-a, T = np.genfromtxt("../Messwerte/Traegheitsmoment.txt", unpack=True)
+a, T = np.genfromtxt("Messwerte/Traegheitsmoment.txt", unpack=True)
 T = T / 5
 x = np.linspace(0, 0.1, 1000)
 

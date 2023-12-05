@@ -2,6 +2,8 @@
 \label{sec:Vorbereitung}
 Es wird für 10 Abstände $r$ zwischen 5 und 25\,cm das Drehmoment auf eine Stange berechnet. 
 Einmal wird die Kraft im rechten Winkel angesetzt, einmal im 45°-Winkel. \\
+\noindent
+In Tabelle \ref{tab:Vorbereitung} sind die errechneten Werte aufgeführt.
 \begin{figure}
     \begin{minipage}{0.39\textwidth}
     \begin{align*} 
@@ -39,22 +41,22 @@ Einmal wird die Kraft im rechten Winkel angesetzt, einmal im 45°-Winkel. \\
             \draw[thick] (2,2.8) -- (1.9,2.6);
             \draw[thick] (2,2.8) -- (2.1,2.6);
             % F_2
-            \draw[thick] (-1,0) -- node[right] {$\vec F_2$} (1.8,2.8);
+            \draw[thick] (0,1) -- node[right] {$\vec F_2$} (1.8,2.8);
             \draw[thick] (1.8,2.8) -- (1.6,2.7);
             \draw[thick] (1.8,2.8) -- (1.7,2.6);
             \end{tikzpicture}
     \end{minipage}
     \begin{minipage}{0.27\textwidth}
         \begin{tikzpicture}
-        \draw[thick] (1,0) --node[left]{$\vec F_2$} (2.5,1.5);
+        \draw[thick,-stealth] (1,0) --node[left]{$\vec F_2$} (2.5,1.5);
         \draw[thick] (1,0) -- node[below] {x} (2.5,0);
         \draw[thick] (2.5,0) -- node[right] {y} (2.5,1.5);
         \draw[thick] (2,0) arc (0:45:1);
         \draw (1.7,0.29) node {$\varphi$};
         \end{tikzpicture}
         \begin{align*}
-            &\sin(\varphi)=\frac{y}{|\vec F_2|}\\
-            &\cos{\varphi}=\frac{x}{|\vec F_2|}
+            \sin(\varphi)&=\frac{y}{|\vec F_2|}\\
+            \cos(\varphi)&=\frac{x}{|\vec F_2|}
         \end{align*}
     \end{minipage}
 \end{figure}
@@ -65,7 +67,7 @@ Einmal wird die Kraft im rechten Winkel angesetzt, einmal im 45°-Winkel. \\
     \label{tab:Vorbereitung}
     \begin{tblr}{colspec={c | c c }}
     \toprule
-    $r$ & M für $\vec F \perp \vec r$ / J & M für $\angle(\vec r, \vec F)=45°$ / J\\ 
+    $r$ / cm & M für $\vec F \perp \vec r$ / J & M für $\angle(\vec r, \vec F)=45°$ / J\\ 
     \midrule
     5  & 0,5 & 0,35\\
     7  & 0,7 & 0,49\\

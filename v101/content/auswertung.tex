@@ -37,16 +37,16 @@ Die lineare Regression wird durch diese beiden Größen gelegt, wie in Abbildung
      $R \, / \unit{\meter}$ & $F\, / \unit{\newton}$
       & $R^2 \, / \unit{\meter^2}$ & $F^2\, / \unit{\newton^2}$\\
     \midrule
-    0.05  & 2.832 & 0.0025   & 8.0202\\
-    0.075 & 3.194 & 0.0056   & 10.2016\\
-    0.10  & 3.668 & 0.01     & 13.4542\\
-    0.125 & 4.156 & 0.0156   & 17.2723\\
-    0.15  & 4.694 & 0.0225   & 22.0336\\
-    0.175 & 5.294 & 0.0306   & 28.0264\\
-    0.20  & 5.962 & 0.04     & 35.5454\\
-    0.225 & 6.962 & 0.0506   & 43.0598\\
-    0.25  & 7.164 & 0.0625   & 51.3228\\
-    0.30  & 8.358 & 0.09     & 69.8561\\
+    0.05 & 2.83 & 0.003 & 8.020\\
+    0.08 & 3.19 & 0.006 & 10.202\\
+    0.10 & 3.67 & 0.010 & 13.454\\
+    0.13 & 4.16 & 0.016 & 17.272\\
+    0.15 & 4.69 & 0.023 & 22.034\\
+    0.18 & 5.29 & 0.031 & 28.026\\
+    0.20 & 5.96 & 0.040 & 35.545\\
+    0.23 & 6.96 & 0.051 & 43.060\\
+    0.25 & 7.16 & 0.063 & 51.323\\
+    0.30 & 8.36 & 0.090 & 69.856\\
     \bottomrule
   \end{tabular}
 \end{table}
@@ -56,17 +56,17 @@ Die lineare Regression wird durch diese beiden Größen gelegt, wie in Abbildung
   \caption{Das Quadrat des Abstandes aufgetragen gegen das Quadrat der einfachen Schwingungsdauer.}
   \label{fig:Plot1}
 \end{figure}
-
+\noindent
 Das gemessene Trägheitsmoment setzt sich zusammen aus dem Trägheitsmoment der beiden Zylinder $I_\text{Zylinder}$
   und dem Trägheitsmoment der Drillachse $I_D$
   \begin{equation}
     I_{\text{ges}} = I_D + I_{\text{Zylinder}}
    \end{equation}
-wobei
+wobei mit Gleichung \eqref{eq:falscher_zylinder} und Gleichung \eqref{eq:Steiner}
     \begin{equation}
     I_{\text{Zylinder}} = 2m(\frac{R^2}{4}+\frac{h^2}{12})+2ma^2
   \end{equation}
-  ist.
+  folgt.
 Mit Gleichung \ref{eq:Schwingungsdauer} ergibt sich
   \begin{equation}
     T^2 = \frac{4 \pi^2}{D}(I_D + 2m(\frac{R^2}{4}+\frac{h^2}{12}))+\frac{8 \pi^2 m}{D}a^2.
@@ -74,12 +74,13 @@ Mit Gleichung \ref{eq:Schwingungsdauer} ergibt sich
   \end{equation}
 Aus der linearen Regression, die die Gleichung der Form $y = b x + c$ hat, ergeben sich die Parameter
   \begin{align*}
-    b &= 714 \pm 5 \\
-    c &= 6.3 \pm 0.2.
+    b &= 714 \pm 5\,, \\
+    c &= 6.3 \pm 0.2\,.
   \end{align*}
-Durch hinschauen kann man erkennen, dass
+Durch hinschauen lässt sich erkennen, dass
   \begin{align*}
-    b &= \frac{8 \pi^2 m}{D} \\
+    b &= \frac{8 \pi^2 m}{D}\\
+    \intertext{und}
     c &= \frac{4 \pi^2}{D}(I_D + 2m(\frac{R^2}{4}+\frac{h^2}{12}))
   \end{align*}
   gilt.
@@ -94,38 +95,12 @@ Durch hinschauen kann man erkennen, dass
     R &= \SI{22.26(0.02)e-3}{\meter}\\
     h &= \SI{20.4(0.02)e-3}{\meter}\\
   \end{align*}
-  und Formel \ref{eq:gauss} erhält man
+  und Formel \ref{eq:gauss} ergibt sich das Trägheitsmoment
   \begin{equation*}
     I_D = \SI{3.10(0.75)e-4}{\kilogram \meter\squared}.
   \end{equation*}
 
-  \subsection{Trägheitsmoment eines Zylinders}
-  Der verwendete Zylinder hat eine Masse $M_{\text{Z}} = \SI{423.2}{\gram}$, eine Höhe von $H_{\text{Z}} = \SI{1.5e-2}{\meter}$
-  und einen Radius von $R_{\text{Z}} = \SI{11.125e-2}{\meter}$.
-  \begin{table}[H]
-  \centering
-  \caption{Schwingungsdauer eines Zylinders für eine Auslenkung von $90°$.}
-  \label{tab:Zylinder}
-    \begin{tblr}{
-      colspec={c|c}
-      }
-    \toprule
-    $t$ / s & $t$ / s\\
-    \midrule
-    1.90 & 1.86\\
-    1.89 & 1.88\\
-    1.86 & 1.86\\
-    1.89 & 1.86\\
-    1.86 & 1.86\\
-    \bottomrule
-    \end{tblr}
-\end{table}
-  Aus Tabelle \ref{tab:Zylinder} berechnet sich die mittlere Schwingungsdauer zu $\overline{t}=\SI{1.87\pm0.015}{\second}$.
-Mit Gleichung \ref{eq:Schwingungsdauer}
-und umstellen nach $I$ ergibt sich für den experimentellen Wert des Zylinders $I=\SI{1.77e-3}{\kilo\gram\meter\squared}$.
-Der Theoriewert resultiert aus dem Einsetzen der gemessenen Werte in Gleichung %\eqref{eq:Zylinder}
-$I_{\text{Z,theo}}=\SI{2.61e-3}{\kilo\gram\meter\squared}$.
-
+  
 \subsection{Trägheitsmoment einer Kugel}
 
 \begin{table}[H]
@@ -149,10 +124,37 @@ $I_{\text{Z,theo}}=\SI{2.61e-3}{\kilo\gram\meter\squared}$.
 Die verwendete Holzkugel hat die Masse $M_\text{K}=\SI{1172.6}{\gram}$ und den Radius $R_\text{K}=\SI{7.34}{\centi\meter}$. 
 Mittels Gl. \eqref{eq:Mittelwert} und \eqref{eq:Standardabweichung} ergibt sich aus den Daten der Tabelle \ref{tab:Kugel} 
 eine mittlere Schwingungsdauer von $\overline{t}=\SI{1.86\pm0.015}{\second}$.Mit Einsetzen der gemessenen Werte in Gleichung 
-\eqref{eq:Kugel} ein ergibt sich ein Theoriewert für das Trägheitsmoment der Kugel von $I_{\text{K,theo}}=\SI{2.53e-4}
-{\kilo\gram\meter\squared}$.
+\eqref{eq:Kugel} ein ergibt sich ein Theoriewert für das Trägheitsmoment der Kugel von $I_{\text{K,theo}}=\qty{2.53e-3}{\kilo\gram\meter\squared}$.
 Unter Verwendung der Gl. \eqref{eq:Schwingungsdauer} umgestellt nach $I$ ergibt sich
-ein experimenteller Wert von $I=\SI{0.161}{\kilo\gram\meter\squared}$.
+ein experimenteller Wert von $I_\text{K,exp}=\SI{1,75e-3}{\kilo\gram\meter\squared}$.
+
+\subsection{Trägheitsmoment eines Zylinders}
+  Der verwendete Zylinder hat eine Masse $M_{\text{Z}} = \SI{423.2}{\gram}$, eine Höhe von $H_{\text{Z}} = \SI{1.5e-2}{\meter}$
+  und einen Radius von $R_{\text{Z}} = \SI{11.125e-2}{\meter}$.
+  \begin{table}[H]
+  \centering
+  \caption{Schwingungsdauer eines Zylinders für eine Auslenkung von $90°$.}
+  \label{tab:Zylinder}
+    \begin{tblr}{
+      colspec={c|c}
+      }
+    \toprule
+    $t$ / s & $t$ / s\\
+    \midrule
+    1.90 & 1.86\\
+    1.89 & 1.88\\
+    1.86 & 1.86\\
+    1.89 & 1.86\\
+    1.86 & 1.86\\
+    \bottomrule
+    \end{tblr}
+\end{table}\noindent
+Aus Tabelle \ref{tab:Zylinder} berechnet sich die mittlere Schwingungsdauer zu $\overline{t}=\SI{1.87\pm0.015}{\second}$.
+Mit Gleichung \ref{eq:Schwingungsdauer}
+und umstellen nach $I$ ergibt sich für den experimentellen Wert des Zylinders $I=\SI{1.77e-3}{\kilo\gram\meter\squared}$.
+Der Theoriewert resultiert aus dem Einsetzen der gemessenen Werte in Gleichung %\eqref{eq:Zylinder}
+$I_{\text{Z,theo}}=\SI{2.61e-3}{\kilo\gram\meter\squared}$.
+
 \subsection{Trägheitsmoment einer Puppe}
 Um das Trägheitsmoment einer Puppe zu bestimmen, muss diese vermessen werden. Wie in der Durchführung bereits 
 beschrieben, wurde die Höhe der einzelnen Körperteile jeweils ein mal, die Dicke 5 oder 10 mal gemessen. Folgende 
@@ -229,21 +231,21 @@ verläuft. Die Beine werden als ein Zylinder mit Radius $r=D_\text{B}=2r_\text{B
 jeweils als auch als Zylinder angenommen. Das Trägheitsmoment der Arme wird mithilfe der Formel in Gl. 
 \eqref{eq:falscher_zylinder} berechnet. Die Verschiebung $a$ zwischen Dreh- und Schwerpunktsachse setzt 
 sich aus dem Radius des Torsos und der Länge des Arms zusammen.
-\begin{align*}
-  a&=r_T+\frac{H_\text{A}}{2}
+\begin{align}
+  a&=r_T+\frac{H_\text{A}}{2}\nonumber
 \intertext{Damit ergibt sich für einen Arm mit Gl.\eqref{eq:Steiner}}
-\label{eq:Arme}
 I_\text{A}&=m_\text{A}\left(\frac{r_\text{A}^2}{4}+\frac{(r_T*0,5*H_\text{A})^2}{12}\right)\,,
+\label{eq:Arme}
 \intertext{Für das Trägheitsmoment der Beine ergibt sich nach Gl. \eqref{eq:Zylinder}}
-I_\text{2B}&=\frac{2m_\text{B}\cdot 2r_\text{B}^2}{2}=m_\text{B}\cdot r_\text{B}^2\,.
+I_\text{2B}&=\frac{2m_\text{B}\cdot 2r_\text{B}^2}{2}=m_\text{B}\cdot r_\text{B}^2\,.\nonumber
 \intertext{Analog dazu für Kopf und Torso}
-I_\text{i}&=\frac{m_i\cdot r_i^2}{2};\quad i\in\{T,K\}\,.
-\end{align*}
+I_\text{i}&=\frac{m_i\cdot r_i^2}{2};\quad i\in\{T,K\}\,.\nonumber
+\end{align}
 Aus diesen Formeln und vorher berechneten Werten ergibt sich
 der Theorie-Wert für das Gesamträgheitsmoment
 \begin{equation}
   I_\text{1,theo}=\qty{32.1+-6.8e-4}{\kilo\gram\meter\squared}\,.
-\end{equation}0.0032185662+/-0.0006804836
+\end{equation}
 Das Trägheitsmoment soll nun mittels Gleichung \eqref{eq:Schwingungsdauer} und den in Tabelle
 \ref{tab:Zeiten1_Puppe} aufgeführten Daten bestimmt und mit dem Theorie-Wert abgeglichen werden.
 Gl. \eqref{eq:Schwingungsdauer} nach $I$ umgestellt ergibt
@@ -251,7 +253,7 @@ Gl. \eqref{eq:Schwingungsdauer} nach $I$ umgestellt ergibt
   I=\frac{T^2}{2\pi}D\,.
   \label{eq:Traegheitsmoment}
 \end{equation}
-\begin{table}
+\begin{table}[H]
   \centering
   \caption{Messdaten der Schwingungsdauer für zwei verschiedene Winkel in 
   der ersten Körperhaltung der Puppe.}
@@ -271,24 +273,25 @@ Gl. \eqref{eq:Schwingungsdauer} nach $I$ umgestellt ergibt
     \bottomrule
   \end{tblr}
 \end{table}
-FÜr das experimentell bestimmte Trägheitsmoment der Puppe in der ersten Haltung ergibt sich 
+\noindent
+Für das experimentell bestimmte Trägheitsmoment der Puppe in der ersten Haltung ergibt sich 
 \begin{equation*}
   I_\text{1,exp}=\qty{11,2+-02,9e-4}{\kilo\gram\meter\squared}
 \end{equation*}
 Für die zweite Haltung der Puppe verläuft die Rechnung sehr analog. Die Trägheitsmomente der Arme, des Torsos 
 sowie des Kopfes können übernommen werden, die Beine müssen jedoch mittels des Satzes von Steiner berechnet werden.
-Dies geschieht jedoch genau wie bei der anderen Haltung für die Arme mit Gleichung\eqref{eq:Arme} und \eqref{eq:Steiner}.
+Dies geschieht jedoch genau wie bei der anderen Haltung für die Arme mit Gleichung \eqref{eq:Arme} und \eqref{eq:Steiner}.
 Die Beine werden ebenso wieder als ein Zylinder mit doppeltem Radius angenommen.
 Es ergibt sich ein gesamt theoretisch bestimmtes Trägheitsmoment 
 \begin{equation*}
   I_\text{2,theo}=\qty{5,2+-1,3e-3}{\kilo\gram\meter\squared}
 \end{equation*}
-Mit den in Tabelle \ref{tab:Zeiten2_Puppe} und Gleichung \eqref{eq:Trägheitsmoment} ergibt sich
+Mit den in Tabelle \autoref{tab:Zeiten2_Puppe} und Gleichung \eqref{eq:Traegheitsmoment} ergibt sich
 ein experimentell bestimmtes Trägheitsmoment 
 \begin{equation*}
   I_\text{2,exp}=\qty{3+-0,73e-3}{\kilo\gram\meter\squared}\,.
 \end{equation*}
-\begin{table}
+\begin{table}[H]
   \centering
   \caption{Messdaten der Schwingungsdauer für zwei verschiedene Winkel in 
   der zweiten Körperhaltung der Puppe.}
