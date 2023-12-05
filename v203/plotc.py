@@ -8,8 +8,8 @@ T, p = np.genfromtxt("Messdaten1_203.txt", unpack=True)
 T1, p1 = np.genfromtxt("Messdaten1.1_203.txt", unpack=True)
 x = np.linspace(280, 380, 1000)
 
-p *= 100 # um von mbar auf Pa zu kommen
-p1 *= 100
+# p *= 1000 # um von mbar auf Pa zu kommen
+# p1 *= 100
 #Aufgabe Log des Drucks gegen 1/T
 T = 1/T
 p = np.log(p/1000)
