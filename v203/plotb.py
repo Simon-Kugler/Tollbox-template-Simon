@@ -17,4 +17,3 @@ plt.grid()
 plt.legend()
 
 plt.savefig("plotb.pdf")
-plt.show()
