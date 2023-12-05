@@ -12,9 +12,8 @@ p = np.log(p)
 plt.plot(T, p, "rx", label="Messwerte")
 
 plt.xlabel(r"$\frac{1}{T}\,/\,\frac{1}{K}$ ")
-plt.ylabel(r"$ln\left(\frac{p}{p_0}\right)$")
+plt.ylabel(r"$\ln\left(\frac{p}{p_0}\right)$")
 plt.grid()
 plt.legend()
 
 plt.savefig("plota.pdf")
-plt.show()

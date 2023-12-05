@@ -41,7 +41,7 @@ ax.set_ylabel(r"$\ln\left(\frac{p}{p_0}\right)$")
 ax.grid()
 ax.legend()
 fig.savefig("plotc.pdf")
-fig.show()
+
 L1=ufloat(L,errors[0])*const.R
 print("L1=",L1,)
 # print("b=",b=ufloat(b, params[0]))

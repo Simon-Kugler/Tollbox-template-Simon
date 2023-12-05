@@ -7,9 +7,9 @@ T, p = np.genfromtxt("../Messdaten1_203.txt", unpack=True)
 p *= 100 # um von mbar auf Pa zu kommen
 #Aufgabe Log des Drucks gegen 1/T
 T = 1/T
-p = np.log(p)
+p = np.log(p/100000)
 
-plt.plot(T, p/1000, "r.", label="Messwerte")
+plt.plot(T, p, "r.", label="Messwerte")
 
 plt.xlabel(r"$\frac{1}{T}\,/\,\frac{1}{K}$ ")
 plt.ylabel(r"$ln\left(\frac{p}{p_0}\right)$")
