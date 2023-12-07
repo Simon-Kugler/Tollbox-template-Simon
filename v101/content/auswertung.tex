@@ -16,11 +16,51 @@ Zum Berechnen der Fehler wird die Gaußsche Fehlerfortpflanzung genutzt
 \label{eq:gauss}
 \end{equation}
 Dabei ist $f$ die zur Berechnung der Größe gegebene Formel und $x_k$ dessen Argumente.
-$\increment x_k$ ist der jeweilige Fehler der einzelnen Argumente.\\ \noindent 
+$\increment x_k$ ist der jeweilige Fehler der einzelnen Argumente.\\ 
+Mittelwerte, Standardabweichungen und sonstige Fehler werden für diesen Versuch alle mit Python bzw. 
+numeric python berechnet. \noindent 
 \newpage
-
 \subsection{Bestimmung der Winkelrichtgröße und des Eigenträgheitmoments}
-
+Zunächst wird aus den Messwerten in Tabelle \ref{tab:Winkelrichtgroesse}
+die Winkelrichtgröße $D$ bestimmt.
+\begin{table}[H]
+  \centering
+  \caption{Messwerte zur Bestimmung der Winkelrichtgröße.}
+  \label{tab:Winkelrichtgroesse}
+  \begin{tabular}{
+  c c
+  }
+    \toprule
+     $\phi \, / \unit{°}$ & $F\, / \unit{\newton}$\\
+    \midrule
+    110 & 0.21 \\
+    100 & 0.19 \\
+    90  & 0.188\\
+    80  & 0.168\\
+    70  & 0.147\\
+    60  & 0.118\\
+    50  & 0.090\\
+    40  & 0.060\\
+    30  & 0.038\\
+    20  & 0.016\\
+    \bottomrule
+  \end{tabular}
+\end{table}
+Hierfür werden die Drehwinkel $\phi$ zu nächst von $^\circ$ in $rad$ umgerechnet, 
+was mit $\phi_\text{neu} = \sfrac{\phi \pi}{180}$ durchgeführt wird.
+$D$ wird daraufhin mittels
+\begin{equation}
+  D = \frac{F R}{\phi_\text{neu}}
+\end{equation}
+bestimmt.
+Dabei ist $F$ die gemessene Kraft und $R$ der Radius, an dem der Kraftmesser befestigt wird.
+In diesem Versuch wird $R = \SI{0.2}{\meter}$ gewählt.
+Es werden die Winkelrichtgrößen aller Winkel einzeln ausgerechnet.
+Anschließend wird der Mittelwert und die Standardabweichung dieser gebildet und die Winkelrichtgröße
+\begin{equation*}
+  D = \SI{0.01997 \pm 0.00466}{\newton\meter}
+\end{equation*}
+ergibt sich.
 Die gemessenen Werte zur Bestimmung des Eigenträgheitmoments $I_D$ der Drillachse sind in Tabelle \ref{tab:Traegheitsmoment} zu sehen.
 Dabei ist $a$ der Abstand der Zylinder zur Drillachse und $T$ die Schwingungsdauer.
 Die Quadrate beider Größen werden ebenfalls aufgeführt.
@@ -55,23 +95,20 @@ Die lineare Regression wird durch diese beiden Größen gelegt, wie in Abbildung
   \includegraphics[scale=0.6]{plotI_D.pdf}
   \caption{Das Quadrat des Abstandes aufgetragen gegen das Quadrat der einfachen Schwingungsdauer.}
   \label{fig:Plot1}
-\end{figure}
-
+\end{figure}\noindent
 Das gemessene Trägheitsmoment setzt sich zusammen aus dem Trägheitsmoment der beiden Zylinder $I_\text{Zylinder}$
   und dem Eigenträgheitsmoment der Drillachse $I_D$
-  \begin{equation*}
-    I_{\text{ges}} = I_D + I_{\text{Zylinder}}
-   \end{equation*}
-wobei
-    \begin{equation}
+  \begin{align}
+    I_{\text{ges}} = I_D + I_{\text{Zylinder}}\nonumber
+\intertext{wobei}
     I_{\text{Zylinder}} = 2m(\frac{R^2}{4}+\frac{h^2}{12})+2ma^2
-  \end{equation}
+  \end{align}
   ist.
-Mit Gleichung \ref{eq:Schwingungsdauer} ergibt sich
+Mit Gleichung \eqref{eq:Schwingungsdauer} ergibt sich
   \begin{equation}
     T^2 = \frac{4 \pi^2}{D}(I_D + 2m(\frac{R^2}{4}+\frac{h^2}{12}))+\frac{8 \pi^2 m}{D}a^2.
-    \label{equ:T^2}
-  \end{equation*}
+    \label{eq:T^2}
+  \end{equation}
 Aus der linearen Regression in Abbildung \ref{fig:Plot1}, die die Gleichung der Form $y = b x + c$ hat, ergeben sich die Parameter
   \begin{align*}
     b &= 714 \pm 5\,, \\
@@ -95,9 +132,9 @@ Durch hinschauen lässt sich erkennen, dass
     R &= \SI{22.26(0.02)e-3}{\meter}\\
     h &= \SI{20.4(0.02)e-3}{\meter}\\
   \end{align*}
-  und Formel \ref{eq:gauss} erhält man
+  und Formel \ref{eq:gauss} ergibt sich für das Trägheitsmoment
   \begin{equation*}
-    I_D = \SI{3.10(0.75)e-4}{\kilogram \meter\squared}.
+    I_D = \SI{3.10(0.75)e-4}{\kilogram \meter\squared}\,.
   \end{equation*}
 
 \subsection{Trägheitsmoment einer Kugel}
@@ -147,40 +184,13 @@ ein experimenteller Wert von $I=\SI{1.75e-3}{\kilo\gram\meter\squared}$.
     1.86 & 1.86\\
     \bottomrule
     \end{tblr}
-\end{table}
-  Aus Tabelle \ref{tab:Zylinder} berechnet sich die mittlere Schwingungsdauer zu $\overline{t}=\SI{1.87\pm0.015}{\second}$.
+\end{table}\noindent
+Aus Tabelle \ref{tab:Zylinder} berechnet sich die mittlere Schwingungsdauer zu $\overline{t}=\SI{1.87\pm0.015}{\second}$.
 Mit Gleichung \ref{eq:Schwingungsdauer}
 und umstellen nach $I$ ergibt sich für den experimentellen Wert des Zylinders $I=\SI{1.77e-3}{\kilo\gram\meter\squared}$.
 Der Theoriewert resultiert aus dem Einsetzen der gemessenen Werte in Gleichung %\eqref{eq:Zylinder}
 $I_{\text{Z,theo}}=\SI{2.61e-3}{\kilo\gram\meter\squared}$.
 
-\subsection{Trägheitsmoment einer Kugel}
-
-\begin{table}[H]
-  \centering
-  \caption{Schwingungsdauer einer Kugel für eine Auslenkung von $90°$.}
-  \label{tab:Kugel}
-    \begin{tblr}{
-      colspec={c|c}
-      }
-    \toprule
-    $t$ / s & $t$ / s\\
-    \midrule
-    1.83 & 1.87\\
-    1.86 & 1.88\\
-    1.84 & 1.86\\
-    1.87 & 1.86\\
-    1.86 & 1.87\\
-    \bottomrule
-    \end{tblr}
-\end{table}
-Die verwendete Holzkugel hat die Masse $M_\text{K}=\SI{1172.6}{\gram}$ und den Radius $R_\text{K}=\SI{7.34}{\centi\meter}$. 
-Mittels Gl. \eqref{eq:Mittelwert} und \eqref{eq:Standardabweichung} ergibt sich aus den Daten der Tabelle \ref{tab:Kugel} 
-eine mittlere Schwingungsdauer von $\overline{t}=\SI{1.86\pm0.015}{\second}$.Mit Einsetzen der gemessenen Werte in Gleichung 
-\eqref{eq:Kugel} ein ergibt sich ein Theoriewert für das Trägheitsmoment der Kugel von $I_{\text{K,theo}}=\SI{2.53e-4}
-{\kilo\gram\meter\squared}$.
-Unter Verwendung der Gl. \eqref{eq:Schwingungsdauer} umgestellt nach $I$ ergibt sich
-ein experimenteller Wert von $I=\SI{0.161}{\kilo\gram\meter\squared}$.
 \subsection{Trägheitsmoment einer Puppe}
 Um das Trägheitsmoment einer Puppe zu bestimmen, muss diese vermessen werden. Wie in der Durchführung bereits 
 beschrieben, wurde die Höhe der einzelnen Körperteile jeweils ein mal, die Dicke 5 oder 10 mal gemessen. Folgende 
@@ -219,10 +229,10 @@ Mittels Gleichung \eqref{eq:Mittelwert} und Gleichung \eqref{eq:Standardabweichu
 die Mittelwerte und Standardabweichungen der verschiedenen
 Dicken berechnet. Das Ergebnis geteilt durch zwei ergibt den Radius $r$.
 \begin{align*}
-  r_\text{A}= \SI{6.6\pm0.5}{\milli\meter}\\
-  r_\text{B}= \SI{8.1\pm1.0}{\milli\meter}\\
-  r_\text{T}= \SI{17.0\pm2.5}{\milli\meter}\\
-  r_\text{K}= \SI{13.1\pm1.1}{\milli\meter}\\
+  r_\text{A}&= \SI{6.6\pm0.5}{\milli\meter}\\
+  r_\text{B}&= \SI{8.1\pm1.0}{\milli\meter}\\
+  r_\text{T}&= \SI{17.0\pm2.5}{\milli\meter}\\
+  r_\text{K}&= \SI{13.1\pm1.1}{\milli\meter}\\
 \end{align*}
 Das Volumen eines Zylinders ist gegeben durch $V=\pi\cdot r^2\cdot H$. Durch Anwendung der Gauß'schen Fehlerfortpflanzung nach Gl. \eqref{eq:gauss}
 ergeben sich für die Volumina sowie deren Fehler 
@@ -262,7 +272,7 @@ sich aus dem Radius des Torsos und der Länge des Arms zusammen.
   a&=r_T+\frac{H_\text{A}}{2}\nonumber
 \intertext{Damit ergibt sich für einen Arm mit Gl.\eqref{eq:Steiner}}
 \label{eq:Arme}
-I_\text{A}&=m_\text{A}\left(\frac{r_\text{A}^2}{4}+\frac{(r_T*0,5*H_\text{A})^2}{12}\right)\,,
+I_\text{A}&=m_\text{A}\left(\frac{r_\text{A}^2}{4}+\frac{(r_T \cdot0,5\cdot H_\text{A})^2}{12}\right)\,,
 \intertext{Für das Trägheitsmoment der Beine ergibt sich nach Gl. \eqref{eq:Zylinder}}
 I_\text{2B}&=\frac{2m_\text{B}\cdot 2r_\text{B}^2}{2}=m_\text{B}\cdot r_\text{B}^2\,.\nonumber
 \intertext{Analog dazu für Kopf und Torso}
@@ -272,7 +282,7 @@ Aus diesen Formeln und vorher berechneten Werten ergibt sich
 der Theorie-Wert für das Gesamträgheitsmoment
 \begin{equation*}
   I_\text{1,theo}=\qty{32.1+-6.8e-4}{\kilo\gram\meter\squared}\,.
-\end{equation}0.0032185662+/-0.0006804836
+\end{equation*}  
 Das Trägheitsmoment soll nun mittels Gleichung \eqref{eq:Schwingungsdauer} und den in Tabelle
 \ref{tab:Zeiten1_Puppe} aufgeführten Daten bestimmt und mit dem Theorie-Wert abgeglichen werden.
 Gl. \eqref{eq:Schwingungsdauer} nach $I$ umgestellt ergibt

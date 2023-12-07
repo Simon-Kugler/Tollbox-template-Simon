@@ -13,7 +13,7 @@ build/plotI_D.pdf: python/plotI_D.py ../matplotlibrc ../header-matplotlib.tex | 
 	# and set the matplotlibrc
 	#TEXINPUTS=$$(pwd)/..: MATPLOTLIBRC=../matplotlibrc python python/plotI_D.py
 
-hier weitere Abhängigkeiten für build/v101.pdf deklarieren:
+# hier weitere Abhängigkeiten für build/v101.pdf deklarieren:
 build/v101.pdf: build/plotI_D.pdf build/plota.pdf 
 
 build/v101.pdf: FORCE | build

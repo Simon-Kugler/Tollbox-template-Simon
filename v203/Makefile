@@ -1,12 +1,14 @@
 all: build/v203.pdf
 TEX := TEXINPUTS=$$(pwd)/..:
 MPL := MATPLOTLIBRC=$(CURDIR)/../matplotlibrc
+# $(TEX) $(MPL)
 # hier Python-Skripte:
 build/plota.pdf: python/plota.py ../matplotlibrc ../header-matplotlib.tex Messdaten1_203.txt | build
 	# so that matplotlib can find the tex header when running
 	# LaTeX in the tmp directory
 	# and set the matplotlibrc
-	$(TEX) $(MPL) python plota.py
+	$(TEX) $(MPL) TEXINPUTS=$$(pwd)/..: MATPLOTLIBRC=../matplotlibrc \
+	python plota.py
 build/plotb.pdf: plota.py ../matplotlibrc ../header-matplotlib.tex Messdaten2_203.txt | build
 	# so that matplotlib can find the tex header when running
 	# LaTeX in the tmp directory
