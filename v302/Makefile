@@ -1,14 +1,16 @@
 all: build/v302.pdf
+TEX := TEXINPUTS=$$(pwd)/..:
+MPL := MATPLOTLIBRC=$(CURDIR)=../matplotlibrc
+$(TEX) $(MPL)
+hier Python-Skripte:
+build/fit.pdf: python/fit.py ../matplotlibrc ../header-matplotlib.tex  | build
+	# so that matplotlib can find the tex header when running
+	# LaTeX in the tmp directory
+	# and set the matplotlibrc
+	$(TEX) $(MPL) python python/fit.py
 
-# hier Python-Skripte:
-# build/plot.pdf: plot.py ../matplotlibrc ../header-matplotlib.tex | build
-# 	# so that matplotlib can find the tex header when running
-# 	# LaTeX in the tmp directory
-# 	# and set the matplotlibrc
-# 	TEXINPUTS=$$(pwd)/..: MATPLOTLIBRC=../matplotlibrc python plot.py
-
-# hier weitere Abhängigkeiten für build/v302.pdf deklarieren:
-build/v302.pdf: build/plot.pdf
+PLOTS := python/fit.pdf
+build/v302.pdf: $(PLOTS)
 
 build/v302.pdf: FORCE | build
 	# to find header and bib files in the main directory
