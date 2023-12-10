@@ -89,7 +89,7 @@ print("Abweichung L: ",(L_61-L19)/L19*100,"%")
 #Klirrfaktor
 U_S=0.5
 f_2=np.sqrt((1/9)*((2**2-1)**2)/((1-2**2)**2+9*2**2))
-U_Br=np.sqrt(0.5/f_2)
+U_Br=np.sqrt(f_2)*0.5
 U_2=U_Br/f_2
 print(U_Br)
 print(U_Br/f_2)
