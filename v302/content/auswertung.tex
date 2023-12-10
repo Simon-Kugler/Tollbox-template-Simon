@@ -165,3 +165,18 @@ Theoriekurve sind in Abb. \ref{fig:plot} visualisiert.
     \caption{Die Spannung aufgetragen gegen den Logarithmus der Frqeuenz.}
     \includegraphics[width=\textwidth]{python/fit.pdf}
 \end{figure}
+\subsection{Klirrfaktor}
+In der Theorie sollte die Brückenspannung bei der Frequenz $\nu_0$
+verschwinden. Da dies experimentell jedoch durch nicht gewollte 
+Oberwelle nicht geschieht, wird dies durch den Klirrfaktor \eqref{eq:klirrfaktor}
+beschrieben. Näherungsweise wird angenommen, dass nur die zweite Oberwelle mit der
+Spannung $U_2$ Einfluss nimmt. Über \eqref{eq:klirrfaktor} bzw. \eqref{eq:klirrfaktor2}
+und \eqref{eq:U_2} ergibt sich der Klirrfaktor.
+\begin{align*}
+    U_2&=\frac{U_\text{Br}}{f(2)}=\frac{\qty{1,83}{\volt}}{f(2)}\\
+    &=\qty{12,29}{\volt}
+\end{align*}
+Damit ergibt sich $k$ zu
+\begin{equation*}
+    \frac{U_2}{U_1}=\frac{\qty{12,29}{\volt}}{\qty{0,5}{\volt}}=24,57
+\end{equation*}
