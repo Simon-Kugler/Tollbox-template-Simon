@@ -23,7 +23,7 @@ sowie die Ermittlung der Frequenzabhängigkeit der Brückenspannung einer Wien-R
         \item Die Maschenregel besagt, dass in jedem in sich geschlossenen Stromkreis die Summe der Spannung gleich null ist.
     \end{enumerate}
     Aufgrund der Kontenregel gilt $I_1 = I_2$ und $I_3 = I_4$.
-    Mit der Maschenregel ergibt sich $U = -R_1 I_1 + R_3 I_3$ und $-U = -R_2 I_2 + R_4 I_4$.
+    Mit der Maschenregel ergibt sich $U = -R_1 I_1 + R_3 I_3$ und $U = R_2 I_2 - R_4 I_4$.
     Außerdem ist die Speisespannung der Brücke gegeben durch $U_\text{S} = I_1(R_1 + R_2)$.
     So berechnet sich die Spannung U zwischen A und B mit
     \begin{equation}
@@ -41,7 +41,7 @@ sowie die Ermittlung der Frequenzabhängigkeit der Brückenspannung einer Wien-R
     ist.
     Durch diese Abgleichbedingung kann eine Widerstandsmessung durchgeführt werden, da die Brückenspannung
     nur von dem Verhältnis der Widerstände abhängt.
-    Wie Gl. \ref{eq:Brueckenspannung} zeigt, ist $U$ proportional zu $U_{\text{S}}$.
+    Wie Gl. \eqref{eq:Brueckenspannung} zeigt, ist $U$ proportional zu $U_{\text{S}}$.
     Also muss $U_{\text{S}}$ möglichst groß gewählt werden, damit die Genauigkeit der Messung verbessert wird.
     \subsection{Wheatstonsche Brücke}
     Die Wheastosche Brücke wird zur Bestimmung unbekannter Widerstände genutzt.
@@ -68,7 +68,7 @@ sowie die Ermittlung der Frequenzabhängigkeit der Brückenspannung einer Wien-R
     \end{figure}
     Um die Verlustleistung des zu ermittlenden Kondensator mit zu berücksichtigen, wird ein Widerstand mit diesem in Reihe geschaltet
     und das typische Ersatzschaltbild eines realen Kondensators, entsteht.
-    $R_x$ wird wieder über die Abgleichbedingung \ref{eq:Abgleichbed} bestimmt.
+    $R_x$ wird wieder über die Abgleichbedingung \eqref{eq:Abgleichbed} bestimmt.
     $C_x$ ergibt sich zu
     \begin{equation}
          C_x = C_2 \frac{R_4}{R_3} \, \text{.}
@@ -141,6 +141,3 @@ sowie die Ermittlung der Frequenzabhängigkeit der Brückenspannung einer Wien-R
         U_2 = \frac{U_\text{Br}}{f(\Omega = 2)} \, \text{.}
     \end{equation}
     Damit lässt sich der Klirrfaktor $k$ berechnen.
-
-
-
