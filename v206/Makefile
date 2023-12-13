@@ -5,7 +5,7 @@ all: build/v206.pdf
 # 	# so that matplotlib can find the tex header when running
 # 	# LaTeX in the tmp directory
 # 	# and set the matplotlibrc
-# 	TEXINPUTS=$$(pwd)/..: MATPLOTLIBRC=../matplotlibrc python plot.py
+# 	TEXINPUTS=$$(pwd)/..: MATPLOTLIBRC=$(CURDIR)/../matplotlibrc python plot.py
 
 # hier weitere Abhängigkeiten für build/v206.pdf deklarieren:
 build/v206.pdf: 
