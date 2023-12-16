@@ -1,39 +1,40 @@
 all: build/v203.pdf
 TEX := TEXINPUTS=$$(pwd)/..:
 MPL := MATPLOTLIBRC=$(CURDIR)/../matplotlibrc
-# $(TEX) $(MPL)
+$(TEX) $(MPL)
 # hier Python-Skripte:
-build/plota.pdf: python/plota.py ../matplotlibrc ../header-matplotlib.tex Messdaten1_203.txt | build
+plota.pdf: python/plota.py ../matplotlibrc ../header-matplotlib.tex Messdaten1_203.txt | build
 	# so that matplotlib can find the tex header when running
 	# LaTeX in the tmp directory
 	# and set the matplotlibrc
-	$(TEX) $(MPL) TEXINPUTS=$$(pwd)/..: MATPLOTLIBRC=../matplotlibrc \
+	# $(TEX) $(MPL) python plota.py
+	TEXINPUTS=$$(pwd)/..: MATPLOTLIBRC=$(CURDIR)/../matplotlibrc \
 	python plota.py
-build/plotb.pdf: plota.py ../matplotlibrc ../header-matplotlib.tex Messdaten2_203.txt | build
+plotb.pdf: plota.py ../matplotlibrc ../header-matplotlib.tex Messdaten2_203.txt | build
 	# so that matplotlib can find the tex header when running
 	# LaTeX in the tmp directory
 	# and set the matplotlibrc
 	TEXINPUTS=$$(pwd)/..: MATPLOTLIBRC=../matplotlibrc \
 	python plotb.py
-build/plotc.pdf: plotc.py ../matplotlibrc ../header-matplotlib.tex Messdaten1_203.txt Messdaten1.1_203.txt | build
+plotc.pdf: plotc.py ../matplotlibrc ../header-matplotlib.tex Messdaten1_203.txt Messdaten1.1_203.txt | build
 	# so that matplotlib can find the tex header when running
 	# LaTeX in the tmp directory
 	# and set the matplotlibrc
 	TEXINPUTS=$$(pwd)/..: MATPLOTLIBRC=../matplotlibrc \
 	python plotc.py
-build/plotd.pdf: plotd.py ../matplotlibrc ../header-matplotlib.tex Messdaten2_203.txt | build
+plotd.pdf: plotd.py ../matplotlibrc ../header-matplotlib.tex Messdaten2_203.txt | build
 	# so that matplotlib can find the tex header when running
 	# LaTeX in the tmp directory
 	# and set the matplotlibrc
 	TEXINPUTS=$$(pwd)/..: MATPLOTLIBRC=../matplotlibrc \
 	python plotd.py
-build/plote.pdf: plote.py ../matplotlibrc ../header-matplotlib.tex  | build
+plote.pdf: plote.py ../matplotlibrc ../header-matplotlib.tex  | build
 	# so that matplotlib can find the tex header when running
 	# LaTeX in the tmp directory
 	# and set the matplotlibrc
 	TEXINPUTS=$$(pwd)/..: MATPLOTLIBRC=../matplotlibrc \
 	python plote.py
-build/plotf.pdf: plotf.py ../matplotlibrc ../header-matplotlib.tex | build
+plotf.pdf: plotf.py ../matplotlibrc ../header-matplotlib.tex | build
 	# so that matplotlib can find the tex header when running
 	# LaTeX in the tmp directory
 	# and set the matplotlibrc
@@ -45,7 +46,7 @@ build/plotf.pdf: plotf.py ../matplotlibrc ../header-matplotlib.tex | build
 
 # hier weitere Abhängigkeiten für build/vXXX.pdf deklarieren:
 
-PLOTS := build/plota.pdf build/plotb.pdf build/plotc.pdf build/plotd.pdf build/plote.pdf build/plotf.pdf
+PLOTS := plota.pdf plotb.pdf plotc.pdf plotd.pdf plote.pdf plotf.pdf
 
 build/v203.pdf: $(PLOTS)
 

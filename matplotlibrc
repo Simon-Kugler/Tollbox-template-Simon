@@ -2,7 +2,7 @@
 backend : pgf
 
 # Größe der Zeichenfläche in Zoll
-figure.figsize : 5.78; 3.57
+figure.figsize : 5.78, 3.57
 figure.constrained_layout.use : True
 
 # Serifenfont benutzen
@@ -20,4 +20,4 @@ pgf.rcfonts : False
 # TeX benutzen
 text.usetex : True
 pgf.texsystem : lualatex
-pgf.preamble : input{/header-matplotlib.tex}
+pgf.preamble : \input{header-matplotlib.tex}
