@@ -8,8 +8,11 @@ def x21(x,a,b,c):
 def x22(x,a,b,c):
     return a*x**2+b*x+c
 
-x_t=np.linspace(1,21,1000)
-t, T_b, p_b, T_a, p_a, A = np.genfromtxt("messdaten/Messdaten.txt", unpack=True)
+x_t=np.linspace(1,1300,1000)
+t, T_b, p_b, T_a, p_a, A = np.genfromtxt("../messdaten/Messdaten.txt", unpack=True)
+t = t * 60
+#T_a = T_a + 273.15
+#T_b = T_b + 273.15
 #Koeffizienten und Fehler berechnen
 params1, cov = curve_fit(x21, t, T_b)
 errors1 = errors = np.sqrt(np.diag(cov))
@@ -57,11 +60,45 @@ print(2*params2[0]*10+params2[1])
 print("Differenzenqutient 2 bei t=15")
 print(2*params2[0]*15+params2[1])
 print("Differenzenqutient 2 bei t=20")
-print(2*params2[0]*20+params2[1])
+print(2*params2[0]*20*60+params2[1], "+/-", 2*errors2[0]*20*60+errors2[1])
 
-# Aufgabe d)
-c_w=4187
-m_1=ufloat(3,0.0012)
-c_k=750
-m_k=1
-#m_k c_k stimmen noch nicht, nur deren Produkt
+
+dT1dt = [0, 0, 0, 0]
+dT2dt = [0, 0, 0, 0]
+dT1dte = [0, 0, 0, 0]
+dT2dte = [0, 0, 0, 0]
+for i in range (0, 4, 1):
+    dT1dt[i] = 2*params1[0]*i*60+params1[1]
+
+for i in range (0, 4, 1):
+    dT2dt[i] = 2*params2[0]*i*60+params2[1]
+
+for i in range (0, 4, 1):
+    dT1dte = 2*errors1[0]*i*60+errors1[1]
+
+for i in range (0, 4, 1):
+    dT2dte = 2*errors2[0]*i*60+errors2[1]
+
+
+v_real = [0, 0, 0, 0]
+N = [200.0, 206.0, 210.0, 205.0]
+m_1 = m_2 = 3.0
+mc_k = 750.0
+c_w = 4200.0
+
+#print("T1 reale Gueteziffer")
+#for i in range (0, 4, 1):
+#    #v_real[i] = (1/N[i]) * (m_1 * c_w + mc_k) * dT1dt
+#    print(v_real[i])
+#print("T2 reale Gueteziffer")
+#for i in range (0, 4, 1):
+#    #v_real[i] = 1/N[i] * (m_1 * c_w + mc_k) * dT2dt
+#    print(v_real[i])
+
+v_ideal = [0, 0, 0, 0, 0]
+
+print("ideale Gueteziffer:")
+for i in range (1, 5, 1):
+    v_ideal[i] = (T_b[5*i])/(T_b[5*i] - T_a[5*i])
+    print(5*i, v_ideal[i])
+
