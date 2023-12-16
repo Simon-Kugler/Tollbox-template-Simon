@@ -9,7 +9,7 @@ def x22(x,a,b,c):
     return a*x**2+b*x+c
 
 x_t=np.linspace(1,1300,1000)
-t, T_b, p_b, T_a, p_a, A = np.genfromtxt("../messdaten/Messdaten.txt", unpack=True)
+t, T_b, p_b, T_a, p_a, A = np.genfromtxt("messdaten/Messdaten.txt", unpack=True)
 t = t * 60
 #T_a = T_a + 273.15
 #T_b = T_b + 273.15
@@ -19,10 +19,11 @@ errors1 = errors = np.sqrt(np.diag(cov))
 params2, cov = curve_fit(x22, t, T_a)
 errors2 = errors = np.sqrt(np.diag(cov))
 #Koeffizienten und Fehler ausgeben
-for name, value, error in zip("a1b1c1", params1, errors1):
+print("1. Fit")
+for name, value, error in zip("abc", params1, errors1):
     print(f"{name} = {value:.3f} ± {error:.3f}")
-print("")
-for name, value, error in zip("a2b2c2", params2, errors2):
+print("2. Fit")
+for name, value, error in zip("abc", params2, errors2):
     print(f"{name} = {value:.3f} ± {error:.3f}")
 
 
@@ -34,9 +35,9 @@ ax.plot(t, T_a, "rx")
 #fits plotten
 ax.plot(x_t, x21(x_t,*params1))
 ax.plot(x_t, x22(x_t,*params2))
-ax.set_xlabel(r"$t\,/\,\text{min}$")
-ax.set_ylabel(r"$T\,/\,\text{K}$")
-ax.set_xlim(0,23)
+ax.set_xlabel(r"$t\,\,/\,\,\text{s}$")
+ax.set_ylabel(r"$T\,\,/\,\,\text{K}$")
+ax.set_xlim(0,1300)
 ax.grid()
 ax.legend()
 fig.savefig("build/plota.pdf")

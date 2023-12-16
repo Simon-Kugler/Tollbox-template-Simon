@@ -18,6 +18,16 @@ build/Verdampfungswärme.pdf: python/Verdampfungswärme.py ../matplotlibrc ../he
 PLOTS := build/plota.pdf build/Verdampfungswärme.pdf
 build/v206.pdf: $(PLOTS)
 
+ifeq (,$(shell sh -c 'cygpath --version 2> /dev/null'))
+  # Unix
+  pwd := $$(pwd)
+  translate = $1
+else
+  # Windows mit MSys2/Cygwin
+  pwd := $$(cygpath -m "$$(pwd)")
+  translate = $(shell echo '$1' | sed 's/:/;/g')
+endif
+
 build/v206.pdf: FORCE | build
 	# to find header and bib files in the main directory
 	TEXINPUTS=..: \
