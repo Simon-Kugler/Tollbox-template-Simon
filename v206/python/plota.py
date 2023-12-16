@@ -9,7 +9,7 @@ def x22(x,a,b,c):
     return a*x**2+b*x+c
 
 x_t=np.linspace(1,1300,1000)
-t, T_b, p_b, T_a, p_a, A = np.genfromtxt("messdaten/Messdaten.txt", unpack=True)
+t, T_b, p_b, T_a, p_a, A = np.genfromtxt("../messdaten/Messdaten.txt", unpack=True)
 t = t * 60
 #T_a = T_a + 273.15
 #T_b = T_b + 273.15
@@ -40,7 +40,7 @@ ax.set_ylabel(r"$T\,\,/\,\,\text{K}$")
 ax.set_xlim(0,1300)
 ax.grid()
 ax.legend()
-fig.savefig("build/plota.pdf")
+fig.savefig("../build/plota.pdf")
 
 #Ableitung: 2At+B
 print("")
@@ -87,19 +87,30 @@ m_1 = m_2 = 3.0
 mc_k = 750.0
 c_w = 4200.0
 
-#print("T1 reale Gueteziffer")
-#for i in range (0, 4, 1):
-#    #v_real[i] = (1/N[i]) * (m_1 * c_w + mc_k) * dT1dt
+# print("T1 reale Gueteziffer")
+# for i in range (0, 4, 1):
+#    v_real[i] = (1/N[i]) * (m_1 * c_w + mc_k) * dT1dt
 #    print(v_real[i])
-#print("T2 reale Gueteziffer")
-#for i in range (0, 4, 1):
-#    #v_real[i] = 1/N[i] * (m_1 * c_w + mc_k) * dT2dt
+# print("T2 reale Gueteziffer")
+# for i in range (0, 4, 1):
+#    v_real[i] = 1/N[i] * (m_1 * c_w + mc_k) * dT2dt
 #    print(v_real[i])
+# 
+# v_ideal = [0, 0, 0, 0, 0]
+# 
+# print("ideale Gueteziffer:")
+# for i in range (1, 5, 1):
+    # v_ideal[i] = (T_b[5*i])/(T_b[5*i] - T_a[5*i])
+    # print(5*i, v_ideal[i])
 
-v_ideal = [0, 0, 0, 0, 0]
-
-print("ideale Gueteziffer:")
-for i in range (1, 5, 1):
-    v_ideal[i] = (T_b[5*i])/(T_b[5*i] - T_a[5*i])
-    print(5*i, v_ideal[i])
-
+m =ufloat(2726.2816288047175,179.00481892007065)
+b =ufloat(4.1229755871964695,0.5793950001616602)
+L2=ufloat(22700,1500)
+#L Einheit umrechnen von J/mol in g/mol
+L2=L2/120.913
+#Massendurchsatz bestimmen
+#dQ_2/dt=(m_1c_w+m_kc_k)dT_1/dT
+Qt1=(m_1*c_w+mc_k)*ufloat(dT2dt[0],dT2dte[0])
+Qt2=(m_1*c_w+mc_k)*ufloat(dT2dt[1],dT2dte[1])
+Qt3=(m_1*c_w+mc_k)*ufloat(dT2dt[2],dT2dte[2])
+Qt4=(m_1*c_w+mc_k)*ufloat(dT2dt[3],dT2dte[3])
