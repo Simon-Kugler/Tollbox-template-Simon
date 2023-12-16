@@ -18,7 +18,7 @@ x = 1/x
 
 fig, ax = plt.subplots(1,layout="constrained")
 #ax.plot(T_a, p_a, "rx", label="Messwertea")
-ax.plot(T_b, p_b, "bx", label="Messwerteb")
+ax.plot(T_b, p_b, "rx", label="Messwerte $T_1$")
 
 #der Fit
 def fit(T1, L, b):
