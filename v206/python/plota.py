@@ -9,7 +9,7 @@ def x22(x,a,b,c):
     return a*x**2+b*x+c
 
 x_t=np.linspace(1,1300,1000)
-t, T_b, p_b, T_a, p_a, A = np.genfromtxt("../messdaten/Messdaten.txt", unpack=True)
+t, T_b, p_b, T_a, p_a, A = np.genfromtxt("messdaten/Messdaten.txt", unpack=True)
 t = t * 60
 #T_a = T_a + 273.15
 #T_b = T_b + 273.15
@@ -43,7 +43,7 @@ ax.set_ylabel(r"$T\,/\,\text{K}$")
 #ax.set_xlim(0,23)
 ax.grid()
 ax.legend()
-fig.savefig("../build/plota.pdf")
+fig.savefig("build/plota.pdf")
 
 #Ableitung: 2At+B
 print("")
@@ -89,7 +89,6 @@ N = [200.0, 206.0, 210.0, 205.0]
 m_1 = m_2 = 3.0
 mc_k = 750.0
 c_w = 4200.0
-
 #print("T1 reale Gueteziffer")
 #for i in range (0, 4, 1):
 #    #v_real[i] = (1/N[i]) * (m_1 * c_w + mc_k) * dT1dt
@@ -100,9 +99,7 @@ c_w = 4200.0
 #    print(v_real[i])
 
 v_ideal = [0, 0, 0, 0, 0]
-
 print("ideale Gueteziffer:")
 for i in range (1, 5, 1):
     v_ideal[i] = (T_b[5*i])/(T_b[5*i] - T_a[5*i])
     print(5*i, v_ideal[i])
-
