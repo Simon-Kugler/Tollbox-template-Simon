@@ -49,4 +49,4 @@ fig.savefig("../build/Verdampfungswärme.pdf")
 #L1=ufloat(ma,errors[0])*const.R
 L2=ufloat(mb, errorsb[0])*const.R
 #print("L1=",L1,)
-print("L2=",L2,)
+print("L2=",L2)

@@ -64,21 +64,22 @@ print("Differenzenqutient 2 bei t=20")
 print(2*params2[0]*20*60+params2[1], "+/-", 2*errors2[0]*20*60+errors2[1])
 
 
-dT1dt = [0, 0, 0, 0]
-dT2dt = [0, 0, 0, 0]
-dT1dte = [0, 0, 0, 0]
-dT2dte = [0, 0, 0, 0]
-for i in range (0, 4, 1):
-    dT1dt[i] = 2*params1[0]*i*60+params1[1]
+dT1dt = [0, 0, 0, 0, 0]
+dT2dt = [0, 0, 0, 0, 0]
+dT1dte = [0, 0, 0, 0, 0]
+dT2dte = [0, 0, 0, 0, 0]
+for i in range (1, 5, 1):
+    dT1dt[i] = 2*params1[0]*i*5*60+params1[1]
+    print(5*i)
 
-for i in range (0, 4, 1):
-    dT2dt[i] = 2*params2[0]*i*60+params2[1]
+for i in range (1, 5, 1):
+    dT2dt[i] = 2*params2[0]*i*5*60+params2[1]
 
-for i in range (0, 4, 1):
-    dT1dte = 2*errors1[0]*i*60+errors1[1]
+for i in range (1, 5, 1):
+    dT1dte[i] = 2*errors1[0]*i*5*60+errors1[1]
 
-for i in range (0, 4, 1):
-    dT2dte = 2*errors2[0]*i*60+errors2[1]
+for i in range (1, 5, 1):
+    dT2dte[i] = 2*errors2[0]*i*5*60+errors2[1]
 
 
 v_real = [0, 0, 0, 0]
@@ -86,6 +87,10 @@ N = [200.0, 206.0, 210.0, 205.0]
 m_1 = m_2 = 3.0
 mc_k = 750.0
 c_w = 4200.0
+print("dT1dt", dT1dt)
+print("dT1dte", dT1dte)
+print("dT2dt", dT2dt)
+print("dT2dte", dT2dte)
 
 # print("T1 reale Gueteziffer")
 # for i in range (0, 4, 1):
@@ -110,7 +115,11 @@ L2=ufloat(22700,1500)
 L2=L2/120.913
 #Massendurchsatz bestimmen
 #dQ_2/dt=(m_1c_w+m_kc_k)dT_1/dT
-Qt1=(m_1*c_w+mc_k)*ufloat(dT2dt[0],dT2dte[0])
-Qt2=(m_1*c_w+mc_k)*ufloat(dT2dt[1],dT2dte[1])
-Qt3=(m_1*c_w+mc_k)*ufloat(dT2dt[2],dT2dte[2])
-Qt4=(m_1*c_w+mc_k)*ufloat(dT2dt[3],dT2dte[3])
+Qt1=(m_1*c_w+mc_k)*ufloat(dT2dt[1],dT2dte[1])/L2
+Qt2=(m_1*c_w+mc_k)*ufloat(dT2dt[2],dT2dte[2])/L2
+Qt3=(m_1*c_w+mc_k)*ufloat(dT2dt[3],dT2dte[3])/L2
+Qt4=(m_1*c_w+mc_k)*ufloat(dT2dt[4],dT2dte[4])/L2
+print("Qt1", Qt1)
+print("Qt2", Qt2)
+print("Qt3", Qt3)
+print("Qt4", Qt4)

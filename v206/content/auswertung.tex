@@ -1,6 +1,6 @@
 \section{Auswertung}
 \label{sec:Auswertung}
-    In Tabelle \ref{tab:Messdaten} sind beide gemessenen Temperaturen, 
+    In \autoref{tab:Messdaten} sind beide gemessenen Temperaturen,
     Drücke sowie die Arbeit in Abhängigkeit der Zeit aufgetragen.
     Die Messunsicherheiten betragen $\pm 0.1\,°C$ für beide Temperaturen,
     $\pm 0.5\,°C$ für beide Drücke sowie $\pm 5$\, Watt für die Arbeit.
@@ -45,7 +45,7 @@
         \label{fig:Fit_Temperatur}
     \end{figure}
     \subsection{Ausgleichsrechnung}
-    Abbildung \ref{fig:Fit_Temperatur} zeigt die Messwerte der Messreihen für $T_1$
+    \autoref{fig:Fit_Temperatur} zeigt die Messwerte der Messreihen für $T_1$
     und $T_2$ sowie die Plots einer nichtlinearen Ausgleichsrechnung der Messwerte.
     Für die Ausgleichsrechnung werde die Funktion
     \begin{equation}
@@ -67,7 +67,7 @@
 
     \subsection{Berechnung der Differentialquotienten}
     Die Differentialquotienen $\sfrac{\text{d}T_i}{\text{d}t}$ berechnen sich durch einsetzen von $t$ in die Ableitung
-    von Gl. \eqref{eq:Ausgleich}, $T'(t) = 2at+b$\,.
+    von \autoref{eq:Ausgleich}, $T'(t) = 2at+b$\,.
     Die errechneten Werte der Ableitung sind in \autoref{tab:Diffquot} dargestellt.
     \begin{table}[H]
       \centering
@@ -88,13 +88,12 @@
         \bottomrule
     \end{tabular}
       \label{tab:Diffquot}
-    \caption{Differentialquotienten für vier Zeiten der zwei Messreihen. Mhhh sind das echt zwei Messreihen?
-    Weil basically ist es ja eine Messreihe gewesen, wie kann man das maybe noch anders ausdrücken?}
+    \caption{Differentialquotienten für vier Zeiten der zwei Temperaturverläufe.}
     \end{table}
 
     \subsection{Berechnung der Güteziffer}
-    Die ideale Güterziffer lässt sich über ??? berechnen.
-    Die reale Güteziffer wird mit ??? berechnent.
+    Die ideale Güterziffer lässt sich über \autoref{eq:Gueteideal} berechnen.
+    Die reale Güteziffer wird mit \autoref{eq:Guetereal} berechnent.
     Hierbei gilt $m_1 = 3\,\unit{kg}$ und $c_w = \SI{4200}{\joule\per\kg\per\kelvin}$.
     Die Wärmekapazität der Kupferschlange und der Reservoire ist $m_\text{k} c_\text{k} = \SI{750}{\joule\per\kelvin}$.
     Die Güteziffern sind in \autoref{tab:Guete} aufgeführt.
@@ -105,20 +104,17 @@
     S[table-format=2.3]
     S[table-format=2.3]
     S[table-format=2.3]
-    S[table-format=2.3]
-    S[table-format=2.3]
   }
     \toprule
-    {$t\left[\unit{s}\right]$} & {$v_{\text{ideal}}$} & {$v_{\text{real}}$ für $T_1$} & {$v_{\text{real}}$ für $T_2$}
-    & {$\Delta v_1$} & {$\Delta v_2$}\\
+    {$t\left[\unit{s}\right]$} & {$v_{\text{ideal}}$} & {$v_{\text{real}}$ für $T_1$} & {$\Delta v_1$}\\
     \midrule
-    300 & 2.87  & {$1,9 \pm 0,1$} & {$-1,8 \pm 0,3$} & 0.94 & 1.07\\
-    600 & 1.34  & {$1,7 \pm 0,2$} & {$-1,4 \pm 0,3$} & 0.34 & 0.02\\
-    900 & 1.09  & {$1,5 \pm 0,3$} & {$-1,0 \pm 0,4$} & 0.37 & 0.14\\
-    1200 & 1.02 & {$1,4 \pm 0,3$} & {$-0,5 \pm 0,5$} & 0.35 & 0.50\\
+    300 & 2.87  & {$1,9 \pm 0,1$} & 0.94 \\
+    600 & 1.34  & {$1,7 \pm 0,2$} & 0.34 \\
+    900 & 1.09  & {$1,5 \pm 0,3$} & 0.37 \\
+    1200 & 1.02 & {$1,4 \pm 0,3$} & 0.35 \\
     \bottomrule
 \end{tabular}
-\caption{Ideale und reale Güteziffer für vier Zeiten und deren Abweichung}
+\caption{Ideale und reale Güteziffer für vier Zeiten und deren Abweichung.}
         \label{tab:Guete}
 \end{table}
 
@@ -144,15 +140,37 @@
     \begin{equation*}
         L = \SI{2.27(0.15)e+4}{\joule\per\mol} \, \text{.}
     \end{equation*}
+\subsection{Massendurchsatz}
+Der Massendurchsatz wird durch Umstellen der \autoref{eq:massendurchsatz} errechnet.
+ \begin{table}
+  \centering
+  \begin{tabular}{
+    S[table-format=4.0]
+    S[table-format=2.3]
+  }
+    \toprule
+    {$\frac{\Delta m}{\Delta t}(1)$} & {$-1.9 \pm 0.3 \, \unit{\frac{g}{s}}$} \\
+    \addlinespace
+    {$\frac{\Delta m}{\Delta t}(2)$} & {$-1.5 \pm 0.4 \, \unit{\frac{g}{s}}$} \\
+    \addlinespace
+    {$\frac{\Delta m}{\Delta t}(3)$} & {$-1.0 \pm 0.4 \, \unit{\frac{g}{s}}$} \\
+    \addlinespace
+    {$\frac{\Delta m}{\Delta t}(4)$} & {$-0.6 \pm 0.5 \, \unit{\frac{g}{s}}$} \\
+    \bottomrule
+\end{tabular}
+\caption{Die Massendurchsätze und deren Abweichungen der vier Zeiten.}
+        \label{tab:huhu}
+\end{table}
+Die Werte sind in \autoref{tab:huhu} dargestellt.
 \subsection{Bestimmung der mechanischen Arbeit}
 Der Sinn einer Wärmepumpe ist, im idealen Falle nur die Arbeit
 zur Phasenumwandlung aufzuwenden. Diese mechanisch geleistete Arbeit soll nun berechnet
-werden. Um die dazu in der Theorie angegebene Gl. \eqref{eq:mechanisch} anwenden zu können,
+werden. Um die dazu in der Theorie angegebene \autoref{eq:mechanisch} anwenden zu können,
 muss zunächst $\rho$ bestimmt werden. Dazu wird die allgemeine Gasgleichung verwendet
 \begin{equation}
   pV=n\text{R}T\,.
 \end{equation}
-Es gilt $n\text{R}=\text{const.}$, woraus folgt dass $n_1\text{R}=n_2\text{R}$ korrekt ist.
+Es gilt $n\text{R}=\text{const.}$, woraus folgt, dass $n_1\text{R}=n_2\text{R}$ korrekt ist.
 Über dies und die Beziehung $V=\sfrac{m}{\rho}$ lässt sich für $\rho$ herleiten, dass
 \begin{equation}
   \frac{p_0V_0}{T_0}=\frac{p_2V_2}{T_2}\Leftrightarrow
