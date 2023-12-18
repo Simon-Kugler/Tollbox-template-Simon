@@ -9,7 +9,7 @@ def x22(x,a,b,c):
     return a*x**2+b*x+c
 
 x_t=np.linspace(1,1300,1000)
-t, T_b, p_b, T_a, p_a, A = np.genfromtxt("../messdaten/Messdaten.txt", unpack=True)
+t, T_b, p_b, T_a, p_a, A = np.genfromtxt("messdaten/Messdaten.txt", unpack=True)
 t = t * 60
 #T_a = T_a + 273.15
 #T_b = T_b + 273.15
@@ -40,7 +40,7 @@ ax.set_ylabel(r"$T\,\,/\,\,\text{K}$")
 ax.set_xlim(0,1300)
 ax.grid()
 ax.legend()
-fig.savefig("../build/plota.pdf")
+fig.savefig("build/plota.pdf")
 
 #Ableitung: 2At+B
 print("")
@@ -123,3 +123,60 @@ print("Qt1", Qt1)
 print("Qt2", Qt2)
 print("Qt3", Qt3)
 print("Qt4", Qt4)
+
+#Mechanische Leistung
+k=1.14
+rho_0=5.51
+T_0=273.15
+#Messdaten und Einheiten ändern in Pascal sowie Kelvin 
+p_a1=2.1*10**5 
+p_a2=2.2*10**5 
+p_a3=2.3*10**5
+p_a4=2.2*10**5
+p_b1=7.5*10**5 
+p_b2=9.4*10**5 
+p_b3=11.0*10**5
+p_b4=12.5*10**5
+T_21=17.4+273.15
+T_22=9.0+273.15
+T_23=3.4+273.15
+T_24=0.9+273.15
+#Einheit Massendurchsatz ändern
+Qt11=Qt1*10**(-3)
+Qt12=Qt2*10**(-3)
+Qt13=Qt3*10**(-3)
+Qt14=Qt4*10**(-3)
+#Formel für rho
+# rho=(rho_0*T_0*p_a)/(T_21*p_a)
+#1
+rho1=(rho_0*T_0*p_a1)/(T_21*p_a1)
+print(rho1)
+#2
+rho2=(rho_0*T_0*p_a2)/(T_22*p_a2)
+print(rho2)
+#3
+rho3=(rho_0*T_0*p_a3)/(T_23*p_a3)
+print(rho3)
+#4
+rho4=(rho_0*T_0*p_a4)/(T_24*p_a4)
+print(rho4)
+#Formel für mechanische Leistung
+#1
+N1=1/(k-1)*(p_b1*((p_a1/p_b1)**(1/1.14))-p_a1)*1/rho1*(Qt11)
+#2
+N2=1/(k-1)*(p_b2*((p_a2/p_b2)**(1/1.14))-p_a2)*1/rho2*(Qt12)
+#3
+N3=1/(k-1)*(p_b3*((p_a3/p_b3)**(1/1.14))-p_a3)*1/rho3*(Qt13)
+#4
+N4=1/(k-1)*(p_b4*((p_a4/p_b4)**(1/1.14))-p_a4)*1/rho4*(Qt14)
+print("N1=",N1)
+print("N2=",N2)
+print("N3=",N3)
+print("N4=",N4)
+# python 3.x
+# import numpy as npobject
+# 
+# a = 9
+# n = 2
+# result = npobject.power(a, (1 / n))
+# print(f"The {n}th root of value = {a} is:", r

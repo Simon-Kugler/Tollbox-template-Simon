@@ -4,7 +4,7 @@ from scipy.optimize import curve_fit
 import scipy.constants as const
 from uncertainties import ufloat
 
-t, T_b, p_b, T_a, p_a, A = np.genfromtxt("../messdaten/Messdaten.txt", unpack=True)
+t, T_b, p_b, T_a, p_a, A = np.genfromtxt("messdaten/Messdaten.txt", unpack=True)
 t = t * 60
 x = np.linspace(290, 330, 1000)
 
@@ -44,7 +44,7 @@ ax.set_xlabel(r"$1/T$ ")
 ax.set_ylabel(r"$\ln\left(\frac{p}{p_0}\right)$")
 ax.grid()
 ax.legend()
-fig.savefig("../build/Verdampfungswärme.pdf")
+fig.savefig("build/Verdampfungswärme.pdf")
 
 #L1=ufloat(ma,errors[0])*const.R
 L2=ufloat(mb, errorsb[0])*const.R
