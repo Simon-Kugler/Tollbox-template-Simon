@@ -3,7 +3,7 @@
     In \autoref{tab:Messdaten} sind beide gemessenen Temperaturen,
     Drücke sowie die Arbeit in Abhängigkeit der Zeit aufgetragen.
     Die Messunsicherheiten betragen $\pm 0.1\,°C$ für beide Temperaturen,
-    $\pm 0.5\,°C$ für beide Drücke sowie $\pm 5$\, Watt für die Arbeit.
+    $\pm 0.5$\, mbar für beide Drücke sowie $\pm 5$\, Watt für die Arbeit.
     \begin{table}[H]
       \centering
       \label{tab:Messdaten}
@@ -11,8 +11,8 @@
       die Arbeit zu verschiedenen Zeiten.}
       \begin{tblr}{colspec={c c c c c c}}
       \toprule
-      $t$ / min & $T_\text{b}$ / °C & $p_\text{b}$ / bar &
-      $T_\text{a}$ / °C & $p_\text{a}$ / bar & $A$ / W\\ 
+      $t$ / min & $T_1$ / °C & $p_\text{b}$ / mbar &
+      $T_2$ / °C & $p_\text{a}$ / mbar & $A$ / W\\
       \midrule
       1  & 21,5 & 4,4  &  21,0 & 4,1 & 150\\
       2  & 22,0 & 6,0  &  21,0 & 1,4 & 165\\
@@ -171,18 +171,19 @@ muss zunächst $\rho$ bestimmt werden. Dazu wird die allgemeine Gasgleichung ver
   pV=n\text{R}T\,.
 \end{equation}
 Es gilt $n\text{R}=\text{const.}$, woraus folgt, dass $n_1\text{R}=n_2\text{R}$ korrekt ist.
-Über dies und die Beziehung $V=\sfrac{m}{\rho}$ lässt sich für $\rho$ herleiten, dass
+Über dies und die Beziehung $V=\sfrac{m}{\rho}$ lässt sich für $\rho$ herleiten, sodass
 \begin{equation}
   \frac{p_0V_0}{T_0}=\frac{p_2V_2}{T_2}\Leftrightarrow
   \frac{p_0}{\rho_0T_0}=\frac{p_\text{a}}{T_2\rho}\Leftrightarrow
-  \rho=\frac{\rho_0T_0p_\text{a}}{T_2p_0}\,.
+  \rho=\frac{\rho_0T_0p_\text{a}}{T_2p_0}\,
 \end{equation}
+gilt.
 Die Einheit $\unit{\bar}$ sowie $\unit{\gram\per\second}$ müssen jeweils in SI-EInheiten 
 umgerechnet werden. Um mittels Formel \eqref{eq:mechanisch} nun die mechanische 
 Arbeit berechnen zu können, sind einige Werte aus der Aufgabenstellung gegeben.
 Für das Transportgas $\text{Cl}_2\text{F}_2\text{C}$ gilt die Dichte 
 $\rho_0=\qty{5.51}{\gram\per\liter}$ bei $T_0=\qty{0}{\celsius}$, $p=\qty{1}{\bar}$
-sowie $k=1,14$\,. Folgend ergeben sich für die Kompressorleistung sowie die Dichte
+sowie $k=1,14$\,. Folgend ergeben sich für die Kompressorleistung, sowie die Dichte,
 die in Tabelle \ref{tab:leistung} eingetragenen Werte.
 \begin{table}
   \centering
