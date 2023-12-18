@@ -40,7 +40,7 @@ print("b = ", paramsb[1], "±", errorsb[1])
 
 ax.plot(x, fit(x, *paramsb), "b-", label="Ausgleichsgerade")
 
-ax.set_xlabel(r"$1/T$ ")
+ax.set_xlabel(r"$1\,/\,T$ ")
 ax.set_ylabel(r"$\ln\left(\frac{p}{p_0}\right)$")
 ax.grid()
 ax.legend()

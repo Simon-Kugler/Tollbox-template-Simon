@@ -30,13 +30,13 @@ for name, value, error in zip("abc", params2, errors2):
 fig, ax = plt.subplots(1,layout="constrained")
 
 #Messdaten plotten
-ax.plot(t, T_b, "rx")
-ax.plot(t, T_a, "rx")
+ax.plot(t, T_b, "x", label="Messdaten 1")
+ax.plot(t, T_a, "rx", label="Messdaten 2")
 #fits plotten
-ax.plot(x_t, x21(x_t,*params1))
-ax.plot(x_t, x22(x_t,*params2))
+ax.plot(x_t, x21(x_t,*params1),label="Regression 1")
+ax.plot(x_t, x22(x_t,*params2),label="Regression 2")
 ax.set_xlabel(r"$t\,\,/\,\,\text{s}$")
-ax.set_ylabel(r"$T\,\,/\,\,\text{K}$")
+ax.set_ylabel(r"$T\,\,/\,\,\text{°C}$")
 ax.set_xlim(-10,1300)
 ax.grid()
 ax.legend()
