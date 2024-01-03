@@ -56,6 +56,12 @@ sowie die Phasenverschiebung $\varphi$ zwischen beiden Spannungen null ist.
 Bei steigender Frequenz $\omega$ wird jedoch die Phasenverschiebung immer größer,
 da die Auf- und Entladung des Kondensators länger andauert als das Überwinden des
 Widerstands $R$. Ebenfalls sinkt die Spannung $U_\text{C}(t)$ am Kondensator.
+Die Phasenverschiebung $\varphi$ wird aus Phasenverschiebung und Periodenlänge
+jeweils in Sekunden über 
+\begin{equation}
+    \varphi=\frac{a}{b}\cdot2\symup{\pi}
+    \label{eq:Phasenverschiebung}
+\end{equation}
 Mathematisch ausgedrückt ist dieses Problem 
 \begin{equation}
     U_\text{C}(t)=A(\omega)\cos(\omega t+\varphi\{\omega\})\,.
@@ -70,6 +76,7 @@ Werden sehr hohe Frequenzen eingestellt, konvergiert er gegen $\sfrac{\symup{\pi
 Für die Amplitude in Abhängigkeit der Frequenz kann der Ausdruck
 \begin{equation}
     A(\omega)=\frac{U_0}{\sqrt{1+\omega^2R^2C^2}}
+    \label{eq:arctan}
 \end{equation}
 hergeleitet werden. Für sehr kleine Frequenzen gilt $A(\omega)\approx U_0$, bei sehr großen
 konvergiert $A(\omega)$ gegen null. Dieses freuqenzabhängige Verhalten ist das eines
