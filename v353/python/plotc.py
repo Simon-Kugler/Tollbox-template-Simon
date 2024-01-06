@@ -18,9 +18,9 @@ fig, ax = plt.subplots(1,layout="constrained")
 ax.plot(f, phi, "rx", label="Messdaten")
 #Plotten Fit
 # U_C1[U_C1 <= 0] = 1e-10
-ax.plot(x_t, x2(x_t),label="Regression")
+ax.plot(x_t, x2(x_t),label="Theoriekurve")
 ax.set_xlabel(r"$f$ / Hz")
-ax.set_ylabel(r"$\frac{A(\omega)}{U_0}$")
+ax.set_ylabel(r"$\varphi(\omega)$ / rad")
 ax.grid()
 ax.legend()
 fig.savefig("build/plotc.pdf")

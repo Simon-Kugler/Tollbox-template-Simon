@@ -30,7 +30,7 @@ ax.plot(t, np.log(U_C1/U_0), "rx", label="Messdaten")
 #Plotten Fit
 ax.plot(x_t, x_t*params[0]+params[1], label="Lineare Regression")
 ax.set_xlabel(r"$t$ / ms")
-ax.set_ylabel(r"$\ln\left(\frac{U_C}{U_0}\right)$ / V")
+ax.set_ylabel(r"$\ln\left(\frac{U_C}{U_0}\right)$")
 ax.grid()
 ax.legend()
 fig.savefig("build/plota.pdf")
