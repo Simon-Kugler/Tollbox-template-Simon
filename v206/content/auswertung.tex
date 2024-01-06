@@ -64,14 +64,7 @@
     \end{align*}
     wobei die Werte mit dem Index 1 den Verlauf der blauen Kurve beschreiben
     und die Werte mit dem Index 2 den der orangenen Kurve beschreiben.
-    Die Fehler berechnen sich über Scipy mit der Gauß'schen Fehlerfortpflanzung, 
-    welche durch die Formel 
-    \begin{equation}
-    \increment f= \sqrt{\sum_{i=1}^n\left(\frac{\partial f}{\partial x_i}
-    \right)^2\cdot (\increment x_i)^2}
-    \end{equation}
-    beschrieben wird. Dabei ist $f$ die zur Berechnung genutzte Formel, $x_i$ dessen
-    Variablen und $\increment x_i$ die jeweilige Unsicherheit.
+
     \subsection{Berechnung der Differentialquotienten}
     Die Differentialquotienen $\sfrac{\text{d}T_i}{\text{d}t}$ berechnen sich durch einsetzen von $t$ in die Ableitung
     von \autoref{eq:Ausgleich}, $T'(t) = 2at+b$\,.

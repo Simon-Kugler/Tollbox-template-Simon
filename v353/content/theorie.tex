@@ -7,94 +7,85 @@ Ziel des Versuches ist es, das Relaxationsverhalten eines RC-Kreises zu untersuc
 Wird ein System aus dem Ausganszustand herausgebracht um dann 
 nicht-oszillatorisch zurückzukehren, so spricht man von Relaxationserscheinungen.
 Für die Änderungsrate der physikalischen Größe $A$ gilt 
-\begin{equation*}
+\begin{equation}
     \frac{\text{d}A}{\text{d}t}=c[A(t)-A(\infty)]\,.
-\end{equation*}
+\end{equation}
 Über Integration der Größe über die Zeit ergibt sich 
-\begin{equation*}
+\begin{equation}
     A(t)=A(\infty)+[A(0)-A(\infty)]e^{ct}\,.
-\end{equation*}
-Um $A$ beschränkt zu lassen, muss gelten dass $c<0$ ist.
+\end{equation}
+Um $A$ beschränkt zu lassen, muss gelten dass $c<0$\,.
 Als Beispiel wird nun das Auf- und Entladen eines Kondensators
 mit Kapazität $C$ und Ladung $Q$ betrachtet.
 Für die Entladung gilt für die anliegende Spannung 
-\begin{align*}
+\begin{align}
     U_\text{C}&=\frac{Q}{C}\\
     \intertext{sowie für die Stromstärke}
     I&=\frac{U_\text{C}}{R}\,.
-\end{align*}
+\end{align}
 Dabei ist $R$ der Widerstand, welcher einen Ladungsausgleich bewirkt.
 Mit Lösen der Differentialgleichung 
-\begin{align*}
+\begin{align}
     \frac{\text{d}Q}{\text{d}t}&=-\frac{1}{RC}Q(t)\\
     \intertext{ergibt sich als Funktion für $Q$}
     Q(t)&=Q(0)\exp\left(\frac{-t}{RC}\right)\,.
-\end{align*}
+\end{align}
 Für unendliche Zeiten konvergiert $Q(t)$ gegen null.
 Der Aufladevorgang wird, hergeleitet über einen ähnlichen Weg,
 mit der Gleichung 
-\begin{equation*}
+\begin{equation}
     Q(t)=CU_0(1-\exp\left(\frac{-t}{RC}\right))
-\end{equation*}
+\end{equation}
 beschrieben.
 Als Randbedingungen gelten hier $Q(0)=0$ sowie $Q(\infty)=CU_0$.
 Die Zeitkonstante $RC$ ist ein Maß für jene Geschwindigkeit, mit der 
-das System gegen den Grenzwert für $Q(t)\lim\limits_{t\to\infty}$
-konvergiert. Während des Zeitraums $\increment T$ ändert sich die Ladung um 
+das System gegen den Grenzwert für $Q(t)\text{lim}t\rightarrow\infty$
+konvergiert. Während der Zeit $\increment T$ ändert sich die Ladung um 
 den Faktor $\exp(\sfrac{-(t=RC)}{RC})=\exp(-1)=e^{-1}\approx0,368$\,. 
 \subsection{Relaxationsphänomene durch Periodizizät im Auslenkungsvorgang 
 aus der Ruhelage}
 Um weitere Analogien zu mechanischen phsyikalischen Systemen zu betrachten,
 wird nun eine Sinusspannung betrachtet für welche man in der mechanischen 
 Physik Sinusförmige Kräfte als Beispiel betrachten kann. Es gilt
-\begin{equation*}
+\begin{equation}
     U(t)=\cos(\omega t)
-\end{equation*}
+\end{equation}
 Dabei ist $\omega$ die Kreisfrequenz, bei der unter der Bedingung $\omega<<\sfrac{1}{RC}$
 gilt, dass die Spannung $U_\text{C}$ am Kondensator genähert gleich mit der Erregerspannung ist
 sowie die Phasenverschiebung $\varphi$ zwischen beiden Spannungen null ist.
 Bei steigender Frequenz $\omega$ wird jedoch die Phasenverschiebung immer größer,
 da die Auf- und Entladung des Kondensators länger andauert als das Überwinden des
 Widerstands $R$. Ebenfalls sinkt die Spannung $U_\text{C}(t)$ am Kondensator.
-Die Phasenverschiebung $\varphi$ wird aus Phasenverschiebung und Periodenlänge
-jeweils in Sekunden über 
+Mathematisch ausgedrückt ist dieses Problem 
 \begin{equation}
-    \varphi=\frac{a}{b}\cdot2\symup{\pi}
-    \label{eq:Phasenverschiebung}
-\end{equation}
-berechnet. Mathematisch ausgedrückt ist dieses Problem 
-\begin{equation*}
     U_\text{C}(t)=A(\omega)\cos(\omega t+\varphi\{\omega\})\,.
-\end{equation*}
-Mit den Kirchhoffschen Gesetzen, Einsetzen und Umformungen ergibt sich für die Phasenverschiebung
+\end{equation}
+Mit den Kirchhoffschen Gesetzen, einsetzen und Umformungen ergibt sich für die Phasenverschiebung
 in Abhängigkeit der Frequenz
 \begin{equation}
     \varphi(\omega)=\arctan(-\omega RC)\,.
-    \label{eq:arctan1}
 \end{equation}
-Das Grenzverhalten des $\arctan$ für niedrige Frequenzen ist eine Konvergenz gegen null.
+Das Grenzverhalten des $\arctan$ für niedrige Frequenzen geht gegen null.
 Werden sehr hohe Frequenzen eingestellt, konvergiert er gegen $\sfrac{\symup{\pi}}{2}$.
 Für die Amplitude in Abhängigkeit der Frequenz kann der Ausdruck
 \begin{equation}
     A(\omega)=\frac{U_0}{\sqrt{1+\omega^2R^2C^2}}
-    \label{eq:arctan}
 \end{equation}
 hergeleitet werden. Für sehr kleine Frequenzen gilt $A(\omega)\approx U_0$, bei sehr großen
 konvergiert $A(\omega)$ gegen null. Dieses freuqenzabhängige Verhalten ist das eines
 Tiefpasses.
 \subsection{Integration mithilfe des RC-Kreises}
 Wenn gilt, dass $\omega >>\sfrac{1}{RC}$ ist, kann die Beziehung
-$U_\text{C}\propto\int U(t)\text{d}t$ gezeigt werden. Ausgegangen wird dabei von
-$U(t)=U_\text{R}(t)+U_\text{C}(t)=I(t)\cdot R+U_\text{C}(t)$\,.
+$U_\text{C}\propto\int U(t)\text{d}t$ gezeigt werden. Ausgegangen wird von
+$U(t)=U_\text{R}(t)+U_\text{C}(t)=I(t)\cdot R+U_\text{C}(t)$.
 Es gelten die Vorraussetzungen
-\begin{align*}
+\begin{align}
     \omega &>>\frac{1}{RC}\,,\\
     |U_\text{C}|&<<|U_\text{R}|\text{ sowie}\\
     |U_\text{C}|&<<|U|\,.
-\end{align*}
+\end{align}
 Daraus lässt sich der Ausdruck
 \begin{equation}
     U_\text{C}(t)=\frac{1}{RC}\int_0^t U(t')\text{d}t'
-    \label{eq:integrator}
 \end{equation}
 herleiten.
