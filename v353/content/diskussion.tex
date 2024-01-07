@@ -11,7 +11,7 @@ war sowie das Ende nicht bei $U=0$\,. Dies hat das Messen erschwert. Der letzte 
 wurde bewusst aus der Berechnung der Zeitkonstante herausgelassen, da dieser offensichtlich 
 deutlich von einer Geraden durch die linearisierten Werte abwich. Damit würde dieser einerseits
 den Wert für $RC$ verfälschen, andererseits aber auch den Fehler der Zeitkonstante deutlich
-erhöhen. $RC$ wurde damit als $\qty{-0,52(0.04)}{\milli\second}$ berechnet, wobei der Fehler,
+erhöhen. $RC$ wurde damit als $\qty{0,52(0.04)}{\milli\second}$ berechnet, wobei der Fehler,
 welchen SciPy berechnet hat relativ klein ist. Darin enthalten ist jedoch nicht der Fehler, der 
 durch das erschwerte Ablesen aufgetreten ist. 
 \subsection{Bestimmung der Zeitkonstante bei variierter Frequenz}
@@ -24,3 +24,14 @@ Vollausschlag nicht mehr arretiert, was zu einer völlig fehleingestellten Skala
 konnte weder die Periodenlänge $(b)$, noch der Nulldurchgangsabstand $(a)$ sicher abgelesen werden. 
 Außerdem konnten die Schwingungen nur sehr erschwert still auf dem Oszilloskop gehalten werden, was
 ebenfalls einen großen, nicht skalierbaren Fehler mit sich brachte. 
+Über die zweite Methode, das Auswerten des Amplitudenverhältnisses beider Schwingungen, wurde eine 
+Zeitkonstante von $\qty{2,27(0.05)}{\milli\second}$ berechnet. Das entspricht einer Abweichung von
+$77\,\%$ zwischen beiden errechneten Werten. Über die dritte Methode war eine Berechnung der Zeitkonstante 
+nicht möglich, da die Messwerte (zu sehen in \autoref{fig:plotc}) keinerlei Parallelen zum Verlauf der 
+Regressionskurve zeigten. 
+Mit steigenden Frequenzen wurde das arretieren der Kurven auf dem Oszilloskop praktisch unmöglich, weshalb
+der zur Messung verwendete Frequenzbereich deutlich früher endete, als eigentlich angedacht.
+\subsection{RC-Kreis als Integrator}
+Die visuelle Integration der verschiedenen Schwingungsformen erfolgte so wie erwartet und korrekt. Die 
+Fotoqualität ist nicht optimal, da die Belichtungszeit der Kamera kein Foto vom Bildschirm zuließ.
+Anstattdessen wurde ein Video aufgenommen und daraus ein Foto herausgeschnitten.  
