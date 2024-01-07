@@ -16,22 +16,28 @@ Diese Beziehung heißt das Hookesche Gesezt und hat die Form
 Hierbei ist $E$ das Elastizitätsmodul, welches eine Materialkonstante ist.
 Um diese zu bestimmen, wird eine spezielle Deformation verwendet, die sogenannte Biegung.
 \subsection{Durchbiegung eines homogenen Stabes bei einseitiger Einspannung}
-%Hier ABB 2 aus der Theorie einsetzen
-Der Versuchsaufbau ist in %\autoref{}
-dargestellt.
+\begin{figure}
+    \centering
+    \includegraphics[height=3.5cm]{Abbildungen/einseitige_Einspannung.pdf}
+    \caption{Durchbiegung eines elastischen Stabes bei einseitiger Einspannung}
+    \label{fig:einseitige_Einspannung}
+\end{figure}
+Der Versuchsaufbau ist in \autoref{fig:einseitige_Einspannung} dargestellt.
 Es soll die Durchbiegung $D(x)$, also die Verschiebung eines Oberflächenpunktes $x$ zwischen belastet und unbelastet errechent werden.
 Mithilfe von $D$ lässt sich mit den gemessenen Größen $E$ bestimmen.
-Wie in %\autoref
-zu sehen, wird der Querschnitt $Q$ aus seiner vertikalen Lage durch die Kraft $F$ verdreht.
+Wie in \autoref{fig:einseitige_Einspannung} zu sehen, wird der Querschnitt $Q$ aus seiner vertikalen Lage durch die Kraft $F$ verdreht.
 Auf ihn wirkt das Drehmoment $M_\text{F}$.
 Auf die obere Schicht des Stabes wirkt die Zugspannung, somit wird sie gedehnt.
 Auf die untere Schicht dagegen wirkt die Drucksapnnung und sie wird gestaucht.
 Die Schicht dazwischen wird weder gedehnt, noch gestaucht.
-Diese wird als neutrale Faser bezeichnet und ist in %\autoref{}
-als gestrichelte Linie dargestellt.
-%Hier Abb 3
-In %\autoref{}
-ist die Richtung der Zug- und Druckspannung in dem Stab dargestellt.
+Diese wird als neutrale Faser bezeichnet und ist in \autoref{fig:einseitige_Einspannung} als gestrichelte Linie dargestellt.
+\begin{figure}
+    \centering
+    \includegraphics[height=3.5cm]{Abbildungen/Skizze_Drehmoment.pdf}
+    \caption{Skizze zur Berechnung des Drehmoments $M_\sigma$}
+    \label{fig:Drehmoment}
+\end{figure}
+In \autoref{fig:Drehmoment} ist die Richtung der Zug- und Druckspannung in dem Stab dargestellt.
 Diese zeigen in entgegengesetzte Richtungen und bewirken somit ein Drehmoment $M_\text{\sigma}$.
 Durch ein sich einstellendes Gleichgewicht, können die beiden Drehmomente $M_\text{F}$ und $M_\text{\sigma}$ gleichgesetzt werden.
 Es ergibt sich
@@ -44,8 +50,13 @@ von der neutralen Faser die Normalspannung
 \begin{equation*}
     \sigma (y) = E \frac{\delta x}{\Delta x} \, .
 \end{equation*}
-%Abb 4
-Mit den geometrischen Überlegungen in %\autoref{}
+\begin{figure}
+    \centering
+    \includegraphics[height=3.5cm]{Abbildungen/Skizze_Normalspannung.pdf}
+    \caption{Skizze zur Berechnung der Normalspannung $\sigma (y)$ in einem gebogenen Stab}
+    \label{fig:Normalspannung}
+\end{figure}
+Mit den geometrischen Überlegungen in \autoref{fig:Normalspannung}
 und unter der Voraussetzung, dass es sich um geringe Kurvenkrümmungen handelt, folgt
 \begin{equation} \label{eq:DGL}
     E \frac{d^2 D}{d x^2} I = F(L-x) \, .
@@ -55,7 +66,7 @@ Hierbei ist $I$ das Flächenträgheitsmoment, welches sich mit
     I = \int_{Q} y^2 dq(y)
 \end{equation}
 berechnet.
-Nach Lösen von \autoref{eq:DGL}folgt für die einseitige Einspannung
+Nach Lösen von \autoref{eq:DGL} folgt für die einseitige Einspannung
 \begin{equation}
     D(x) = \frac{F}{2EI}(Lx^2-\frac{x^3}{3}) \, \, \, (für 0 \leq x \leq L) \, .
 \end{equation}

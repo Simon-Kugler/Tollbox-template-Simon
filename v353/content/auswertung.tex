@@ -8,10 +8,10 @@ Auswertung einer Entladungskurve. Dazu werden die Messdaten aus
 mittels Scipy berechnet und durch die Messdaten gelegt.
  \begin{table}[H]
     \centering
-    \label{tab:Messdaten1}
     \caption{Messdaten der Entladekurve eines Kondensators im RC-Kreis.}
+    \label{tab:Messdaten1}
     \begin{tblr}{colspec={c c||c c}}
-        \toprule
+        \topruleu
         $t$\,\,/\,\,s & $U$\,\,/\,\,V &  $t$\,\,/\,\,s & $U$\,\,/\,\,V\\
         \midrule
         -1.3 &  3.8 & -0.5 & -1.4\\
@@ -28,9 +28,9 @@ mittels Scipy berechnet und durch die Messdaten gelegt.
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{build/plota.pdf}
-    \label{fig:fit1}
-    \caption{Der Logarhithmus der Spannung geteilt durch die Ausgangsspannung $U_0=\qty{3.5}{\volt}$ 
+    \caption{Der Logarhithmus der Spannung geteilt durch die Ausgangsspannung $U_0=\qty{3.5}{\volt}$
     aufgetragen gegen die Zeit.}
+    \label{fig:fit1}
 \end{figure}\noindent
 Für den Fit werden zu den Messdaten der Zeit jeweils $\qty{1.3}{\milli\second}$ dazu addiert
 sowie zu den Spannungen jeweils $\qty{3.5}{\volt}$, sodass die Kurve bei $t=0$ beginnt und bei 
@@ -54,9 +54,9 @@ Fehlerfortpflanzung berechnet. Die Formel dafür lautet
     \increment f= \sqrt{\sum_{i=1}^n\left(\frac{\partial f}{\partial x_i}
     \right)^2\cdot (\increment x_i)^2}\,.
     \end{equation}
-Dabei ist $f$ die zur Berechnung genutzte Formel, $x_i$ dessen
+Dabei ist $f$, die zur Berechnung genutzte Formel, $x_i$ dessen
 Variablen und $\increment x_i$ die jeweilige Unsicherheit.
-Dr letzte Messwert der messreihe wurde nicht in die Berechnung von $RC$ miteinbezogen,
+Der letzte Messwert der Messreihe wurde nicht in die Berechnung von $RC$ miteinbezogen,
 näheres dazu in der Diskussion.
 \subsection{Bestimmung der Zeitkonstante bei variierter Frequenz}
 Wie in der Durchführung bereits beschrieben, wird in dieser Messreihe unter anderem die 
@@ -64,8 +64,8 @@ Frequenzabhängigkeit einer Ausgangsamplitude gemessen. Die dazu gemessenen Wert
 \autoref{tab:Messdaten2} aufgeführt.
 \begin{table}
     \centering
-    \label{tab:Messdaten2}
     \caption{Erreger- und Ausgangsspannung in Abhängigkeit der Frequenz.} 
+    \label{tab:Messdaten2}
     \begin{tblr}{colspec={c c c||c c c}}
         \toprule
         $f$\,\,/\,\,$\unit{\hertz}$ & $U_\text{E}$\,\,/\,\,V & $U_\text{A}$\,\,/\,\,V&
@@ -96,10 +96,10 @@ Dies wird mittels des in \autoref{fig:fit2} gezeigten Fits und der damit einherg
 geprüft beziehungsweise berechnet.
 \begin{figure}[H]
     \centering
-    \label{fig:fit2}
+    \includegraphics[width=\textwidth]{build/plotb.pdf}
     \caption{Die Ausgangsspannung geteilt durch die Erregerspannung aufgetragen gegen die Frequenz
     sowie eine nichtlineare Regression.}
-    \includegraphics[width=\textwidth]{build/plotb.pdf}
+    \label{fig:fit2}
 \end{figure}\noindent
 Für die Zeitkonstante ergibt sich mittels Scipy und integrierter Gaußscher Fehlerfortpflanzung für den 
 Betrag der Zeitkonstante
@@ -110,12 +110,12 @@ Hierbei ist $U_0=\qty{4}{\volt}$.
 \subsection{Phasenverschiebung des RC-Kreises}
 Wie schon in der Theorie beschrieben, kommt es für hohe Frequenzen zu einer Phasenverschiebung
 zwischen Ein- und Ausgangssignal. Zur Periodenlänge $b$ und der Phasenverschiebung $a$ in
-Abhängigkeit der Frequenz wurden die in \autoref{tab:Phasenverschiebung} aufgeführten
+Abhängigkeit der Frequenz wurden die, in \autoref{tab:Phasenverschiebung} aufgeführten,
 Messwerte aufgenommen.
 \begin{table}
     \centering
-    \label{tab:Phasenverschiebung}
     \caption{Phasenverschiebung $a$ sowie Periodenlänge $b$ in Abhängigkeit dr Frequenz.}
+    \label{tab:Phasenverschiebung}
     \begin{tblr}{colspec={c c c c ||c c c c}}
         \toprule
         $f$\,\,/\,\,Hz & $a$\,\,/\,\,ms & $b$\,\,/\,\,ms&$\varphi$\,\,/\,\,rad &
@@ -135,8 +135,8 @@ Messwerte aufgenommen.
 \end{table}
 Die Perdiodenlänge $b$ wird hierbei über die Formel $b=\sfrac{1}{f}$ berechnet. Mit den gemessenen Daten soll 
 eigentlich erneut die Zeitkonstante, jedoch diesmal über \autoref{eq:arctan1} bestimmt werden. Dies war mit 
-den aufgeführten Messdaten jedoch leider nicht möglich. Näheres dazu ist in der Diskussion zu finden. 
-Anstattdessen ist in \autoref{fig:plotc} der $\arctan(-\omega\cdot RC)$ mit dem Wert aus Teil b) für die 
+den aufgeführten Messdaten jedoch nicht möglich. Näheres dazu ist in der Diskussion zu finden.
+Stattdessen ist in \autoref{fig:plotc} der $\arctan(-\omega\cdot RC)$ mit dem Wert aus Teil b) für die
 Zeitkonstante geplottet.
 \begin{figure}[H]
     \centering
@@ -152,16 +152,19 @@ Abb. \ref{fig:integration} zeigt diese.
     \begin{subfigure}{0.32\textwidth}
         \includegraphics[height=3.5cm]{messdaten/cos_int.png}
         \caption{Sinusschwingung.}
+        \label{fig:integrationa}
     \end{subfigure}
     \hfill
     \begin{subfigure}{0.32\textwidth}
         \includegraphics[height=3.5cm]{messdaten/dre_int.png}
         \caption{Rechtecksschwingung.}
+        \label{fig:integrationb}
     \end{subfigure}
     \hfill
     \begin{subfigure}{0.32\textwidth}
         \includegraphics[height=3.5cm]{messdaten/sin_int.png}
         \caption{Dreiecksschwingung.}
+        \label{fig:integrationc}
     \end{subfigure}  
     \label{fig:integration}
 \end{figure}
