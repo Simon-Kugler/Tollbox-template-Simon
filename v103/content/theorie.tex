@@ -5,11 +5,11 @@ Das Ziel dieses Versuches ist es das Elastizitätsmodul verschiedener Metalle zu
 \label{sec:Theorie}
 
 Wenn Kräfte an Oberflächen von Körpern angreifen, können diese Gestalts- und Volumenveränderungen hervorrufen.
-Diese Kräfte bezogen auf die Flächeneinheit heißt Spannung.
-Die senkrecht zur Oberflächen verlaufende Komponente heißt Normalspannung $\sigma$ und die parallele Komponente wird Tangentialspannung genannt.
+Diese Kräfte bezogen auf die Flächeneinheit heißt Spannungen.
+Die senkrecht zur Oberfläche verlaufende Komponente heißt Normalspannung $\sigma$ und die parallele Komponente wird Tangentialspannung genannt.
 Die Formänderung kann durch die relative Änderung $\sfrac{\delta L }{L}$, mit einer linearen Körperdimension $L$, beschreiben werden.
 Ist diese Änderung hinreichend klein, entsteht eine lineare Beziehung zwischen $\sfrac{\delta L }{L}$ und der Spannung $\sigma$.
-Diese Beziehung heißt das Hookesche Gesezt und hat die Form
+Diese Beziehung heißt Hooksches Gesetz und hat die Form
 \begin{equation}
     \sigma = E \frac{\delta L}{L}
 \end{equation}
@@ -19,11 +19,12 @@ Um diese zu bestimmen, wird eine spezielle Deformation verwendet, die sogenannte
 \begin{figure}
     \centering
     \includegraphics[height=3.5cm]{Abbildungen/einseitige_Einspannung.pdf}
-    \caption{Durchbiegung eines elastischen Stabes bei einseitiger Einspannung}
+    \caption{Durchbiegung eines elastischen Stabes bei einseitiger Einspannung.}
     \label{fig:einseitige_Einspannung}
-\end{figure}
+\end{figure}\noindent
 Der Versuchsaufbau ist in \autoref{fig:einseitige_Einspannung} dargestellt.
-Es soll die Durchbiegung $D(x)$, also die Verschiebung eines Oberflächenpunktes $x$ zwischen belastet und unbelastet errechent werden.
+Es soll die Durchbiegung $D(x)$, also die Verschiebung eines Oberflächenpunktes $x$ zwischen belastetem 
+und unbelastetem Zustand errechent werden.
 Mithilfe von $D$ lässt sich mit den gemessenen Größen $E$ bestimmen.
 Wie in \autoref{fig:einseitige_Einspannung} zu sehen, wird der Querschnitt $Q$ aus seiner vertikalen Lage durch die Kraft $F$ verdreht.
 Auf ihn wirkt das Drehmoment $M_\text{F}$.
@@ -34,7 +35,7 @@ Diese wird als neutrale Faser bezeichnet und ist in \autoref{fig:einseitige_Eins
 \begin{figure}
     \centering
     \includegraphics[height=3.5cm]{Abbildungen/Skizze_Drehmoment.pdf}
-    \caption{Skizze zur Berechnung des Drehmoments $M_\sigma$}
+    \caption{Skizze zur Berechnung des Drehmoments $M_\sigma$.}
     \label{fig:Drehmoment}
 \end{figure}
 In \autoref{fig:Drehmoment} ist die Richtung der Zug- und Druckspannung in dem Stab dargestellt.
@@ -53,7 +54,7 @@ von der neutralen Faser die Normalspannung
 \begin{figure}
     \centering
     \includegraphics[height=3.5cm]{Abbildungen/Skizze_Normalspannung.pdf}
-    \caption{Skizze zur Berechnung der Normalspannung $\sigma (y)$ in einem gebogenen Stab}
+    \caption{Skizze zur Berechnung der Normalspannung $\sigma (y)$ in einem gebogenen Stab.}
     \label{fig:Normalspannung}
 \end{figure}
 Mit den geometrischen Überlegungen in \autoref{fig:Normalspannung}
@@ -76,25 +77,25 @@ Ist der Stab an seinen beiden Enden aufgelegt, und eine Kraft greift in der Mitt
 $\sfrac{F}{2}$ an $Q$.
 Somit verändert sich $M_\text{F}$ zu
 \begin{align*}
-    M_\text{F} & = - \frac{F}{2} x &\text{für} &\, \,0 \leq x \leq L/2 \\
-    M_\text{F} & = - \frac{F}{2} (L -x) &\text{für} &\, \,L/2 \leq x \leq L \, .
+    M_\text{F} & = - \frac{F}{2} x &\text{für} \, \,\phantom{L/}0 &\leq x \leq L/2 \\
+    M_\text{F} & = - \frac{F}{2} (L -x) &\text{für} \, \,L/2 &\leq x \leq L \, .
 \end{align*}
-Somit änder sich $D(x)$ zu
+Somit ändert sich $D(x)$ zu
 \begin{align}
-    D(x) & = \frac{F}{48EI}(3L^2x-4x^3) & \text{für} &\, \,0 \leq x \leq \frac{L}{2} \\
-    D(x) & = \frac{F}{48EI}(4x^3- 12Lx^2+9L^2x-L^3) & \text{für} &\, \, \frac{L}{2} \leq x \leq L \, .
+    D(x) & = \frac{F}{48EI}(3L^2x-4x^3) & \text{für} \, \,\,0 &\leq x \leq \frac{L}{2} \\
+    D(x) & = \frac{F}{48EI}(4x^3- 12Lx^2+9L^2x-L^3) & \text{für} \, \, \frac{L}{2} &\leq x \leq L \, .
 \end{align}
 
 \subsection{Zusammenhang zwischen Elasitizitätsmodul und Schallgeschwindigkeit in Festkörpern}
-Eine andere Methode zur Bestimmung des Elastizitätsmoduls geschieht mithilfe der Schallgeschwindigkeit.
-Die Schallgeschwindigkeit in einem Festkörper steht in einfachem Zusammenhang mit dessen Elastizitätsmodul.
+Eine andere Methode zur Bestimmung des Elastizitätsmoduls nutzt die Schallgeschwindigkeit, da diese
+in einem Festkörper in einfachem Zusammenhang mit dessen Elastizitätsmodul steht.
 Diese Methode ist besonders geeignet, da die Messung nicht durch das Phänomen der elastischen Nachwirkung beeinflusst wird.
-Wenn eine longitudinal Welle durch den Körper geht, erzeugt diese eine Spannung $\sigma (x)$.
-Da das Hookesche Gesezt hier gelten muss, kann mithilfe von diesem eine Differenzialgleichung aufgestellt werden,
-dessen Lösungen allen Gleichungen der Form $f(x \pm ct)$ sind.
-Um die Differenzialgleichung zu erfüllen, muss
+Wenn eine longitudinal Welle durch den Körper propagiert, erzeugt diese eine Spannung $\sigma (x)$.
+Da das Hooksche Gesetz hier gelten muss, kann mithilfe von diesem eine Differentialgleichung aufgestellt werden,
+dessen Lösungen aller Gleichungen der Form $f(x \pm ct)$ sind.
+Um die Differentialgleichung zu erfüllen, muss
 \begin{equation}
     c = \sqrt {\frac{E}{\rho}}
 \end{equation}
-sein.
+gelten.
 $c$ ist hierbei die gesuchte Fortpflanzungsgeschwindigkeit der elastischen Deformation durch den Schall.
