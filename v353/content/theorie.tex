@@ -4,8 +4,8 @@ Ziel des Versuches ist es, das Relaxationsverhalten eines RC-Kreises zu untersuc
 \section{Theorie}
 \label{sec:Theorie}
 \subsection{Die allgemeine Relaxationsgleichung für den RC-Kreis}
-Wird ein System aus dem Ausganszustand herausgebracht um dann 
-nicht-oszillatorisch zurückzukehren, so spricht man von Relaxationserscheinungen.
+Wird ein System aus dem Ausganszustand herausgebracht, um dann
+nicht-oszillatorisch zurückzukehren, sind dies Relaxationserscheinungen.
 Für die Änderungsrate der physikalischen Größe $A$ gilt 
 \begin{equation}
     \frac{\text{d}A}{\text{d}t}=c[A(t)-A(\infty)]\,.
@@ -39,28 +39,30 @@ mit der Gleichung
 beschrieben.
 Als Randbedingungen gelten hier $Q(0)=0$ sowie $Q(\infty)=CU_0$.
 Die Zeitkonstante $RC$ ist ein Maß für jene Geschwindigkeit, mit der 
-das System gegen den Grenzwert für $Q(t)\text{lim}t\rightarrow\infty$
+das System gegen den Grenzwert für $\displaystyle \lim_{x \to \infty}Q(t)$
 konvergiert. Während der Zeit $\increment T$ ändert sich die Ladung um 
 den Faktor $\exp(\sfrac{-(t=RC)}{RC})=\exp(-1)=e^{-1}\approx0,368$\,. 
-\subsection{Relaxationsphänomene durch Periodizizät im Auslenkungsvorgang 
+\subsection{Relaxationsphänomene durch Periodizität im Auslenkungsvorgang
 aus der Ruhelage}
-Um weitere Analogien zu mechanischen phsyikalischen Systemen zu betrachten,
-wird nun eine Sinusspannung betrachtet für welche man in der mechanischen 
-Physik Sinusförmige Kräfte als Beispiel betrachten kann. Es gilt
+Um weitere Analogien zu mechanischen phsyikalischen Systemen zu untersuchen,
+wird eine Sinusspannung betrachtet.
+In der mechanischen Physik können dafür Sinusförmige Kräfte als Beispiel genommen werden.
+Es gilt
 \begin{equation}
-    U(t)=\cos(\omega t)
+    U(t)=\cos(\omega t) \, \text{.}
 \end{equation}
-Dabei ist $\omega$ die Kreisfrequenz, bei der unter der Bedingung $\omega<<\sfrac{1}{RC}$
-gilt, dass die Spannung $U_\text{C}$ am Kondensator genähert gleich mit der Erregerspannung ist
-sowie die Phasenverschiebung $\varphi$ zwischen beiden Spannungen null ist.
+Dabei ist $\omega$ die Kreisfrequenz.
+Unter der Bedingung $\omega<<\sfrac{1}{RC}$ gilt, dass die Spannung $U_\text{C}$ am Kondensator
+genähert gleich mit der Erregerspannung ist und
+die Phasenverschiebung $\varphi$ zwischen beiden Spannungen ist null.
 Bei steigender Frequenz $\omega$ wird jedoch die Phasenverschiebung immer größer,
-da die Auf- und Entladung des Kondensators länger andauert als das Überwinden des
+da die Auf- und Entladung des Kondensators länger andauert, als das Überwinden des
 Widerstands $R$. Ebenfalls sinkt die Spannung $U_\text{C}(t)$ am Kondensator.
 Mathematisch ausgedrückt ist dieses Problem 
 \begin{equation}
     U_\text{C}(t)=A(\omega)\cos(\omega t+\varphi\{\omega\})\,.
 \end{equation}
-Mit den Kirchhoffschen Gesetzen, einsetzen und Umformungen ergibt sich für die Phasenverschiebung
+Durch Einsetzen und Umformen der Kirchhoffschen Gesetzen, ergibt sich für die Phasenverschiebung
 in Abhängigkeit der Frequenz
 \begin{equation}
     \varphi(\omega)=\arctan(-\omega RC)\,.
