@@ -2,7 +2,7 @@ Daten Stäbe
 rund:
 411.6g +-0.1
 58.9cm +-0.1 Länge
-10mm +-0.05
+10mm +-0.05 Durchmesser
 
 eckig:
 535.7g

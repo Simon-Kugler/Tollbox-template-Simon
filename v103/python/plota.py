@@ -5,7 +5,16 @@ from scipy.optimize import curve_fit
 from uncertainties import ufloat
 #Messwerte importen
 xR1, D_R1, D_RM1, e1 = np.genfromtxt("messdaten/rund1.txt", unpack=True)
-
+#Berechnung der Dichte etc.
+m=ufloat(0.4116,0.0001)
+l=ufloat(0.589,0.0001)
+d=ufloat(0.01,0.00005)
+#Volumen
+V=(d/2)**2*np.pi*l 
+#Dichte
+rho=m/V 
+print("Volumen runder Stab: ",V,"m^3")
+print("Dichte runder Stab: ",rho,"kg/m^3")
 #def's und anpassungen einheiten
 L=0.515
 x_x=np.linspace(0,L,1000)
