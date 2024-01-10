@@ -1,15 +1,46 @@
 all: build/v103.pdf
 
 # hier Python-Skripte:
-# build/plot.pdf: plot.py ../matplotlibrc ../header-matplotlib.tex | build
+
+# build/plota.pdf: plot.py ../matplotlibrc ../header-matplotlib.tex | build
 # 	# so that matplotlib can find the tex header when running
 # 	# LaTeX in the tmp directory
 # 	# and set the matplotlibrc
-# 	TEXINPUTS=$$(pwd)/..: MATPLOTLIBRC=$(CURDIR)/../matplotlibrc python plot.py
+# 	TEXINPUTS=$$(pwd)/..: MATPLOTLIBRC=$(CURDIR)/../matplotlibrc python python/plota.py
 
-# hier weitere Abhängigkeiten für build/vXXX.pdf deklarieren:
+# build/plotb.pdf: plot.py ../matplotlibrc ../header-matplotlib.tex | build
+# 	# so that matplotlib can find the tex header when running
+# 	# LaTeX in the tmp directory
+# 	# and set the matplotlibrc
+# 	TEXINPUTS=$$(pwd)/..: MATPLOTLIBRC=$(CURDIR)/../matplotlibrc python python/plotb.py
+
+# build/plotc.pdf: plot.py ../matplotlibrc ../header-matplotlib.tex | build
+# 	# so that matplotlib can find the tex header when running
+# 	# LaTeX in the tmp directory
+# 	# and set the matplotlibrc
+# 	TEXINPUTS=$$(pwd)/..: MATPLOTLIBRC=$(CURDIR)/../matplotlibrc python python/plotc.py
+
+# build/plotd.pdf: plot.py ../matplotlibrc ../header-matplotlib.tex | build
+# 	# so that matplotlib can find the tex header when running
+# 	# LaTeX in the tmp directory
+# 	# and set the matplotlibrc
+# 	TEXINPUTS=$$(pwd)/..: MATPLOTLIBRC=$(CURDIR)/../matplotlibrc python python/plotd.py
+
+# build/plote.pdf: plot.py ../matplotlibrc ../header-matplotlib.tex | build
+# 	# so that matplotlib can find the tex header when running
+# 	# LaTeX in the tmp directory
+# 	# and set the matplotlibrc
+# 	TEXINPUTS=$$(pwd)/..: MATPLOTLIBRC=$(CURDIR)/../matplotlibrc python python/plote.py
+
+# build/plotf.pdf: plot.py ../matplotlibrc ../header-matplotlib.tex | build
+# 	# so that matplotlib can find the tex header when running
+# 	# LaTeX in the tmp directory
+# 	# and set the matplotlibrc
+# 	TEXINPUTS=$$(pwd)/..: MATPLOTLIBRC=$(CURDIR)/../matplotlibrc python python/plotf.py
+
+# hier weitere Abhängigkeiten für build/v103.pdf deklarieren:
 build/v103.pdf: 
-# build/plot.pdf
+# build/plota.pdf build/plotb.pdf build/plotc.pdf build/plotd.pdf build/plote.pdf build/plotf.pdf
 
 build/v103.pdf: FORCE | build
 	# to find header and bib files in the main directory

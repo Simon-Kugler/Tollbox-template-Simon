@@ -1,0 +1,11 @@
+Daten Stäbe
+rund:
+411.6g +-0.1
+58.9cm +-0.1 Länge
+10mm +-0.05
+
+eckig:
+535.7g
+60cm 
+10mm
+(Aufhängung 18.4 g)
