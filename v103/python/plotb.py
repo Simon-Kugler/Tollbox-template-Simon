@@ -4,7 +4,7 @@ from uncertainties import ufloat
 from scipy.optimize import curve_fit
 from uncertainties import ufloat
 #Messwerte importen
-xlR2, xrR2, D_R2l, D_R2r, D_R2Ml, D_R2Mr, e5, e6 = np.genfromtxt("../messdaten/rund2.txt", unpack=True)
+xlR2, xrR2, D_R2l, D_R2r, D_R2Ml, D_R2Mr, e5, e6 = np.genfromtxt("messdaten/rund2.txt", unpack=True)
 
 #def's und anpassungen einheiten
 L=0.549
@@ -32,4 +32,4 @@ ax.set_xlim(0.065,0.17)
 # ax.set_ylim(0,0.003)
 ax.legend()
 ax.grid()
-fig.savefig("../build/plotb.pdf")
+fig.savefig("build/plotb.pdf")

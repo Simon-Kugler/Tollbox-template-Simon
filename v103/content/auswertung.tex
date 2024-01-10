@@ -49,7 +49,8 @@ aufgeführten Messwerte. Der Stab ist bei $L=\qty{51,5}{\centi\meter}$ eingespan
 \end{table}
 Es sollen nun die Elastizitätsmodule der Stäbe bestimmt werden. Dafür wird jeweils eine lineare Regression der Form
 $l(x)=ax+b$ durch die Messwerte gelegt, welche nach Gleichung \eqref{eq:polynom1} lineariesiert werden. Der Vorfaktor 
-$\sfrac{F}{2EI}$ des Polynoms $Lx^2-\sfrac{x^3}{3}$ ist dabei die Steigung der Ausgleichsgeraden. Da $F$ und $I$ 
+$\sfrac{F}{2EI}$ des Polynoms $Lx^2-\sfrac{x^3}{3}$ ist dabei die Steigung der Ausgleichsgeraden. Dieses Verfahren und 
+die Bennenung der jeweiligen Koeffizienten bleibt für jede Teilberechnung dieses protokolls gleich. Da $F$ und $I$ 
 aus den gegebenen Größen direkt berechnet werden können, kann $a=\sfrac{F}{2EI}$ direkt nach dem Elastizitätsmodul $E$
 umgestellt werden. Das Flächenträgheitsmoment $I$ wird über $I=\sfrac{\pi d^4}{64}$ berechnet REFERENZ!!. In 
 \autoref{fig:plota} sind die Messwerte der ersten Messreihe sowie die lineare Regression zu sehen. Die angehangene 
@@ -69,7 +70,7 @@ Der Elastizitätsmodul berechnet sich über
 \begin{align*}
 E&=\frac{F}{2aI}
 \intertext{mit}
-F&=mg=\qty{0,5}{\kilo\gram}\cdot\qty{9,806}{\meter\per\second\squared} \text{ und } I=\qt{4,91e-10}{\meter\tothe{4}}
+F&=mg=\qty{0,5}{\kilo\gram}\cdot\qty{9,806}{\meter\per\second\squared} \text{ und } I=\qty{4,91e-10}{\meter\tothe{4}}
 \intertext{zu}
 E_1&=\qty{146(8,2)}{\giga\pascal}\,.
 \end{align*}
@@ -82,7 +83,7 @@ Zur beidseitigen Einspannung des runden Stabes ergeben sich die in \autoref{tab:
     \begin{tblr}{colspec={c c c c c c c c}}
         \toprule
         $x_\text{l}$\ /\ cm & $x_\text{r}$\ /\ cm  & $D_{0\text{l}}$\ /\ mm & $D_\text{Gewicht,l}$\ /\ mm &
-        $D_{0\text{r}}$\ /\ mm & $D_\text{Gewicht,r}$\ /\ mm & $\increment D_\text{l}$ & $\increment D_\text{l}$ \\
+        $D_{0\text{r}}$\ /\ mm & $D_\text{Gewicht,r}$\ /\ mm & $\increment D_\text{l}$ & $\increment D_\text{r}$ \\
         \midrule
         31 & 24 & 7.16 & 7.61 & 6.89 & 7.36 & 0.27 & 0.25\\
         32 & 23 & 7.17 & 7.60 & 6.93 & 7.39 & 0.24 & 0.20\\
@@ -100,33 +101,93 @@ Zur beidseitigen Einspannung des runden Stabes ergeben sich die in \autoref{tab:
 \end{table}
 Aus diesen Messwerten lassen sich zwei Plots erstellen und damit zwei mal der Elastizitätsmodul bestimmen.
 \autoref{fig:plotb} zeigt die lineare Regression sowie die Messdaten der rechten Seite, \autoref{fig:plotc} 
-die der linken. Für die Messwerte der rechten Seite ($x\leq\sfrac{L}{2}$) wird die $x-Skala$ nach Formel 
+die der linken. Für die Messwerte der rechten Seite ($x\leq\sfrac{L}{2}$) wird die $x$-Skala nach Formel 
 \eqref{eq:rechts} skaliert, für die linke Seite nach Formel \eqref{eq:links}.
+Das Gewicht ist bei dieser Messreihe mittig bei $\qty{27,75}{\centi\meter}$ angebracht und hat eine Masse
+von $\qty{1}{\kilo\gram}$\,. 
 \begin{figure}[H]
     \centering
     \label{fig:plotb}
     \caption{Messwerte sowie die lineare Regression der Durchbiegung des beidseitig eingespannten runden Stabes rechtsseitig.}
     \includegraphics[width=\textwidth]{build/plotb.pdf}
 \end{figure}
+Es ergeben sich die Koeffizienten 
+\begin{align*}
+    a&=\qty{2(0.4)e-3}{\per\meter\squared}\,,\\
+    b&=\qty{-1.1(0.6)e-4}{\meter}\,.
+\end{align*}
+Über das gleiche Vorgehen wie bei einseitiger Einspannung ergibt sich der Elastizitätsmodul. Der einzige Unterschied ist 
+der Vorfaktor des Polynoms $D(x)$ nach Gleichung \eqref{eq:rechts} und \eqref{eq:links}.
+\begin{equation*}
+E_\text{beidseitig,rechts}=\qty{2.1(0.4)e2}{\giga\pascal}\,.
+\end{equation*}
 \begin{figure}[H]
     \centering
     \label{fig:plotc}
     \caption{Messwerte sowie die lineare Regression der Durchbiegung des beidseitig eingespannten runden Stabes linksseitig.}
     \includegraphics[width=\textwidth]{build/plotc.pdf}
 \end{figure}
-
-Es ergeben sich die Koeffizienten 
+Für die linke Seite ergeben sich die Koeffizienten
 \begin{align*}
-    a&=\qty{2(0.4)e-3}{\per\meter\squared}\,,\\
-    b&=\qty{-1.1(0.6)e-4}{\meter}\,.
+    a&=\qty{1,6(0.29)e-3}{\per\meter\squared}\,\\
+    b&=\qty{8(3)e-5}{\meter}\,.
 \end{align*}
-Über das gleiche Vorgehen wie bei einseitiger Einspannung ergibt sich für den Elastizitätsmodul
-
-#Koeffizienten linke Seite(größer L/2)
-a = 0.00161 ± 0.00029
-b = 0.00008 ± 0.00003
-#Koeffizienten eckiger Stab einseitig
-Volumen quadratischer Stab:  (6.00+/-0.06)e-05 m^3
-Dichte quadratischer Stab:  (8.93+/-0.09)e+03 kg/m^3
-a = 0.02551 ± 0.00027
-b = 0.00004 ± 0.00001
+Damit ergibt sich der Elastizitätsmodul für die linke Seite
+\begin{equation*}
+    E_{\text{beidseitig,links}}=\qty{2.6(0.5)e2}{\giga\pascal}\,.
+\end{equation*}
+\subsection{Quadratischer Stab}
+Für den qaudratischen Stab verläuft die Auswertung analog. Das Flächenträgheitsmoment für den quardatischen Stab errechnet sich
+über $I_\square\sfrac{d^4}{12}$. Der qaudratische Stab hat die Abmessungen 
+\begin{align*}
+    \text{Länge: } l&=\qty{0,6(0.001)}{\meter},\\
+    \text{Dicke: } d&=\qty{1,0(0,1)e-3}{\meter},\\
+    \text{Masse: } m&=\qty{0,5357(0.0001)}{\kilo\gram}.
+\end{align*}
+Daraus ergibt sich für das Volumen und die Dichte 
+\begin{align*}
+    V&=\qty{6(0.06)e-5}{\meter\cubed},\\
+    \rho&=\qty{8.93(0.09)e3}{\kilo\gram\per\meter\cubed}.
+\end{align*}
+Auch dieser Stab ist aus Kupfer gefertigt.
+\subsubsection{Einseitige Einspannung}
+Für die einseitige Einspannung des Stabes ergeben sich die in \autoref{tab:quadr1} 
+aufgeführten Messwerte. Auch dieser Stab ist bei $L=\qty{51,5}{\centi\meter}$ eingespannt.
+\begin{table}
+    \centering
+    \label{tab:quadr1}
+    \caption{Abstand zur Einspannung, Auslenkung mit und ohne Gewicht sowie deren Differenz des quadratischen Stabes.}
+    \begin{tblr}{colspec={c c c c||c c c c}}
+        \toprule
+        $x$\ /\ cm & $D_0$\ /\ mm & $D_\text{Gewicht}$\ /\ mm & $\increment D$&
+        $x$\ /\ cm & $D_0$\ /\ mm & $D_\text{Gewicht}$\ /\ mm & $\increment D$\\
+        \midrule
+        49 & 4.74 & 2.51 & 2.23 & 25 & 6.47 & 5.74 & 0.73\\
+        46 & 4.93 & 3.03 & 1.90 & 22 & 6.65 & 6.05 & 0.60\\
+        43 & 5.21 & 3.43 & 1.78 & 19 & 6.77 & 6.31 & 0.46\\
+        40 & 5.43 & 3.82 & 1.61 & 16 & 6.95 & 6.63 & 0.32\\
+        37 & 5.66 & 4.24 & 1.42 & 13 & 7.12 & 6.87 & 0.25\\
+        34 & 5.89 & 4.65 & 1.24 & 10 & 7.27 & 7.12 & 0.15\\
+        31 & 6.10 & 5.06 & 1.04 & 07 & 7.40 & 7.32 & 0.08\\
+        28 & 6.32 & 5.43 & 0.89 & 04 & 7.50 & 7.46 & 0.04\\
+        \bottomrule
+    \end{tblr}
+\end{table}
+Erneut wird der Elastizitätsmodul nach gleicher Berechnungsvorschrift wie für den runden Stab ermittelt. In \autoref{fig:plotd}
+ist die zu den Koeffizienten 
+\begin{align*}
+    a&=\qty{2.6(0.03)e-2}{\per\meter\squared}\,\,\text{und}\\
+    b&=\qty{4(1)e-5}{\meter}
+\end{align*}
+gehörende lineare Regression sowie die in der Tabelle \ref{tab:quadr1} aufgeführten Messdaten zu sehen.
+\begin{figure}[H]
+    \centering
+    \label{fig:plotd}
+    \caption{Messwerte des einseitig eingespannten quadratischen Stabes und deren lineare Regression.}
+    \includegraphics[width=\textwidth]{build/plotd.pdf}
+\end{figure}
+% #Koeffizienten eckiger Stab einseitig
+% Volumen quadratischer Stab:  (6.00+/-0.06)e-05 m^3
+% Dichte quadratischer Stab:  (8.93+/-0.09)e+03 kg/m^3
+% a = 0.02551 ± 0.00027
+% b = 0.00004 ± 0.00001
