@@ -4,7 +4,7 @@ from uncertainties import ufloat
 from scipy.optimize import curve_fit
 from uncertainties import ufloat
 #Messwerte importen
-xQ1, D_Q1, D_QM1, e2 = np.genfromtxt("../messdaten/quadr1.txt", unpack=True)
+xQ1, D_Q1, D_QM1, e2 = np.genfromtxt("messdaten/quadr1.txt", unpack=True)
 #Berechnung der Dichte etc.
 m=ufloat(0.5357,0.0001)
 l=ufloat(0.6,0.0001)
@@ -39,4 +39,4 @@ ax.set_xlim(0,0.1)
 ax.set_ylim(0,0.003)
 ax.legend()
 ax.grid()
-fig.savefig("../build/plotd.pdf")
+fig.savefig("build/plotd.pdf")

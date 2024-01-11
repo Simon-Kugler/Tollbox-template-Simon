@@ -20,27 +20,26 @@ build/plotc.pdf: python/plotc.py ../matplotlibrc ../header-matplotlib.tex | buil
 	# and set the matplotlibrc
 	TEXINPUTS=$$(pwd)/..: MATPLOTLIBRC=$(CURDIR)/../matplotlibrc python python/plotc.py
 
-# build/plotd.pdf: plotd.py ../matplotlibrc ../header-matplotlib.tex | build
-# 	# so that matplotlib can find the tex header when running
-# 	# LaTeX in the tmp directory
-# 	# and set the matplotlibrc
-# 	TEXINPUTS=$$(pwd)/..: MATPLOTLIBRC=$(CURDIR)/../matplotlibrc python python/plotd.py
+build/plotd.pdf: python/plotd.py ../matplotlibrc ../header-matplotlib.tex | build
+	# so that matplotlib can find the tex header when running
+	# LaTeX in the tmp directory
+	# and set the matplotlibrc
+	TEXINPUTS=$$(pwd)/..: MATPLOTLIBRC=$(CURDIR)/../matplotlibrc python python/plotd.py
 
-# build/plote.pdf: plote.py ../matplotlibrc ../header-matplotlib.tex | build
-# 	# so that matplotlib can find the tex header when running
-# 	# LaTeX in the tmp directory
-# 	# and set the matplotlibrc
-# 	TEXINPUTS=$$(pwd)/..: MATPLOTLIBRC=$(CURDIR)/../matplotlibrc python python/plote.py
-
-# build/plotf.pdf: plotf.py ../matplotlibrc ../header-matplotlib.tex | build
-# 	# so that matplotlib can find the tex header when running
-# 	# LaTeX in the tmp directory
-# 	# and set the matplotlibrc
-# 	TEXINPUTS=$$(pwd)/..: MATPLOTLIBRC=$(CURDIR)/../matplotlibrc python python/plotf.py
+build/plote.pdf: python/plote.py ../matplotlibrc ../header-matplotlib.tex | build
+	# so that matplotlib can find the tex header when running
+	# LaTeX in the tmp directory
+	# and set the matplotlibrc
+	TEXINPUTS=$$(pwd)/..: MATPLOTLIBRC=$(CURDIR)/../matplotlibrc python python/plote.py
+ 
+build/plotf.pdf: python/plotf.py ../matplotlibrc ../header-matplotlib.tex | build
+	# so that matplotlib can find the tex header when running
+	# LaTeX in the tmp directory
+	# and set the matplotlibrc
+	TEXINPUTS=$$(pwd)/..: MATPLOTLIBRC=$(CURDIR)/../matplotlibrc python python/plotf.py
 
 # hier weitere Abhängigkeiten für build/v103.pdf deklarieren:
-build/v103.pdf: build/plota.pdf build/plotb.pdf build/plotc.pdf 
-#build/plotd.pdf build/plote.pdf build/plotf.pdf
+build/v103.pdf: build/plota.pdf build/plotb.pdf build/plotc.pdf build/plotd.pdf build/plote.pdf build/plotf.pdf
 
 build/v103.pdf: FORCE | build
 	# to find header and bib files in the main directory
