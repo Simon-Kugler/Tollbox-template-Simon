@@ -1,5 +1,5 @@
 \section{Zielsetzung}
-Das Ziel dieses Versuches ist es das Elastizitätsmodul verschiedener Metalle zu bestimmen.
+Das Ziel dieses Versuches ist es das Elastizitätsmodul eines Metalls verschiedener Formen zu bestimmen.
 
 \section{Theorie}
 \label{sec:Theorie}
@@ -10,9 +10,9 @@ Die senkrecht zur Oberfläche verlaufende Komponente heißt Normalspannung $\sig
 Die Formänderung kann durch die relative Änderung $\sfrac{\delta L }{L}$, mit einer linearen Körperdimension $L$, beschreiben werden.
 Ist diese Änderung hinreichend klein, entsteht eine lineare Beziehung zwischen $\sfrac{\delta L }{L}$ und der Spannung $\sigma$.
 Diese Beziehung heißt Hooksches Gesetz und hat die Form
-\begin{equation}
+\begin{equation*}
     \sigma = E \frac{\delta L}{L}
-\end{equation}
+\end{equation*}
 Hierbei ist $E$ das Elastizitätsmodul, welches eine Materialkonstante ist.
 Um diese zu bestimmen, wird eine spezielle Deformation verwendet, die sogenannte Biegung.
 \subsection{Durchbiegung eines homogenen Stabes bei einseitiger Einspannung}
@@ -39,11 +39,11 @@ Diese wird als neutrale Faser bezeichnet und ist in \autoref{fig:einseitige_Eins
     \label{fig:Drehmoment}
 \end{figure}
 In \autoref{fig:Drehmoment} ist die Richtung der Zug- und Druckspannung in dem Stab dargestellt.
-Diese zeigen in entgegengesetzte Richtungen und bewirken somit ein Drehmoment $M_\text{\sigma}$.
-Durch ein sich einstellendes Gleichgewicht, können die beiden Drehmomente $M_\text{F}$ und $M_\text{\sigma}$ gleichgesetzt werden.
+Diese zeigen in entgegengesetzte Richtungen und bewirken somit ein Drehmoment $M_\sigma$.
+Durch ein sich einstellendes Gleichgewicht, können die beiden Drehmomente $M_\text{F}$ und $M_\sigma$ gleichgesetzt werden.
 Es ergibt sich
 \begin{align*}
-    M_\text{F} &= M_\text{\sigma} \\
+    M_\text{F} &= M_\sigma \\
     F(L-x) &= \int_{Q} y \sigma(y) dq  \, .
 \end{align*}
 Mit den Hookschen Gesetz ergibt sich für ein kurzes Stabstück der Länge $\Delta x$ und dem Abstand $y$ 
@@ -63,13 +63,13 @@ und unter der Voraussetzung, dass es sich um geringe Kurvenkrümmungen handelt, 
     E \frac{d^2 D}{d x^2} I = F(L-x) \, .
 \end{equation}
 Hierbei ist $I$ das Flächenträgheitsmoment, welches sich mit
-\begin{equation}
+\begin{equation*}
     I = \int_{Q} y^2 dq(y)
-\end{equation}
+\end{equation*}
 berechnet.
 Nach Lösen von \autoref{eq:DGL} folgt für die einseitige Einspannung
 \begin{equation}
-    D(x) = \frac{F}{2EI}(Lx^2-\frac{x^3}{3}) \, \, \, (\text{für} 0 \leq x \leq L) \, .
+    D(x) = \frac{F}{2EI}(Lx^2-\frac{x^3}{3}) \, \, \, (\text{für } 0 \leq x \leq L) \, .
     \label{eq:polynom1}
 \end{equation}
 

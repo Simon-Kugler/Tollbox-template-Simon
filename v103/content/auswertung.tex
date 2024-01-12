@@ -29,8 +29,8 @@ Für die einseitige Einspannung des Stabes ergeben sich die in \autoref{tab:rund
 aufgeführten Messwerte. Der Stab ist bei $L=\qty{51,5}{\centi\meter}$ eingespannt.
 \begin{table}
     \centering
-    \label{tab:rund1}
     \caption{Abstand zur Einspannung, Auslenkung mit und ohne Gewicht sowie deren Differenz.}
+    \label{tab:rund1}
     \begin{tblr}{colspec={c c c c||c c c c}}
         \toprule
         $x$\ /\ cm & $D_0$\ /\ mm & $D_\text{Gewicht}$\ /\ mm & $\increment D$&
@@ -50,16 +50,16 @@ aufgeführten Messwerte. Der Stab ist bei $L=\qty{51,5}{\centi\meter}$ eingespan
 Es sollen nun die Elastizitätsmodule der Stäbe bestimmt werden. Dafür wird jeweils eine lineare Regression der Form
 $l(x)=ax+b$ durch die Messwerte gelegt, welche nach Gleichung \eqref{eq:polynom1} lineariesiert werden. Der Vorfaktor 
 $\sfrac{F}{2EI}$ des Polynoms $Lx^2-\sfrac{x^3}{3}$ ist dabei die Steigung der Ausgleichsgeraden. Dieses Verfahren und 
-die Bennenung der jeweiligen Koeffizienten bleibt für jede Teilberechnung dieses protokolls gleich. Da $F$ und $I$ 
+die Bennenung der jeweiligen Koeffizienten bleibt für jede Teilberechnung dieses Protokolls gleich. Da $F$ und $I$ 
 aus den gegebenen Größen direkt berechnet werden können, kann $a=\sfrac{F}{2EI}$ direkt nach dem Elastizitätsmodul $E$
 umgestellt werden. Das Flächenträgheitsmoment $I$ wird über $I_\circ=\sfrac{\pi d^4}{64}$ berechnet \cite{Flächenträgheitsmomente}. In 
 \autoref{fig:plota} sind die Messwerte der ersten Messreihe sowie die lineare Regression zu sehen. Die angehangene 
 Masse beträgt $m=\qty{0,5}{\kilo\gram}$
 \begin{figure}[H]
     \centering
-    \label{fig:plota}
     \caption{Messwerte des einseitig eingespannten runden Stabes und deren lineare Regression.}
     \includegraphics[width=\textwidth]{build/plota.pdf}
+    \label{fig:plota}
 \end{figure}
 Für die Koeffizienten ergeben sich mit \textit{Python} die Werte
 \begin{align*}
@@ -78,8 +78,8 @@ E_{\circ,\text{einseitig}}&=\qty{146(8,2)}{\giga\pascal}\,.
 Zur beidseitigen Einspannung des runden Stabes ergeben sich die in \autoref{tab:rund2} aufgeführten Messwerte.
 \begin{table}
     \centering
-    \label{tab:rund2}
     \caption{Messwerte der Durchbiegung eines runden Stabes links und rechts der Mitte mit und ohne Gewicht.}
+    \label{tab:rund2}
     \begin{tblr}{colspec={c c c c c c c c}}
         \toprule
         $x_\text{l}$\ /\ cm & $x_\text{r}$\ /\ cm  & $D_{0\text{l}}$\ /\ mm & $D_\text{Gewicht,l}$\ /\ mm &
@@ -107,11 +107,11 @@ Das Gewicht ist bei dieser Messreihe mittig bei $\qty{27,75}{\centi\meter}$ ange
 von $\qty{1}{\kilo\gram}$\,. 
 \begin{figure}[H]
     \centering
-    \label{fig:plotb}
     \caption{Messwerte sowie die lineare Regression der Durchbiegung des beidseitig eingespannten runden Stabes rechtsseitig.}
     \includegraphics[width=\textwidth]{build/plotb.pdf}
+    \label{fig:plotb}
 \end{figure}
-Es ergeben sich die Koeffizienten 
+Für die rechte Seite ergeben sich die Koeffizienten 
 \begin{align*}
     a&=\qty{2(0.4)e-3}{\per\meter\squared}\,,\\
     b&=\qty{-1.1(0.6)e-4}{\meter}\,.
@@ -123,9 +123,9 @@ E_{\circ,\text{beidseitig,rechts}}=\qty{2.1(0.4)e2}{\giga\pascal}\,.
 \end{equation*}
 \begin{figure}[H]
     \centering
-    \label{fig:plotc}
     \caption{Messwerte sowie die lineare Regression der Durchbiegung des beidseitig eingespannten runden Stabes linksseitig.}
     \includegraphics[width=\textwidth]{build/plotc.pdf}
+    \label{fig:plotc}
 \end{figure}
 Für die linke Seite ergeben sich die Koeffizienten
 \begin{align*}
@@ -155,8 +155,8 @@ Für die einseitige Einspannung des Stabes ergeben sich die in \autoref{tab:quad
 aufgeführten Messwerte. Auch dieser Stab ist bei $L=\qty{51,5}{\centi\meter}$ eingespannt.
 \begin{table}
     \centering
-    \label{tab:quadr1}
     \caption{Abstand zur Einspannung, Auslenkung mit und ohne Gewicht sowie deren Differenz des quadratischen Stabes.}
+    \label{tab:quadr1}
     \begin{tblr}{colspec={c c c c||c c c c}}
         \toprule
         $x$\ /\ cm & $D_0$\ /\ mm & $D_\text{Gewicht}$\ /\ mm & $\increment D$&
@@ -182,9 +182,9 @@ ist die zu den Koeffizienten
 gehörende lineare Regression sowie die in der Tabelle \ref{tab:quadr1} aufgeführten Messdaten zu sehen.
 \begin{figure}[H]
     \centering
-    \label{fig:plotd}
     \caption{Messwerte des einseitig eingespannten quadratischen Stabes und deren lineare Regression.}
     \includegraphics[width=\textwidth]{build/plotd.pdf}
+    \label{fig:plotd}
 \end{figure}
 Der Elastizitätsmodul errechnet sich zu 
 \begin{equation*}
@@ -195,8 +195,8 @@ Für die beidseitige Einspannung des qaudratischen Stabes ergeben sich die in Ta
 Das Gewicht wurde wieder mit einer Masse von $m=\qty{1}{\kilo\gram}$ mittig aufgehangen.
 \begin{table}
     \centering
-    \label{tab:quadr2}
     \caption{Messwerte der Durchbiegung eines quadratischen Stabes links und rechts der Mitte mit und ohne Gewicht.}
+    \label{tab:quadr2}
     \begin{tblr}{colspec={c c c c c c c c}}
         \toprule
         $x_\text{l}$\ /\ cm & $x_\text{r}$\ /\ cm  & $D_{0\text{l}}$\ /\ mm & $D_\text{Gewicht,l}$\ /\ mm &
@@ -222,9 +222,9 @@ Die Koeffizienten zur linearen Reggression in Abbildung \ref{fig:plote} sind
 \end{align*}
 \begin{figure}[H]
     \centering
-    \label{fig:plote}
     \caption{Messwerte des beidseitig eingespannten quadratischen Stabes und deren lineare Regression rechtsseitig.}
     \includegraphics[width=\textwidth]{build/plote.pdf}
+    \label{fig:plote}
 \end{figure}
 Dazu ergibt sich der Elastizitätsmodul 
 \begin{equation*}
@@ -237,9 +237,9 @@ Schließlich sind die Koeffizienten zur linearen Reggression in Abbildung \ref{f
 \end{align*}
 \begin{figure}[H]
     \centering
-    \label{fig:plotf}
     \caption{Messwerte des beidseitig eingespannten quadratischen Stabes und deren lineare Regression linksseitig.}
     \includegraphics[width=\textwidth]{build/plotf.pdf}
+    \label{fig:plotf}
 \end{figure}
 Dazu ergibt sich der letzte Elastizitätsmodul 
 \begin{equation*}
