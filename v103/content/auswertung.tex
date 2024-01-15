@@ -4,12 +4,12 @@
 Der runde Stab weißt folgende Daten und Abmessungen auf
 \begin{align*}
     \text{Länge: } l&=\qty{0,589(0.001)}{\meter},\\
-    \text{Durchmesser: } d&=\qty{1,0(0,1)e-3}{\meter},\\
+    \text{Durchmesser: } d&=\qty{1,0(0,1)e-3}{\meter}\text{ und}\\
     \text{Masse: } m&=\qty{0,4116(0.0001)}{\kilo\gram}.
 \end{align*}
 Daraus ergibt sich für das Volumen und die Dichte 
 \begin{align*}
-    V&=\qty{4.6(0.05)e-5}{\meter\cubed},\\
+    V&=\qty{4.6(0.05)e-5}{\meter\cubed}\text{ und}\\
     \rho&=\qty{8.9(0.09)e3}{\kilo\gram\per\meter\cubed}.
 \end{align*}
 Die Fehler werden über Pythons Applikation \textit{SciPy} via der Gaußschen 
@@ -22,7 +22,7 @@ Dabei ist $f$ die zur Berechnung der Größe gegebene Formel und $x_k$ dessen Ar
 $\increment x_k$ ist der jeweilige Fehler der einzelnen Argumente.\\ 
 Mittelwerte, Standardabweichungen und sonstige Fehler werden für diesen Versuch alle mit Python bzw. 
 numeric python berechnet. \noindent 
-Der Wert der Dichte entspricht dem Literaturwert für Kupfer \cite{Kupfer}. 
+Der Wert der Dichte entspricht dem Literaturwert von $\qty{8,92}{\kilo\gram\per\meter\cubed}$ für Kupfer \cite{Kupfer}. 
 Auch das äußere Erscheinungsbild deutet auf Kupfer hin.
 \subsubsection{Einseitige Einspannung}
 Für die einseitige Einspannung des Stabes ergeben sich die in \autoref{tab:rund1} 
@@ -54,7 +54,7 @@ die Bennenung der jeweiligen Koeffizienten bleibt für jede Teilberechnung diese
 aus den gegebenen Größen direkt berechnet werden können, kann $a=\sfrac{F}{2EI}$ direkt nach dem Elastizitätsmodul $E$
 umgestellt werden. Das Flächenträgheitsmoment $I$ wird über $I_\circ=\sfrac{\pi d^4}{64}$ berechnet \cite{Flächenträgheitsmomente}. In 
 \autoref{fig:plota} sind die Messwerte der ersten Messreihe sowie die lineare Regression zu sehen. Die angehangene 
-Masse beträgt $m=\qty{0,5}{\kilo\gram}$
+Masse beträgt $m=\qty{0,5}{\kilo\gram}$\,.
 \begin{figure}[H]
     \centering
     \caption{Messwerte des einseitig eingespannten runden Stabes und deren lineare Regression.}
@@ -63,7 +63,7 @@ Masse beträgt $m=\qty{0,5}{\kilo\gram}$
 \end{figure}
 Für die Koeffizienten ergeben sich mit \textit{Python} die Werte
 \begin{align*}
-    a&=\qty{3,4(0,19)e-2}{\per\meter\squared},\\
+    a&=\qty{3,4(0,19)e-2}{\per\meter\squared}\text{ und}\\
     b&=\qty{1,4(0,9)e-4}{\meter}.
 \end{align*}
 Der Elastizitätsmodul berechnet sich über
@@ -113,11 +113,11 @@ von $\qty{1}{\kilo\gram}$\,.
 \end{figure}
 Für die rechte Seite ergeben sich die Koeffizienten 
 \begin{align*}
-    a&=\qty{2(0.4)e-3}{\per\meter\squared}\,,\\
+    a&=\qty{2(0.4)e-3}{\per\meter\squared}\text{ und}\\
     b&=\qty{-1.1(0.6)e-4}{\meter}\,.
 \end{align*}
 Über das gleiche Vorgehen wie bei einseitiger Einspannung ergibt sich der Elastizitätsmodul. Der einzige Unterschied ist 
-der Vorfaktor des Polynoms $D(x)$ nach Gleichung \eqref{eq:rechts} und \eqref{eq:links}.
+der Vorfaktor des Polynoms $D(x)$ nach Gleichung \eqref{eq:rechts} und \eqref{eq:links}. Der Wert für $E$ berechnet sich zu
 \begin{equation*}
 E_{\circ,\text{beidseitig,rechts}}=\qty{2.1(0.4)e2}{\giga\pascal}\,.
 \end{equation*}
@@ -129,7 +129,7 @@ E_{\circ,\text{beidseitig,rechts}}=\qty{2.1(0.4)e2}{\giga\pascal}\,.
 \end{figure}
 Für die linke Seite ergeben sich die Koeffizienten
 \begin{align*}
-    a&=\qty{1,6(0.29)e-3}{\per\meter\squared}\,\\
+    a&=\qty{1,6(0.29)e-3}{\per\meter\squared}\text{ und}\\
     b&=\qty{8(3)e-5}{\meter}\,.
 \end{align*}
 Damit ergibt sich der Elastizitätsmodul für die linke Seite
@@ -141,15 +141,15 @@ Für den qaudratischen Stab verläuft die Auswertung analog. Das Flächenträghe
 über $I_\square=\sfrac{d^4}{12}$. Der qaudratische Stab hat die Abmessungen 
 \begin{align*}
     \text{Länge: } l&=\qty{0,6(0.001)}{\meter},\\
-    \text{Dicke: } d&=\qty{1,0(0,1)e-3}{\meter},\\
+    \text{Dicke: } d&=\qty{1,0(0,1)e-3}{\meter}\text{ und}\\
     \text{Masse: } m&=\qty{0,5357(0.0001)}{\kilo\gram}.
 \end{align*}
 Daraus ergibt sich für das Volumen und die Dichte 
 \begin{align*}
-    V&=\qty{6(0.06)e-5}{\meter\cubed},\\
+    V&=\qty{6(0.06)e-5}{\meter\cubed}\text{ und}\\
     \rho&=\qty{8.93(0.09)e3}{\kilo\gram\per\meter\cubed}.
 \end{align*}
-Auch dieser Stab ist aus Kupfer gefertigt.
+Auch dieser Stab ist aus Kupfer gefertigt, da wieder das äußere Erscheinungsbild sowie die Dichte darauf schließen lässt \cite{Kupfer}.
 \subsubsection{Einseitige Einspannung}
 Für die einseitige Einspannung des Stabes ergeben sich die in \autoref{tab:quadr1} 
 aufgeführten Messwerte. Auch dieser Stab ist bei $L=\qty{51,5}{\centi\meter}$ eingespannt.
