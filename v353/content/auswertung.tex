@@ -101,6 +101,8 @@ geprüft beziehungsweise berechnet.
     sowie eine nichtlineare Regression.}
     \label{fig:fit2}
 \end{figure}\noindent
+Um den eigentlich ewarteten Verlauf der Messwerte zu zeigen, ist die orangene Kurve mit dem in Aufgabe 
+a) berechneten $RC$-Wert gezeichnet.
 Für die Zeitkonstante ergibt sich mittels Scipy und integrierter Gaußscher Fehlerfortpflanzung für den 
 Betrag der Zeitkonstante
 \begin{equation}
@@ -133,17 +135,20 @@ Messwerte aufgenommen.
         \bottomrule
     \end{tblr}
 \end{table}
-Die Perdiodenlänge $b$ wird hierbei über die Formel $b=\sfrac{1}{f}$ berechnet. Mit den gemessenen Daten soll 
-eigentlich erneut die Zeitkonstante, jedoch diesmal über \autoref{eq:arctan1} bestimmt werden. Dies war mit 
-den aufgeführten Messdaten jedoch nicht möglich. Näheres dazu ist in der Diskussion zu finden.
-Stattdessen ist in \autoref{fig:plotc} der $\arctan(-\omega\cdot RC)$ mit dem Wert aus Teil b) für die
-Zeitkonstante geplottet.
+Die Periodenlänge $b$ wird hierbei über die Formel $b=\sfrac{1}{f}$ berechnet. Mit den gemessenen Daten soll 
+erneut die Zeitkonstante, diesmal jedoch über \autoref{eq:arctan1} bestimmt werden.
+Daher ist in \autoref{fig:plotc} der $\arctan(-\omega\cdot RC)$ mit dem $RC$-Wert aus Aufgabe a) für die
+Zeitkonstante sowie ein Fit dieser Form geplottet.
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{build/plotc.pdf}
     \caption{Gemessene Werte für die Phasenverschiebung $\varphi$ sowie die Theorie-Kurve.}
     \label{fig:plotc}
 \end{figure}
+Für $RC$ ergibt sich
+\begin{equation*}
+    RC=\qty{1640.0(0.15)e-3}{\milli\second}\,.
+\end{equation*}
 \subsection{RC-Kreis als Integrator}
 Wie in der Theorie schon diskutiert, lässt sich der RC-Kreis nach \autoref{eq:integrator} auch als Integrator verwenden. 
 Um dies zu überprüfen, wurden drei verschiedene Schwingungsformen sowie deren Stammfunktionen auf das Oszilloskop gelegt.

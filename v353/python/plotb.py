@@ -31,6 +31,13 @@ fig, ax = plt.subplots(1,layout="constrained")
 ax.plot(f, U_C2/4, "rx", label="Messdaten")
 #Plotten Fit
 ax.plot(x_t, x1(x_t,R),label="Regression")
+
+
+##########
+ax.plot(x_t,x1(x_t,0.52e-3),label="Theoriekurve")
+##########
+
+
 w=2*np.pi*f
 ax.set_xlabel(r"$f$ / Hz")
 ax.set_ylabel(r"$\frac{A(\omega)}{U_0}$")
